@@ -28,6 +28,81 @@ export type bjInsObjType = {
 export type UserPropsType = {
     [key: string]: Array<{id: number, title: string}>
 }
+export type ArrOfPrimit = {
+    name: string
+    age: number
+    friends: Array<string>
+}
+export type ArrayOfObjects = Array<{name: string, age: number}>
+export type ArrOfObjectinsideObject = {
+    name: string
+    age: number
+    friends: ArrayOfObjects
+}
+export type ObjectInsideObjectInsideObjectType = {
+    name: string
+    age: number
+    mother: {
+        name: string
+        age: number
+        work: {
+            position: string
+            experience: number
+        }
+    }
+}
+export type ArrayOfObjectsInsideObjectsType = {
+    name: string
+    age: number
+    mother: {
+        name: string
+        age: number
+        work: {
+            position: string
+            experience: number
+        }
+        parents: Array<{ name: string, age: number }>
+    }
+}
+export type ObjectInsideObjectArrayObjectObjectType = {
+    name: string
+    age: number
+    mother: {
+        name: string
+        age: number
+        work: {
+            position: string
+            experience: number
+        }
+        parents: Array<{
+            name: string
+            age: number
+            favoriteDish: {
+                title: string
+            }
+        }>
+    }
+}
+export type ArrayObjectObjectObjectArrayObjectType = {
+    name: string
+    age: number
+    mother: {
+        name: string
+        age: number
+        work: {
+            position: string
+            experience: number
+        }
+        parents: Array<{
+            name: string
+            age: number
+            favoriteDish: {
+                title: string
+                ingredients: Array<{title: string, amount: number}>
+            }
+        }>
+    }
+}
 
 export function changeAddress(u: UserType, city: string ) {
     return {
@@ -84,146 +159,6 @@ export function changeName(u: UserPropsType, name: string, id: number, title: st
 // https://www.youtube.com/watch?v=6napu-MGQDo&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=47
 // https://www.youtube.com/watch?v=I8LNJpG60vI&feature=youtu.be
 
-// 4. Array of primitives inside an object
-let man2 = {
-    name: 'John',
-    age: 28,
-    friends: ["Peter", "Steven", "William"]
-};
-
-let man2FullCopy  // your code
-
-// 5 Array of objects
-let people = [
-    {name: "Peter", age: 30},
-    {name: "Steven", age: 32},
-    {name: "William", age: 28}
-];
-
-let peopleFullCopy  // your code
-
-// 6 Array of objects inside object
-let man3 = {
-    name: 'John',
-    age: 28,
-    friends: [
-        {name: "Peter", age: 30},
-        {name: "Steven", age: 32},
-        {name: "William", age: 28}
-    ]
-};
-
-let man3FullCopy //  your code
-
-// 7 Object inside an object, inside an object
-let man4 = {
-    name: 'John',
-    age: 28,
-    mother: {
-        name: "Kate",
-        age: 50,
-        work: {
-            position: "doctor",
-            experience: 15
-        }
-    }
-};
-
-let man4FullCopy //  your code
-
-// 8 Array of objects inside object -> object
-let man5 = {
-    name: 'John',
-    age: 28,
-    mother: {
-        name: "Kate",
-        age: 50,
-        work: {
-            position: "doctor",
-            experience: 15
-        },
-        parents: [
-            {name: "Kevin", age: 80},
-            {name: "Jennifer", age: 78},
-        ]
-    }
-};
-
-let man5FullCopy //  your code
-
-// 9 Object inside an object -> array -> object ->  object
-let man6 = {
-    name: 'John',
-    age: 28,
-    mother: {
-        name: "Kate",
-        age: 50,
-        work: {
-            position: "doctor",
-            experience: 15
-        },
-        parents: [
-            {
-                name: "Kevin",
-                age: 80,
-                favoriteDish: {
-                    title: "borscht"
-                }
-            },
-            {
-                name: "Jennifer",
-                age: 78,
-                favoriteDish: {
-                    title: "sushi"
-                }
-            },
-        ]
-    }
-};
-
-let man6FullCopy  //  your code
-
-//10 Array of objects inside an object -> object -> array -> object ->  object
-let man7 = {
-    name: 'John',
-    age: 28,
-    mother: {
-        name: "Kate",
-        age: 50,
-        work: {
-            position: "doctor",
-            experience: 15
-        },
-        parents: [
-            {
-                name: "Kevin",
-                age: 80,
-                favoriteDish: {
-                    title: "borscht",
-                    ingredients: [
-                        {title: "beet", amount: 3},
-                        {title: "potatoes", amount: 5},
-                        {title: "carrot", amount: 1},
-                    ]
-                }
-            },
-            {
-                name: "Jennifer",
-                age: 78,
-                favoriteDish: {
-                    title: "sushi",
-                    ingredients: [
-                        {title: "fish", amount: 1},
-                        {title: "rise", amount: 0.5}
-                    ]
-                }
-            },
-        ]
-    }
-};
-
-let man7FullCopy  //  your code
-
 export function simpleObjectCopy(u: SimpleObjectType): SimpleObjectType {
     return {
         ...u
@@ -236,5 +171,58 @@ export function copyObjInsObj(obj: bjInsObjType) {
     return {
         ...obj,
         mother: {...obj.mother}
+    }
+}
+export function fullCopyArrayOfPrimitivInsadeObj(obj: ArrOfPrimit) {
+    return {
+        ...obj,
+        friends: [...obj.friends]
+    }
+}
+export function fullCopyArrayOfObjects(arr: ArrayOfObjects) {
+    return arr.map(u => ({...u}))
+}
+export function fullCopyArrayOfObjectsInsideObject(obj: ArrOfObjectinsideObject):ArrOfObjectinsideObject  {
+    return {
+        ...obj,
+        friends: obj.friends.map(u => ({...u}))
+    }
+}
+export function fullCopyObjectInsideObjectInsideObject(obj: ObjectInsideObjectInsideObjectType): ObjectInsideObjectInsideObjectType {
+    return {
+        ...obj,
+        mother: {...obj.mother, work: {...obj.mother.work}}
+    }
+}
+export function fullCopyArrayOfObjectsInsideObjects(obj: ArrayOfObjectsInsideObjectsType): ArrayOfObjectsInsideObjectsType{
+    return {
+        ...obj,
+        mother: {...obj.mother,
+                work: {...obj.mother.work},
+                parents: obj.mother.parents.map( u => ({...u}) )
+        }
+    }
+}
+export function fullCopyObjectArrayObjectObject(obj: ObjectInsideObjectArrayObjectObjectType) {
+    return {
+        ...obj,
+        mother: {...obj.mother,
+                    parents: obj.mother.parents.map((u) => ({...u,favoriteDish: {...u.favoriteDish}}))
+        }
+    }
+}
+export function fullCopyArrayObjectObjectjbject(obj: ArrayObjectObjectObjectArrayObjectType): ArrayObjectObjectObjectArrayObjectType {
+    return {
+        ...obj,
+        mother: {...obj.mother,
+                    work: {...obj.mother.work},
+                    parents: obj.mother.parents.map(u => {
+                        return {...u,
+                            favoriteDish: {...u.favoriteDish,
+                                            ingredients: u.favoriteDish.ingredients.map(i => ({...i}))
+                            }
+                        }
+                    })
+        }
     }
 }

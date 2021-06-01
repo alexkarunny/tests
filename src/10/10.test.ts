@@ -1,10 +1,29 @@
 import {
-    addBook, arrOfPrim, arrOfPrimit, bjInsObjType,
+    addBook, ArrayObjectObjectObjectArrayObjectType,
+    ArrayOfObjects,
+    ArrayOfObjectsInsideObjectsType,
+    ArrOfObjectinsideObject,
+    arrOfPrim,
+    ArrOfPrimit,
+    arrOfPrimit,
+    bjInsObjType,
     changeAddress,
     changeBook,
-    changeCcmpanyname, changeName, copyObjInsObj,
+    changeCcmpanyname,
+    changeName,
+    copyObjInsObj,
     createPhoneNumber,
-    delBook, simpleObjectCopy, SimpleObjectType,
+    delBook, fullCopyArrayObjectObjectjbject,
+    fullCopyArrayOfObjects,
+    fullCopyArrayOfObjectsInsideObject,
+    fullCopyArrayOfObjectsInsideObjects,
+    fullCopyArrayOfPrimitivInsadeObj,
+    fullCopyObjectArrayObjectObject,
+    fullCopyObjectInsideObjectInsideObject,
+    ObjectInsideObjectArrayObjectObjectType,
+    ObjectInsideObjectInsideObjectType,
+    simpleObjectCopy,
+    SimpleObjectType,
     UserPropsType,
     UserType
 } from "./10";
@@ -136,7 +155,7 @@ test('change company s', () => {
     expect(user['Alex']).not.toBe(userCopy['Alex']);
     expect(user['Dima']).toBe(userCopy['Dima'])
 })
-test('1 simple object', () => {
+test('1. Simple object', () => {
     // 1. Simple object
     let man: SimpleObjectType = {
         name: 'John',
@@ -149,7 +168,7 @@ test('1 simple object', () => {
     expect(man).not.toBe(manFullCopy)
     expect(man.name).toBe('John')
 })
-test('2 Aray of primitives', () => {
+test('2. Array of primitives', () => {
     // 2. Array of primitives
     let numbers: arrOfPrim = [1, 2, 3];
 
@@ -157,7 +176,7 @@ test('2 Aray of primitives', () => {
 
     expect(numbers).not.toBe(numbersFullCopy)
 })
-test('3 object inside object', () => {
+test('3. Object inside an object', () => {
 
 // 3. Object inside an object
     let man1: bjInsObjType = {
@@ -178,3 +197,196 @@ test('3 object inside object', () => {
 
 
 })
+test('4. Array of primitives inside an object', () => {
+    // 4. Array of primitives inside an object
+    let man2: ArrOfPrimit = {
+        name: 'John',
+        age: 28,
+        friends: ["Peter", "Steven", "William"]
+    };
+
+    let man2FullCopy: ArrOfPrimit = fullCopyArrayOfPrimitivInsadeObj(man2)
+    man2FullCopy.friends[1] = 'Alex';
+
+    expect(man2.friends[1]).toBe('Steven')
+    expect(man2.friends).not.toBe(man2FullCopy.friends)
+    expect(man2FullCopy.friends[1]).toBe('Alex')
+
+})
+test('5. Array of objects', () => {
+    // 5 Array of objects
+    let people: ArrayOfObjects = [
+        {name: "Peter", age: 30},
+        {name: "Steven", age: 32},
+        {name: "William", age: 28}
+    ];
+
+    let peopleFullCopy  = fullCopyArrayOfObjects(people)
+    peopleFullCopy[0].name = 'Alex'
+    expect(peopleFullCopy[0].name).toBe('Alex')
+    expect(people[0].name).toBe('Peter')
+    expect(people).not.toBe(peopleFullCopy)
+})
+test('6. Array of objects inside object', () => {
+    // 6 Array of objects inside object
+    let man3: ArrOfObjectinsideObject = {
+        name: 'John',
+        age: 25,
+        friends: [
+            {name: "Peter", age: 30},
+            {name: "Steven", age: 32},
+            {name: "William", age: 28}
+        ]
+    };
+
+    let man3FullCopy: ArrOfObjectinsideObject = fullCopyArrayOfObjectsInsideObject(man3)
+    man3FullCopy.friends[0].name = 'Alex'
+
+    expect(man3.friends).not.toBe(man3FullCopy.friends)
+    expect(man3.friends[0].name).toBe('Peter')
+    expect(man3FullCopy.friends[0].name).toBe('Alex')
+    //  your code
+
+})
+test('7. Object inside an object, inside an object', () => {
+    // 7 Object inside an object, inside an object
+    let man4: ObjectInsideObjectInsideObjectType = {
+        name: 'John',
+        age: 28,
+        mother: {
+            name: "Kate",
+            age: 50,
+            work: {
+                position: "doctor",
+                experience: 15
+            }
+        }
+    };
+
+    let man4FullCopy: ObjectInsideObjectInsideObjectType = fullCopyObjectInsideObjectInsideObject(man4)
+    man4FullCopy.mother.work.experience = 20
+    expect(man4.mother.work).not.toBe(man4FullCopy.mother.work)
+    expect(man4.mother.work.experience).toBe(15)
+    expect(man4FullCopy.mother.work.experience).toBe(20)
+
+})
+test('8. Array of objects inside object -> object', () => {
+    // 8 Array of objects inside object -> object
+    let man5: ArrayOfObjectsInsideObjectsType = {
+        name: 'John',
+        age: 28,
+        mother: {
+            name: "Kate",
+            age: 50,
+            work: {
+                position: "doctor",
+                experience: 15
+            },
+            parents: [
+                {name: "Kevin", age: 80},
+                {name: "Jennifer", age: 78},
+            ]
+        }
+    };
+
+    let man5FullCopy: ArrayOfObjectsInsideObjectsType = fullCopyArrayOfObjectsInsideObjects(man5)
+    man5FullCopy.mother.work.experience = 26
+
+    expect(man5.mother.parents).not.toBe(man5FullCopy.mother.parents)
+    expect(man5.mother.work).not.toBe(man5FullCopy.mother.work)
+    expect(man5FullCopy.mother.work.experience).toBe(26)
+    expect(man5.mother.work.experience).toBe(15)
+})
+test('9. Object inside an object -> array -> object ->  object', () => {
+    // 9 Object inside an object -> array -> object ->  object
+    let man6: ObjectInsideObjectArrayObjectObjectType = {
+        name: 'John',
+        age: 28,
+        mother: {
+            name: "Kate",
+            age: 50,
+            work: {
+                position: "doctor",
+                experience: 15
+            },
+            parents: [
+                {
+                    name: "Kevin",
+                    age: 80,
+                    favoriteDish: {
+                        title: "borscht"
+                    }
+                },
+                {
+                    name: "Jennifer",
+                    age: 78,
+                    favoriteDish: {
+                        title: "sushi"
+                    }
+                },
+            ]
+        }
+    };
+
+    let man6FullCopy  = fullCopyObjectArrayObjectObject(man6)
+    man6FullCopy.mother.parents[0].favoriteDish.title = 'red soup'
+    expect(man6FullCopy.mother.parents[0].favoriteDish.title).toBe('red soup')
+    expect(man6.mother.parents[0].favoriteDish.title).toBe('borscht')
+    expect(man6.mother.parents[0].favoriteDish).not.toBe(man6FullCopy.mother.parents[0].favoriteDish)
+
+
+
+})
+test('10 Array of objects inside an object -> object -> array -> object ->  object', () => {
+    //10 Array of objects inside an object -> object -> array -> object ->  object
+    let man7: ArrayObjectObjectObjectArrayObjectType = {
+        name: 'John',
+        age: 28,
+        mother: {
+            name: "Kate",
+            age: 50,
+            work: {
+                position: "doctor",
+                experience: 15
+            },
+            parents: [
+                {
+                    name: "Kevin",
+                    age: 80,
+                    favoriteDish: {
+                        title: "borscht",
+                        ingredients: [
+                            {title: "beet", amount: 3},
+                            {title: "potatoes", amount: 5},
+                            {title: "carrot", amount: 1},
+                        ]
+                    }
+                },
+                {
+                    name: "Jennifer",
+                    age: 78,
+                    favoriteDish: {
+                        title: "sushi",
+                        ingredients: [
+                            {title: "fish", amount: 1},
+                            {title: "rise", amount: 0.5}
+                        ]
+                    }
+                },
+            ]
+        }
+    };
+
+    let man7FullCopy:ArrayObjectObjectObjectArrayObjectType  = fullCopyArrayObjectObjectjbject(man7)
+    man7FullCopy.mother.parents[0].favoriteDish.ingredients[1].amount = 347
+
+    expect(man7.mother.parents).not.toBe(man7FullCopy.mother.parents)
+    expect(man7.mother.parents[0].favoriteDish).not.toBe(man7FullCopy.mother.parents[0].favoriteDish)
+    expect(man7.mother.parents[0].favoriteDish.ingredients).not.toBe(man7FullCopy.mother.parents[0].favoriteDish.ingredients)
+    expect(man7.mother.parents[0].favoriteDish.ingredients[1].amount).not.toBe(man7FullCopy.mother.parents[0].favoriteDish.ingredients[1].amount)
+    expect(man7.mother.parents[0].favoriteDish.ingredients[1].amount).toBe(5)
+    expect(man7FullCopy.mother.parents[0].favoriteDish.ingredients[1].amount).toBe(347)
+
+
+})
+
