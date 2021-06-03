@@ -237,3 +237,8 @@ export function sortString(str: string) {
     }
     return newArr.join(' ')
 }
+export function filter_list(l: Array<any>): Array<any> {
+
+
+    return l.filter(n => typeof n === 'number')
+}

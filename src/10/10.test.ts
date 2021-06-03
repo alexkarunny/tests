@@ -13,7 +13,7 @@ import {
     changeName,
     copyObjInsObj,
     createPhoneNumber,
-    delBook, fullCopyArrayObjectObjectjbject,
+    delBook, filter_list, fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
     fullCopyArrayOfObjectsInsideObjects,
@@ -398,5 +398,17 @@ test(' sort a given strin', () => {
     expect(newStr).toBe('Thi1s is2 3a T4est')
     expect(emptyStr).toBe('')
 
+
+})
+test('List Filtering ',() => {
+    let a = [1,2,'a','b'];
+    let x = [1,2,'aasf','1','123',123]
+    let b = filter_list(a)
+    let fd = filter_list(x)
+    expect(b.length).toBe(2)
+    expect(b[1]).toBe(2)
+
+    expect(fd.length).toBe(3)
+    expect(fd[2]).toBe(123)
 
 })
