@@ -23,7 +23,7 @@ import {
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType,
     simpleObjectCopy,
-    SimpleObjectType,
+    SimpleObjectType, sortString,
     UserPropsType,
     UserType
 } from "./10";
@@ -389,4 +389,14 @@ test('10 Array of objects inside an object -> object -> array -> object ->  obje
 
 
 })
+test(' sort a given strin', () => {
+    let str = 'is2 Thi1s T4est 3a'
 
+    let newStr = sortString(str)
+    let emptyStr = sortString('')
+
+    expect(newStr).toBe('Thi1s is2 3a T4est')
+    expect(emptyStr).toBe('')
+
+
+})

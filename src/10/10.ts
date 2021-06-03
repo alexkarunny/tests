@@ -226,3 +226,14 @@ export function fullCopyArrayObjectObjectjbject(obj: ArrayObjectObjectObjectArra
         }
     }
 }
+export function sortString(str: string) {
+    if(str.length === 0) return ''
+    let arr = str.split(' ')
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        // @ts-ignore
+        let number = Number(arr[i].split('').find(n => !isNaN(n))[0]) - 1
+        newArr[number] = arr[i]
+    }
+    return newArr.join(' ')
+}
