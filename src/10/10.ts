@@ -238,7 +238,15 @@ export function sortString(str: string) {
     return newArr.join(' ')
 }
 export function filter_list(l: Array<any>): Array<any> {
-
-
     return l.filter(n => typeof n === 'number')
+}
+export function getSum(a: number, b: number): number {
+    let sum: number = 0;
+    let min: number = Math.min(a, b),
+        max: number = Math.max(a, b);
+    if(a === b) {return b}
+    for (let i = min; i <= max ; i++) {
+        sum += i
+    }
+    return sum
 }

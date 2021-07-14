@@ -19,7 +19,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject,
+    fullCopyObjectInsideObjectInsideObject, getSum,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType,
     simpleObjectCopy,
@@ -410,5 +410,15 @@ test('List Filtering ',() => {
 
     expect(fd.length).toBe(3)
     expect(fd[2]).toBe(123)
+
+})
+test('get sum beetwen', () => {
+    let firstnumber = getSum(-1, 2);
+    let secondNumber = getSum(1,6);
+    let thirdNumber = getSum(0,-1);
+    expect(firstnumber).toBe(2);
+    expect(secondNumber).toBe(21);
+    expect(thirdNumber).toBe(-1)
+
 
 })
