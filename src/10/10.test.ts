@@ -19,7 +19,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getSum,
+    fullCopyObjectInsideObjectInsideObject, getSum, iqTest,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType,
     simpleObjectCopy,
@@ -421,4 +421,12 @@ test('get sum beetwen', () => {
     expect(thirdNumber).toBe(-1)
 
 
+})
+test('iq test', () => {
+    let firstTest = iqTest("2 4 7 8 10")
+    let secondTest = iqTest('1 2 2')
+    let thirdtwst = iqTest('1 3 5 3 5 6 7 9')
+    expect(firstTest).toBe(3)
+    expect(secondTest).toBe(1)
+    expect(thirdtwst).toBe(6)
 })

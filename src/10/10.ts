@@ -250,3 +250,8 @@ export function getSum(a: number, b: number): number {
     }
     return sum
 }
+export function iqTest(numbers: string): number{
+    let newArr = numbers.split(" ").map(l => l % 2 );
+    let checkNumber = newArr.reduce((sum, current) => sum + current, 0 );
+   return (checkNumber === 1) ? newArr.findIndex(item => item === 1) + 1 : newArr.findIndex(item => item === 0) + 1
+}
