@@ -255,3 +255,8 @@ export function iqTest(numbers: string): number{
     let checkNumber = newArr.reduce((sum, current) => sum + current, 0 );
    return (checkNumber === 1) ? newArr.findIndex(item => item === 1) + 1 : newArr.findIndex(item => item === 0) + 1
 }
+export function XO(str: string): boolean {
+    let firstNUm = str.toLowerCase().split('').filter(l => l === 'x')
+    let secnum = str.toLowerCase().split('').filter(l => l === 'o')
+    return firstNUm.length === secnum.length
+}

@@ -25,7 +25,7 @@ import {
     simpleObjectCopy,
     SimpleObjectType, sortString,
     UserPropsType,
-    UserType
+    UserType, XO
 } from "./10";
 
 test('change city', () => {
@@ -429,4 +429,14 @@ test('iq test', () => {
     expect(firstTest).toBe(3)
     expect(secondTest).toBe(1)
     expect(thirdtwst).toBe(6)
+})
+test('same amount of X and O', ()=> {
+    let firstTest = XO('xxxm')
+    let secTest = XO('xxOo')
+    let thirdTest = XO('vfdsdgtre')
+
+
+    expect(firstTest).toBe(false)
+    expect(secTest).toBe(true)
+    expect(thirdTest).toBe(true)
 })
