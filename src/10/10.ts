@@ -260,3 +260,10 @@ export function XO(str: string): boolean {
     let secnum = str.toLowerCase().split('').filter(l => l === 'o')
     return firstNUm.length === secnum.length
 }
+export function validatePinCode(pin: string): boolean {
+    let arr = pin.split('').filter(n => !n.match(/\d/))
+    if (arr.length > 0) return false;
+    if((pin.length === 4 || pin.length === 6) && Number.isInteger(+pin))return true;
+
+    return false;
+}

@@ -25,7 +25,7 @@ import {
     simpleObjectCopy,
     SimpleObjectType, sortString,
     UserPropsType,
-    UserType, XO
+    UserType, validatePinCode, XO
 } from "./10";
 
 test('change city', () => {
@@ -439,4 +439,13 @@ test('same amount of X and O', ()=> {
     expect(firstTest).toBe(false)
     expect(secTest).toBe(true)
     expect(thirdTest).toBe(true)
+})
+test('validate pin code', ()=> {
+    expect(validatePinCode('123' +
+        '')).toBe(false)
+    expect(validatePinCode('-12345')).toBe(false)
+    expect(validatePinCode('12.0')).toBe(false)
+    expect(validatePinCode('090909')).toBe(true)
+    expect(validatePinCode('123v')).toBe(false)
+
 })
