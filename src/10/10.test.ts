@@ -19,7 +19,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getSum, iqTest,
+    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType,
     simpleObjectCopy,
@@ -447,5 +447,16 @@ test('validate pin code', ()=> {
     expect(validatePinCode('12.0')).toBe(false)
     expect(validatePinCode('090909')).toBe(true)
     expect(validatePinCode('123v')).toBe(false)
+
+})
+test('is leap year', () => {
+    expect(isLeapYear(1600)).toBe(true)
+    expect(isLeapYear(1234)).toBe(false)
+    expect(isLeapYear(2000)).toBe(true)
+    expect(isLeapYear(2013)).toBe(false)
+    expect(isLeapYear(1600)).toBe(true)
+    expect(isLeapYear(1900)).toBe(false)
+    expect(isLeapYear(1000)).toBe(false)
+    expect(isLeapYear(1984)).toBe(true)
 
 })
