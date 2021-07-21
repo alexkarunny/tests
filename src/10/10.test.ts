@@ -21,7 +21,7 @@ import {
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear,
     ObjectInsideObjectArrayObjectObjectType,
-    ObjectInsideObjectInsideObjectType,
+    ObjectInsideObjectInsideObjectType, overTheRoad,
     simpleObjectCopy,
     SimpleObjectType, sortString,
     UserPropsType,
@@ -459,4 +459,9 @@ test('is leap year', () => {
     expect(isLeapYear(1000)).toBe(false)
     expect(isLeapYear(1984)).toBe(true)
 
+})
+test('over road find the number of a house', () => {
+    expect(overTheRoad(2,3)).toBe(5)
+    expect(overTheRoad(7,11)).toBe(16)
+    expect(overTheRoad(23633656673,310027696726)).toBe(596421736780)
 })
