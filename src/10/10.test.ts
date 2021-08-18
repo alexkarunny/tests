@@ -13,7 +13,7 @@ import {
     changeName,
     copyObjInsObj,
     createPhoneNumber,
-    delBook, filter_list, fullCopyArrayObjectObjectjbject,
+    delBook, feast, filter_list, fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
     fullCopyArrayOfObjectsInsideObjects,
@@ -464,4 +464,16 @@ test('over road find the number of a house', () => {
     expect(overTheRoad(2,3)).toBe(5)
     expect(overTheRoad(7,11)).toBe(16)
     expect(overTheRoad(23633656673,310027696726)).toBe(596421736780)
+})
+
+test('a dish has to fit an animal', () => {
+
+    const first = feast("great blue heron", "garlic naan");
+    const sec = feast("chickadee", "chocolate cake");
+    const third = feast("brown bear", "bear claw")
+
+    expect(first).toBe(true)
+    expect(sec).toBe(true)
+    expect(third).toBe(false)
+
 })
