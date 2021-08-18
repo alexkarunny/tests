@@ -475,5 +475,6 @@ test('a dish has to fit an animal', () => {
     expect(first).toBe(true)
     expect(sec).toBe(true)
     expect(third).toBe(false)
+    expect(feast('das fdsfd', 'dsdasad')).toBe(true)
 
 })
