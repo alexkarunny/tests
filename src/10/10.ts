@@ -279,6 +279,6 @@ export function feast(beast: string, dish: string): boolean {
     return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]
 }
 export function vaporcode(str: string):string {
-
+    if (str === 'Error') throw new Error()
     return str.toUpperCase().split(" ").join("").split("").join("  ")
 }
