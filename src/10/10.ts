@@ -274,8 +274,11 @@ export function isLeapYear(year: number):boolean {
 export function overTheRoad(address: number, n: number): number{
         return n * 2 - address + 1
 }
-
 export function feast(beast: string, dish: string): boolean {
 
     return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]
+}
+export function vaporcode(str: string):string {
+
+    return str.toUpperCase().split(" ").join("").split("").join("  ")
 }

@@ -25,7 +25,7 @@ import {
     simpleObjectCopy,
     SimpleObjectType, sortString,
     UserPropsType,
-    UserType, validatePinCode, XO
+    UserType, validatePinCode, vaporcode, XO
 } from "./10";
 
 test('change city', () => {
@@ -465,7 +465,6 @@ test('over road find the number of a house', () => {
     expect(overTheRoad(7,11)).toBe(16)
     expect(overTheRoad(23633656673,310027696726)).toBe(596421736780)
 })
-
 test('a dish has to fit an animal', () => {
 
     const first = feast("great blue heron", "garlic naan");
@@ -477,4 +476,9 @@ test('a dish has to fit an animal', () => {
     expect(third).toBe(false)
     expect(feast('das fdsfd', 'dsdasad')).toBe(true)
 
+})
+test('vaporcode have to be returned', () => {
+
+    expect(vaporcode("Let's go to the movies")).toBe("L  E  T  '  S  G  O  T  O  T  H  E  M  O  V  I  E  S")
+    expect(vaporcode("Why isn't my code working?")).toBe("W  H  Y  I  S  N  '  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?")
 })
