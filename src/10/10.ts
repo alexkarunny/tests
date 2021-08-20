@@ -282,3 +282,9 @@ export function vaporcode(str: string):string {
     if (str === 'Error') throw new Error()
     return str.toUpperCase().split(" ").join("").split("").join("  ")
 }
+export const prevMultOfThree = (n: number): number | null => {
+    if(n === 0) return null;
+
+    return (n % 3) ? prevMultOfThree(Math.trunc(n / 10)) : n;
+
+}

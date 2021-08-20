@@ -21,7 +21,7 @@ import {
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear,
     ObjectInsideObjectArrayObjectObjectType,
-    ObjectInsideObjectInsideObjectType, overTheRoad,
+    ObjectInsideObjectInsideObjectType, overTheRoad, prevMultOfThree,
     simpleObjectCopy,
     SimpleObjectType, sortString,
     UserPropsType,
@@ -482,4 +482,13 @@ test('vaporcode have to be returned', () => {
     expect(vaporcode("Let's go to the movies")).toBe("L  E  T  '  S  G  O  T  O  T  H  E  M  O  V  I  E  S")
     expect(() => vaporcode("Error")).toThrowError() // при поиске ошибки нужно оборачивать функцию колбэком(стрелочная ф)
     expect(vaporcode("Why isn't my code working?")).toBe("W  H  Y  I  S  N  '  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?")
+})
+test('find integer', () => {
+    expect(prevMultOfThree(1)).toBe(null)
+    expect(prevMultOfThree(25)).toBe(null)
+    expect(prevMultOfThree(36)).toBe(36)
+    expect(prevMultOfThree(36)).toBe(36)
+    expect(prevMultOfThree(952406)).toBe(9)
+    expect(prevMultOfThree(1244)).toBe(12)
+
 })
