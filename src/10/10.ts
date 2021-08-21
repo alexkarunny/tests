@@ -288,3 +288,13 @@ export const prevMultOfThree = (n: number): number | null => {
     return (n % 3) ? prevMultOfThree(Math.trunc(n / 10)) : n;
 
 }
+export function loopArr(arr: Array<number>, direction: string, steps: number):Array<number> {
+    if(direction === 'left') {
+        const temp = arr.splice(0, steps)
+        return arr.concat(temp)
+    }
+    if(direction === 'right') {
+        const temp = arr.splice(-steps)
+        return temp.concat(arr)
+    }
+}

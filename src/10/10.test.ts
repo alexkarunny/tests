@@ -19,7 +19,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear,
+    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, loopArr,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, overTheRoad, prevMultOfThree,
     simpleObjectCopy,
@@ -491,4 +491,9 @@ test('find integer', () => {
     expect(prevMultOfThree(952406)).toBe(9)
     expect(prevMultOfThree(1244)).toBe(12)
 
+})
+test("loop array", () => {
+    let ne = loopArr([1, 5, 87, 45, 8, 8], 'left', 2)
+    expect(loopArr([1, 5, 87, 45, 8, 8], 'left', 2)).toStrictEqual([87, 45, 8, 8, 1, 5])
+    expect(loopArr([1, 5, 87, 45, 8, 8], 'right', 2)).toStrictEqual([8, 8, 1, 5, 87, 45])
 })
