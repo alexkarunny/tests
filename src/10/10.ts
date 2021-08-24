@@ -298,3 +298,6 @@ export function loopArr(arr: Array<number>, direction: string, steps: number):Ar
         return temp.concat(arr)
     }
 }
+export function descendingOrder(n: number): number{
+    return Number(n.toString().split('').sort((a, b) => b - a).join(''))
+}

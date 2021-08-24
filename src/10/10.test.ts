@@ -13,7 +13,7 @@ import {
     changeName,
     copyObjInsObj,
     createPhoneNumber,
-    delBook, feast, filter_list, fullCopyArrayObjectObjectjbject,
+    delBook, descendingOrder, feast, filter_list, fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
     fullCopyArrayOfObjectsInsideObjects,
@@ -496,4 +496,11 @@ test("loop array", () => {
     let ne = loopArr([1, 5, 87, 45, 8, 8], 'left', 2)
     expect(loopArr([1, 5, 87, 45, 8, 8], 'left', 2)).toStrictEqual([87, 45, 8, 8, 1, 5])
     expect(loopArr([1, 5, 87, 45, 8, 8], 'right', 2)).toStrictEqual([8, 8, 1, 5, 87, 45])
+})
+test("descent order", () => {
+    expect(descendingOrder(15)).toBe(51)
+    expect(descendingOrder(1)).toBe(1)
+    expect(descendingOrder(0)).toBe(0)
+    expect(descendingOrder(123456789)).toBe(987654321)
+    expect(descendingOrder(1021)).toBe(2110)
 })
