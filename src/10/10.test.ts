@@ -13,7 +13,7 @@ import {
     changeName,
     copyObjInsObj,
     createPhoneNumber,
-    delBook, descendingOrder, feast, filter_list, fullCopyArrayObjectObjectjbject,
+    delBook, descendingOrder, duplicateCount, feast, filter_list, fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
     fullCopyArrayOfObjectsInsideObjects,
@@ -503,4 +503,13 @@ test("descent order", () => {
     expect(descendingOrder(0)).toBe(0)
     expect(descendingOrder(123456789)).toBe(987654321)
     expect(descendingOrder(1021)).toBe(2110)
+})
+test("duplateCount", () => {
+
+    expect(duplicateCount("abcde")).toBe(0);
+    expect(duplicateCount("aabbcde")).toBe(2);
+    expect(duplicateCount("aabBcde")).toBe(2);
+    expect(duplicateCount("Indivisibility")).toBe(1);
+    expect(duplicateCount("Indivisibilities")).toBe(2);
+
 })
