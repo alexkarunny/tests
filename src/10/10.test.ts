@@ -19,7 +19,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, loopArr,
+    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, isSquare, loopArr,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, overTheRoad, prevMultOfThree,
     simpleObjectCopy,
@@ -512,4 +512,11 @@ test("duplateCount", () => {
     expect(duplicateCount("Indivisibility")).toBe(1);
     expect(duplicateCount("Indivisibilities")).toBe(2);
 
+})
+test("isSquare", () => {
+    expect(isSquare(0)).toBe(true)
+    expect(isSquare(25)).toBe(true)
+    expect(isSquare(3)).toBe(false)
+    expect(isSquare(26)).toBe(false)
+    expect(isSquare(4)).toBe(true)
 })

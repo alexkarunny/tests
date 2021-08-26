@@ -354,3 +354,7 @@ export function duplicateCount(text: string): number {
 
     return arrTemp.length //...
 }
+
+export function isSquare (n: number): boolean{
+    return Number.isInteger(Math.sqrt(n)); // fix me
+}
