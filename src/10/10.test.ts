@@ -21,7 +21,7 @@ import {
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, isSquare, loopArr,
     ObjectInsideObjectArrayObjectObjectType,
-    ObjectInsideObjectInsideObjectType, overTheRoad, prevMultOfThree,
+    ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree,
     simpleObjectCopy,
     SimpleObjectType, sortString,
     UserPropsType,
@@ -89,9 +89,9 @@ test('add mook', () => {
 
     const copyUser = addBook(user, 'Algorithm');
 
-   // expect(copyUser.books[0]).toBe('Algorithm')
-   // expect(copyUser.books.length).toBe(4)
-   // expect(user.books.length).toBe(3)
+    // expect(copyUser.books[0]).toBe('Algorithm')
+    // expect(copyUser.books.length).toBe(4)
+    // expect(user.books.length).toBe(3)
     expect(copyUser.companies).toBe(user.companies)
 })
 test('del book', () => {
@@ -149,7 +149,7 @@ test('change company s', () => {
         'Dima': [{id: 1, title: 'pon'}, {id: 2, title: 'hey'}],
     }
 
-    const userCopy: UserPropsType = changeName(user, 'Alex',  1, 'EPAM' )
+    const userCopy: UserPropsType = changeName(user, 'Alex', 1, 'EPAM')
 
     expect(userCopy['Alex'][0].title).toBe('EPAM');
     expect(user['Alex']).not.toBe(userCopy['Alex']);
@@ -195,7 +195,6 @@ test('3. Object inside an object', () => {
     expect(man1.mother.age).toBe(50)
 
 
-
 })
 test('4. Array of primitives inside an object', () => {
     // 4. Array of primitives inside an object
@@ -221,7 +220,7 @@ test('5. Array of objects', () => {
         {name: "William", age: 28}
     ];
 
-    let peopleFullCopy  = fullCopyArrayOfObjects(people)
+    let peopleFullCopy = fullCopyArrayOfObjects(people)
     peopleFullCopy[0].name = 'Alex'
     expect(peopleFullCopy[0].name).toBe('Alex')
     expect(people[0].name).toBe('Peter')
@@ -328,12 +327,11 @@ test('9. Object inside an object -> array -> object ->  object', () => {
         }
     };
 
-    let man6FullCopy  = fullCopyObjectArrayObjectObject(man6)
+    let man6FullCopy = fullCopyObjectArrayObjectObject(man6)
     man6FullCopy.mother.parents[0].favoriteDish.title = 'red soup'
     expect(man6FullCopy.mother.parents[0].favoriteDish.title).toBe('red soup')
     expect(man6.mother.parents[0].favoriteDish.title).toBe('borscht')
     expect(man6.mother.parents[0].favoriteDish).not.toBe(man6FullCopy.mother.parents[0].favoriteDish)
-
 
 
 })
@@ -377,7 +375,7 @@ test('10 Array of objects inside an object -> object -> array -> object ->  obje
         }
     };
 
-    let man7FullCopy:ArrayObjectObjectObjectArrayObjectType  = fullCopyArrayObjectObjectjbject(man7)
+    let man7FullCopy: ArrayObjectObjectObjectArrayObjectType = fullCopyArrayObjectObjectjbject(man7)
     man7FullCopy.mother.parents[0].favoriteDish.ingredients[1].amount = 347
 
     expect(man7.mother.parents).not.toBe(man7FullCopy.mother.parents)
@@ -400,9 +398,9 @@ test(' sort a given strin', () => {
 
 
 })
-test('List Filtering ',() => {
-    let a = [1,2,'a','b'];
-    let x = [1,2,'aasf','1','123',123]
+test('List Filtering ', () => {
+    let a = [1, 2, 'a', 'b'];
+    let x = [1, 2, 'aasf', '1', '123', 123]
     let b = filter_list(a)
     let fd = filter_list(x)
     expect(b.length).toBe(2)
@@ -414,8 +412,8 @@ test('List Filtering ',() => {
 })
 test('get sum beetwen', () => {
     let firstnumber = getSum(-1, 2);
-    let secondNumber = getSum(1,6);
-    let thirdNumber = getSum(0,-1);
+    let secondNumber = getSum(1, 6);
+    let thirdNumber = getSum(0, -1);
     expect(firstnumber).toBe(2);
     expect(secondNumber).toBe(21);
     expect(thirdNumber).toBe(-1)
@@ -430,7 +428,7 @@ test('iq test', () => {
     expect(secondTest).toBe(1)
     expect(thirdtwst).toBe(6)
 })
-test('same amount of X and O', ()=> {
+test('same amount of X and O', () => {
     let firstTest = XO('xxxm')
     let secTest = XO('xxOo')
     let thirdTest = XO('vfdsdgtre')
@@ -440,7 +438,7 @@ test('same amount of X and O', ()=> {
     expect(secTest).toBe(true)
     expect(thirdTest).toBe(true)
 })
-test('validate pin code', ()=> {
+test('validate pin code', () => {
     expect(validatePinCode('123' +
         '')).toBe(false)
     expect(validatePinCode('-12345')).toBe(false)
@@ -461,9 +459,9 @@ test('is leap year', () => {
 
 })
 test('over road find the number of a house', () => {
-    expect(overTheRoad(2,3)).toBe(5)
-    expect(overTheRoad(7,11)).toBe(16)
-    expect(overTheRoad(23633656673,310027696726)).toBe(596421736780)
+    expect(overTheRoad(2, 3)).toBe(5)
+    expect(overTheRoad(7, 11)).toBe(16)
+    expect(overTheRoad(23633656673, 310027696726)).toBe(596421736780)
 })
 test('a dish has to fit an animal', () => {
 
@@ -519,4 +517,10 @@ test("isSquare", () => {
     expect(isSquare(3)).toBe(false)
     expect(isSquare(26)).toBe(false)
     expect(isSquare(4)).toBe(true)
+})
+test("persistence", () => {
+    expect(persistence(39)).toBe(3)
+    expect(persistence(4)).toBe(0)
+    expect(persistence(25)).toBe(2)
+    expect(persistence(999)).toBe(4)
 })

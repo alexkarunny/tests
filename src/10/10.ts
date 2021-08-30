@@ -339,15 +339,15 @@ export function descendingOrder(n: number): number {
 export function duplicateCount(text: string): number {
 
     let arr = text.toLowerCase()
-                    .split('')
-                    .sort()
+        .split('')
+        .sort()
     let arrTemp = []
 
     for (let i = 0; i < arr.length; i++) {
-       let temp = arr.filter((el, index) => el === arr[i])
-        if(temp.length > 1) {
+        let temp = arr.filter((el, index) => el === arr[i])
+        if (temp.length > 1) {
             arrTemp.push(temp[0])
-            i = i + (temp.length -1)
+            i = i + (temp.length - 1)
         }
 
     }
@@ -355,6 +355,16 @@ export function duplicateCount(text: string): number {
     return arrTemp.length //...
 }
 
-export function isSquare (n: number): boolean{
+export function isSquare(n: number): boolean {
     return Number.isInteger(Math.sqrt(n)); // fix me
+}
+
+export function persistence(num: number): number {
+
+   /* if (num < 10) return 0;
+
+    let tempNumber = num.toString().split('').reduce((acc, item) => acc * +item, 1)
+
+    return 1 + persistence(tempNumber) //code me*/
+    return (num < 10) ? 0 : 1 + persistence(num.toString().split('').reduce((acc, item) => acc * +item, 1))
 }
