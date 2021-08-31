@@ -361,10 +361,16 @@ export function isSquare(n: number): boolean {
 
 export function persistence(num: number): number {
 
-   /* if (num < 10) return 0;
+    /* if (num < 10) return 0;
 
-    let tempNumber = num.toString().split('').reduce((acc, item) => acc * +item, 1)
+     let tempNumber = num.toString().split('').reduce((acc, item) => acc * +item, 1)
 
-    return 1 + persistence(tempNumber) //code me*/
+     return 1 + persistence(tempNumber) //code me*/
     return (num < 10) ? 0 : 1 + persistence(num.toString().split('').reduce((acc, item) => acc * +item, 1))
+}
+
+export function uniqueInOrder(iterable: string | any[]): string[] {
+    return (typeof iterable === 'string')
+        ? iterable.split('').filter((it, ind, arr) => it !== arr[ind - 1])
+        : iterable.filter((it, ind, arr) => it !== arr[ind - 1])//your code here - remember iterable can be a string or an array
 }

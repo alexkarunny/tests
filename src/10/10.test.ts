@@ -23,7 +23,7 @@ import {
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree,
     simpleObjectCopy,
-    SimpleObjectType, sortString,
+    SimpleObjectType, sortString, uniqueInOrder,
     UserPropsType,
     UserType, validatePinCode, vaporcode, XO
 } from "./10";
@@ -523,4 +523,14 @@ test("persistence", () => {
     expect(persistence(4)).toBe(0)
     expect(persistence(25)).toBe(2)
     expect(persistence(999)).toBe(4)
+})
+test("unique", () => {
+    const testArr = uniqueInOrder('AAAABBBCCDAABBB')
+    const testArrTwo = uniqueInOrder('ABBCcAD')
+    const testArrThree = uniqueInOrder([1,2,2,3,3])
+
+    expect(testArr).toStrictEqual(['A', 'B', 'C', 'D', 'A', 'B'])
+    expect(testArrTwo).toStrictEqual(['A', 'B', 'C', 'c', 'A', 'D'])
+    expect(testArrThree).toStrictEqual([1,2,3])
+
 })
