@@ -374,3 +374,14 @@ export function uniqueInOrder(iterable: string | any[]): string[] {
         ? iterable.split('').filter((it, ind, arr) => it !== arr[ind - 1])
         : iterable.filter((it, ind, arr) => it !== arr[ind - 1])//your code here - remember iterable can be a string or an array
 }
+
+export function tickets(peopleInLine: number[]): "YES" | "NO"{
+    let tempAmount = 0;
+
+
+    const amount = peopleInLine.reduce((acc, item) => {
+
+        return ((item - 25) === 0) ? acc + 25 : acc + 25 - (item - 25)
+    } ,0)
+    return 'NO'// ...
+}

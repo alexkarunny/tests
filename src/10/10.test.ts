@@ -23,7 +23,7 @@ import {
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree,
     simpleObjectCopy,
-    SimpleObjectType, sortString, uniqueInOrder,
+    SimpleObjectType, sortString, tickets, uniqueInOrder,
     UserPropsType,
     UserType, validatePinCode, vaporcode, XO
 } from "./10";
@@ -533,4 +533,8 @@ test("unique", () => {
     expect(testArrTwo).toStrictEqual(['A', 'B', 'C', 'c', 'A', 'D'])
     expect(testArrThree).toStrictEqual([1,2,3])
 
+})
+test('tickets', () => {
+    expect(tickets([25, 25, 50, 50])).toBe('YES')
+    expect(tickets([25, 100])).toBe('NO')
 })
