@@ -376,12 +376,6 @@ export function uniqueInOrder(iterable: string | any[]): string[] {
 }
 
 export function tickets(peopleInLine: number[]): "YES" | "NO"{
-    let tempAmount = 0;
 
-
-    const amount = peopleInLine.reduce((acc, item) => {
-
-        return ((item - 25) === 0) ? acc + 25 : acc + 25 - (item - 25)
-    } ,0)
     return 'NO'// ...
 }
