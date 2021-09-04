@@ -376,6 +376,42 @@ export function uniqueInOrder(iterable: string | any[]): string[] {
 }
 
 export function tickets(peopleInLine: number[]): "YES" | "NO"{
+    if(peopleInLine[0] > 25 || peopleInLine.length === 0) return "NO"
+    const banknote = []
 
-    return 'NO'// ...
+    for (let i = 0; i < peopleInLine.length; i++) {
+        if(peopleInLine[i] === 25) banknote.push(25)
+        else if(peopleInLine[i] === 50) {
+           let index = banknote.findIndex(item => item === 25)
+            if(index >= 0) {
+                banknote.splice(index, 1, 50)
+            } else return "NO"
+        } else if (peopleInLine[i] === 100) {
+            let temp = banknote.reduce((acc, item) => acc + item)
+            if(temp < 75) return "NO"
+            else if(temp >= 75) {
+                let indexFifty = banknote.findIndex(item => item === 50)
+                let indexTwenty = banknote.findIndex(item => item === 25)
+
+                if(indexFifty >= 0 && indexTwenty >= 0) {
+                    banknote.splice(indexFifty, 1)
+                    banknote.splice(banknote.findIndex(item => item === 25), 1)
+                } else{
+                    if(banknote.findIndex(item => item === 25) >= 0) {
+                        banknote.splice(banknote.findIndex(item => item === 25), 1)
+                    } else return "NO"
+                    if(banknote.findIndex(item => item === 25) >= 0) {
+                        banknote.splice(banknote.findIndex(item => item === 25), 1)
+                    } else return "NO"
+                    if(banknote.findIndex(item => item === 25) >= 0) {
+                        banknote.splice(banknote.findIndex(item => item === 25), 1)
+                    } else return "NO"
+
+                    }
+                }
+            }
+        }
+
+
+    return "YES"
 }
