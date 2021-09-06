@@ -415,3 +415,7 @@ export function tickets(peopleInLine: number[]): "YES" | "NO"{
 
     return "YES"
 }
+
+export function isTriangle(a: number, b:number, c: number): boolean {
+    return (a + b) > c && (a + c) > b && (b + c) > a;
+}

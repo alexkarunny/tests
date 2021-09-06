@@ -19,7 +19,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, isSquare, loopArr,
+    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, isSquare, isTriangle, loopArr,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree,
     simpleObjectCopy,
@@ -538,4 +538,8 @@ test('tickets', () => {
     expect(tickets([25, 25, 50, 50])).toBe('YES')
     expect(tickets([25, 100])).toBe('NO')
     expect(tickets([25,25,25,25,25,25,25,50,50,50,100,100,100,100])).toBe('NO')
+})
+test('isTiangle', () => {
+    expect(isTriangle(1,2,2)).toBe(true)
+    expect(isTriangle(7,2,2)).toBe(false)
 })
