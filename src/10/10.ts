@@ -419,3 +419,8 @@ export function tickets(peopleInLine: number[]): "YES" | "NO"{
 export function isTriangle(a: number, b:number, c: number): boolean {
     return (a + b) > c && (a + c) > b && (b + c) > a;
 }
+
+export function sumTwoSmallestNumbers(numbers: number[]): number {
+    numbers.sort((a,b) => a - b)
+    return numbers[0] + numbers[1]
+}

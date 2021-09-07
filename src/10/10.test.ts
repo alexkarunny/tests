@@ -23,7 +23,7 @@ import {
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree,
     simpleObjectCopy,
-    SimpleObjectType, sortString, tickets, uniqueInOrder,
+    SimpleObjectType, sortString, sumTwoSmallestNumbers, tickets, uniqueInOrder,
     UserPropsType,
     UserType, validatePinCode, vaporcode, XO
 } from "./10";
@@ -542,4 +542,10 @@ test('tickets', () => {
 test('isTiangle', () => {
     expect(isTriangle(1,2,2)).toBe(true)
     expect(isTriangle(7,2,2)).toBe(false)
+})
+test("twoSmallestNumbers", () => {
+    expect(sumTwoSmallestNumbers([5, 8, 12, 19, 22])).toBe(13)
+    expect(sumTwoSmallestNumbers([15, 28, 4, 2, 43])).toBe(6)
+    expect(sumTwoSmallestNumbers([23, 71, 33, 82, 1])).toBe(24)
+    expect(sumTwoSmallestNumbers([52, 76, 14, 12, 4])).toBe(16)
 })
