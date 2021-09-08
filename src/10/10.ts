@@ -424,3 +424,6 @@ export function sumTwoSmallestNumbers(numbers: number[]): number {
     numbers.sort((a,b) => a - b)
     return numbers[0] + numbers[1]
 }
+export function longest(s1: string, s2:string): string {
+    return s1.split('').concat(s2.split('')).sort().filter((s, ind, arr) => s !== arr[ind - 1]).join('')
+}

@@ -19,7 +19,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, isSquare, isTriangle, loopArr,
+    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, isSquare, isTriangle, longest, loopArr,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree,
     simpleObjectCopy,
@@ -548,4 +548,10 @@ test("twoSmallestNumbers", () => {
     expect(sumTwoSmallestNumbers([15, 28, 4, 2, 43])).toBe(6)
     expect(sumTwoSmallestNumbers([23, 71, 33, 82, 1])).toBe(24)
     expect(sumTwoSmallestNumbers([52, 76, 14, 12, 4])).toBe(16)
+})
+test('longestString', () => {
+    expect(longest("aretheyhere", "yestheyarehere")).toBe("aehrsty")
+
+    expect(longest("inmanylanguages", "theresapairoffunctions")).toBe("acefghilmnoprstuy")
+    expect(longest("loopingisfunbutdangerous", "lessdangerousthancoding")).toBe("abcdefghilnoprstu")
 })
