@@ -13,7 +13,7 @@ import {
     changeName,
     copyObjInsObj,
     createPhoneNumber,
-    delBook, descendingOrder, duplicateCount, feast, filter_list, fullCopyArrayObjectObjectjbject,
+    delBook, descendingOrder, divisors, duplicateCount, feast, filter_list, fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
     fullCopyArrayOfObjectsInsideObjects,
@@ -561,4 +561,9 @@ test("rowSumOddNumbers", () => {
     expect(rowSumOddNumbers(2)).toBe(8)
     expect(rowSumOddNumbers(3)).toBe(27)
     expect(rowSumOddNumbers(42)).toBe(74088)
+})
+test('divisors', () => {
+    expect(divisors(15)).toStrictEqual([3, 5])
+    expect(divisors(12)).toStrictEqual([2, 3, 4, 6])
+    expect(divisors(13)).toBe("13 is prime")
 })
