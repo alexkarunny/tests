@@ -21,7 +21,7 @@ import {
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, isSquare, isTriangle, longest, loopArr,
     ObjectInsideObjectArrayObjectObjectType,
-    ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree,
+    ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree, rowSumOddNumbers,
     simpleObjectCopy,
     SimpleObjectType, sortString, sumTwoSmallestNumbers, tickets, uniqueInOrder,
     UserPropsType,
@@ -527,21 +527,21 @@ test("persistence", () => {
 test("unique", () => {
     const testArr = uniqueInOrder('AAAABBBCCDAABBB')
     const testArrTwo = uniqueInOrder('ABBCcAD')
-    const testArrThree = uniqueInOrder([1,2,2,3,3])
+    const testArrThree = uniqueInOrder([1, 2, 2, 3, 3])
 
     expect(testArr).toStrictEqual(['A', 'B', 'C', 'D', 'A', 'B'])
     expect(testArrTwo).toStrictEqual(['A', 'B', 'C', 'c', 'A', 'D'])
-    expect(testArrThree).toStrictEqual([1,2,3])
+    expect(testArrThree).toStrictEqual([1, 2, 3])
 
 })
 test('tickets', () => {
     expect(tickets([25, 25, 50, 50])).toBe('YES')
     expect(tickets([25, 100])).toBe('NO')
-    expect(tickets([25,25,25,25,25,25,25,50,50,50,100,100,100,100])).toBe('NO')
+    expect(tickets([25, 25, 25, 25, 25, 25, 25, 50, 50, 50, 100, 100, 100, 100])).toBe('NO')
 })
 test('isTiangle', () => {
-    expect(isTriangle(1,2,2)).toBe(true)
-    expect(isTriangle(7,2,2)).toBe(false)
+    expect(isTriangle(1, 2, 2)).toBe(true)
+    expect(isTriangle(7, 2, 2)).toBe(false)
 })
 test("twoSmallestNumbers", () => {
     expect(sumTwoSmallestNumbers([5, 8, 12, 19, 22])).toBe(13)
@@ -554,4 +554,11 @@ test('longestString', () => {
 
     expect(longest("inmanylanguages", "theresapairoffunctions")).toBe("acefghilmnoprstuy")
     expect(longest("loopingisfunbutdangerous", "lessdangerousthancoding")).toBe("abcdefghilnoprstu")
+})
+test("rowSumOddNumbers", () => {
+
+    expect(rowSumOddNumbers(1)).toBe(1)
+    expect(rowSumOddNumbers(2)).toBe(8)
+    expect(rowSumOddNumbers(3)).toBe(27)
+    expect(rowSumOddNumbers(42)).toBe(74088)
 })

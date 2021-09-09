@@ -375,55 +375,79 @@ export function uniqueInOrder(iterable: string | any[]): string[] {
         : iterable.filter((it, ind, arr) => it !== arr[ind - 1])//your code here - remember iterable can be a string or an array
 }
 
-export function tickets(peopleInLine: number[]): "YES" | "NO"{
-    if(peopleInLine[0] > 25 || peopleInLine.length === 0) return "NO"
+export function tickets(peopleInLine: number[]): "YES" | "NO" {
+    if (peopleInLine[0] > 25 || peopleInLine.length === 0) return "NO"
     const banknote = []
 
     for (let i = 0; i < peopleInLine.length; i++) {
-        if(peopleInLine[i] === 25) banknote.push(25)
-        else if(peopleInLine[i] === 50) {
-           let index = banknote.findIndex(item => item === 25)
-            if(index >= 0) {
+        if (peopleInLine[i] === 25) banknote.push(25)
+        else if (peopleInLine[i] === 50) {
+            let index = banknote.findIndex(item => item === 25)
+            if (index >= 0) {
                 banknote.splice(index, 1, 50)
             } else return "NO"
         } else if (peopleInLine[i] === 100) {
             let temp = banknote.reduce((acc, item) => acc + item)
-            if(temp < 75) return "NO"
-            else if(temp >= 75) {
+            if (temp < 75) return "NO"
+            else if (temp >= 75) {
                 let indexFifty = banknote.findIndex(item => item === 50)
                 let indexTwenty = banknote.findIndex(item => item === 25)
 
-                if(indexFifty >= 0 && indexTwenty >= 0) {
+                if (indexFifty >= 0 && indexTwenty >= 0) {
                     banknote.splice(indexFifty, 1)
                     banknote.splice(banknote.findIndex(item => item === 25), 1)
-                } else{
-                    if(banknote.findIndex(item => item === 25) >= 0) {
+                } else {
+                    if (banknote.findIndex(item => item === 25) >= 0) {
                         banknote.splice(banknote.findIndex(item => item === 25), 1)
                     } else return "NO"
-                    if(banknote.findIndex(item => item === 25) >= 0) {
+                    if (banknote.findIndex(item => item === 25) >= 0) {
                         banknote.splice(banknote.findIndex(item => item === 25), 1)
                     } else return "NO"
-                    if(banknote.findIndex(item => item === 25) >= 0) {
+                    if (banknote.findIndex(item => item === 25) >= 0) {
                         banknote.splice(banknote.findIndex(item => item === 25), 1)
                     } else return "NO"
 
-                    }
                 }
             }
         }
+    }
 
 
     return "YES"
 }
 
-export function isTriangle(a: number, b:number, c: number): boolean {
+export function isTriangle(a: number, b: number, c: number): boolean {
     return (a + b) > c && (a + c) > b && (b + c) > a;
 }
 
 export function sumTwoSmallestNumbers(numbers: number[]): number {
-    numbers.sort((a,b) => a - b)
+    numbers.sort((a, b) => a - b)
     return numbers[0] + numbers[1]
 }
-export function longest(s1: string, s2:string): string {
+
+export function longest(s1: string, s2: string): string {
     return s1.split('').concat(s2.split('')).sort().filter((s, ind, arr) => s !== arr[ind - 1]).join('')
+}
+
+export function rowSumOddNumbers(n: number): number {
+    if (n === 1) return 1
+    let num = 1
+    let tempNum = 0
+
+    for (let i = 1; i < n; i++) {
+        tempNum += i
+    }
+
+    for (let i = 1; i < tempNum; i++) {
+        num += 2
+    }
+    let sum: number = 0
+
+    for (let i = 0; i < n; i++) {
+        num += 2
+        sum += num
+    }
+
+
+    return sum// TODO
 }
