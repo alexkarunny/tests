@@ -461,3 +461,7 @@ export function divisors(integer: number): number[] | string {
     }
     return (arr.length > 0) ? arr : `${integer} is prime`
 };
+
+export function lastChair(N: number): number{
+    return
+}

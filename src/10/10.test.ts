@@ -1,5 +1,6 @@
 import {
-    addBook, ArrayObjectObjectObjectArrayObjectType,
+    addBook,
+    ArrayObjectObjectObjectArrayObjectType,
     ArrayOfObjects,
     ArrayOfObjectsInsideObjectsType,
     ArrOfObjectinsideObject,
@@ -13,19 +14,44 @@ import {
     changeName,
     copyObjInsObj,
     createPhoneNumber,
-    delBook, descendingOrder, divisors, duplicateCount, feast, filter_list, fullCopyArrayObjectObjectjbject,
+    delBook,
+    descendingOrder,
+    divisors,
+    duplicateCount,
+    feast,
+    filter_list,
+    fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getSum, iqTest, isLeapYear, isSquare, isTriangle, longest, loopArr,
+    fullCopyObjectInsideObjectInsideObject,
+    getSum,
+    iqTest,
+    isLeapYear,
+    isSquare,
+    isTriangle,
+    lastChair,
+    longest,
+    loopArr,
     ObjectInsideObjectArrayObjectObjectType,
-    ObjectInsideObjectInsideObjectType, overTheRoad, persistence, prevMultOfThree, rowSumOddNumbers,
+    ObjectInsideObjectInsideObjectType,
+    overTheRoad,
+    persistence,
+    prevMultOfThree,
+    rowSumOddNumbers,
     simpleObjectCopy,
-    SimpleObjectType, sortString, sumTwoSmallestNumbers, tickets, uniqueInOrder,
+    SimpleObjectType,
+    sortString,
+    sumTwoSmallestNumbers,
+    tickets,
+    uniqueInOrder,
     UserPropsType,
-    UserType, validatePinCode, vaporcode, XO
+    UserType,
+    validatePinCode,
+    vaporcode,
+    XO
 } from "./10";
 
 test('change city', () => {
@@ -566,4 +592,7 @@ test('divisors', () => {
     expect(divisors(15)).toStrictEqual([3, 5])
     expect(divisors(12)).toStrictEqual([2, 3, 4, 6])
     expect(divisors(13)).toBe("13 is prime")
+})
+test('lastChair', () => {
+    expect(lastChair(10)).toBe(9)
 })
