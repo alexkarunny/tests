@@ -465,3 +465,7 @@ export function divisors(integer: number): number[] | string {
 export function lastChair(N: number): number{
     return
 }
+
+export function getNumberPassengers(busStops: number[][]): number{
+    return busStops.reduce((acc, item) => acc + item[0] - item[1],0)
+}

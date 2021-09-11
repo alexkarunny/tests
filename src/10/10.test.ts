@@ -26,7 +26,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject,
+    fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
     getSum,
     iqTest,
     isLeapYear,
@@ -595,4 +595,9 @@ test('divisors', () => {
 })
 test('lastChair', () => {
     expect(lastChair(10)).toBe(9)
+})
+test('getNumberPassengers', () => {
+    expect(getNumberPassengers([[10,0],[3,5],[5,8]])).toBe(5)
+    expect(getNumberPassengers([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]])).toBe(17)
+    expect(getNumberPassengers([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]])).toBe(21)
 })
