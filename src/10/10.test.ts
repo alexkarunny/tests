@@ -39,7 +39,7 @@ import {
     ObjectInsideObjectInsideObjectType,
     overTheRoad,
     persistence,
-    prevMultOfThree,
+    prevMultOfThree, reverseWords,
     rowSumOddNumbers,
     simpleObjectCopy,
     SimpleObjectType,
@@ -600,4 +600,9 @@ test('getNumberPassengers', () => {
     expect(getNumberPassengers([[10,0],[3,5],[5,8]])).toBe(5)
     expect(getNumberPassengers([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]])).toBe(17)
     expect(getNumberPassengers([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]])).toBe(21)
+})
+test('reverse words', () => {
+    expect(reverseWords('The quick brown fox jumps over the lazy dog.')).toBe('ehT kciuq nworb xof spmuj revo eht yzal .god')
+    expect(reverseWords('a b c d')).toBe('a b c d')
+    expect(reverseWords('double  spaced  words')).toBe('elbuod  decaps  sdrow')
 })

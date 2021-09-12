@@ -462,10 +462,16 @@ export function divisors(integer: number): number[] | string {
     return (arr.length > 0) ? arr : `${integer} is prime`
 };
 
-export function lastChair(N: number): number{
+export function lastChair(N: number): number {
     return
 }
 
-export function getNumberPassengers(busStops: number[][]): number{
-    return busStops.reduce((acc, item) => acc + item[0] - item[1],0)
+export function getNumberPassengers(busStops: number[][]): number {
+    return busStops.reduce((acc, item) => acc + item[0] - item[1], 0)
+}
+
+export function reverseWords(str: string) {
+    return str.split(' ')
+        .map(item => item.split('').reverse().join(''))
+        .join(' ')
 }
