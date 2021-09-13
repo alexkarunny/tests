@@ -1,5 +1,5 @@
 import {
-    addBook,
+    addBook, arrayDiff,
     ArrayObjectObjectObjectArrayObjectType,
     ArrayOfObjects,
     ArrayOfObjectsInsideObjectsType,
@@ -610,4 +610,9 @@ test('is string a palindrome', () => {
     expect(isPalindrome('aba')).toBe(true)
     expect(isPalindrome("Abba")).toBe(true)
     expect(isPalindrome("hello")).toBe(false)
+})
+test('difference of an array', () => {
+    expect(arrayDiff([], [4,5])).toStrictEqual([])
+    expect(arrayDiff([3,4], [3])).toStrictEqual([4])
+    expect(arrayDiff([1,8,2], [])).toStrictEqual([1,8,2])
 })

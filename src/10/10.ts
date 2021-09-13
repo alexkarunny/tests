@@ -475,6 +475,22 @@ export function reverseWords(str: string) {
         .map(item => item.split('').reverse().join(''))
         .join(' ')
 }
+
 export function isPalindrome(x: string): boolean {
     return x.toLowerCase() === x.toLowerCase().split('').reverse().join('')
+}
+
+export function arrayDiff(a: number[], b: number[]) {
+    if (a.length === 0 || b.length === 0) return a;
+
+    let arr = a.filter(item => {
+        let temp = 0
+        for (let i = 0; i < b.length; i++) {
+            if (item === b[i]) {
+                temp += 1
+            }
+        }
+        if (temp === 0) return item
+    })
+    return arr
 }
