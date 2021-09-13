@@ -42,7 +42,7 @@ import {
     prevMultOfThree, reverseWords,
     rowSumOddNumbers,
     simpleObjectCopy,
-    SimpleObjectType,
+    SimpleObjectType, solution,
     sortString,
     sumTwoSmallestNumbers,
     tickets,
@@ -615,4 +615,9 @@ test('difference of an array', () => {
     expect(arrayDiff([], [4,5])).toStrictEqual([])
     expect(arrayDiff([3,4], [3])).toStrictEqual([4])
     expect(arrayDiff([1,8,2], [])).toStrictEqual([1,8,2])
+})
+test('concatanation', () => {
+    expect(solution('45', '1')).toBe('1451')
+    expect(solution('13', '200')).toBe('1320013')
+    expect(solution('Soon', 'Me')).toBe('MeSoonMe')
 })
