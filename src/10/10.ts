@@ -475,3 +475,6 @@ export function reverseWords(str: string) {
         .map(item => item.split('').reverse().join(''))
         .join(' ')
 }
+export function isPalindrome(x: string): boolean {
+    return x.toLowerCase() === x.toLowerCase().split('').reverse().join('')
+}

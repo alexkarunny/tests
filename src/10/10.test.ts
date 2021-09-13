@@ -29,7 +29,7 @@ import {
     fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
     getSum,
     iqTest,
-    isLeapYear,
+    isLeapYear, isPalindrome,
     isSquare,
     isTriangle,
     lastChair,
@@ -605,4 +605,9 @@ test('reverse words', () => {
     expect(reverseWords('The quick brown fox jumps over the lazy dog.')).toBe('ehT kciuq nworb xof spmuj revo eht yzal .god')
     expect(reverseWords('a b c d')).toBe('a b c d')
     expect(reverseWords('double  spaced  words')).toBe('elbuod  decaps  sdrow')
+})
+test('is string a palindrome', () => {
+    expect(isPalindrome('aba')).toBe(true)
+    expect(isPalindrome("Abba")).toBe(true)
+    expect(isPalindrome("hello")).toBe(false)
 })
