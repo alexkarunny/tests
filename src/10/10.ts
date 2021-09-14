@@ -502,3 +502,15 @@ export function solution(a: string, b: string): string{
 export function reverseWord(str: string){
     return str.split(' ').reverse().join(' ')
 }
+export function lastSurvivor(letters: string, coords: number[]): string {
+    if(coords.length === 0) return letters;
+    let tempNum = coords.length
+    let arr = letters.split('')
+
+    for (let i = 0; i < tempNum; i++) {
+        arr.splice(coords[0], 1)
+        coords.splice(0, 1)
+    }
+
+    return arr.join('')
+}

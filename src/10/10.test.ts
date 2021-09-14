@@ -32,7 +32,7 @@ import {
     isLeapYear, isPalindrome,
     isSquare,
     isTriangle,
-    lastChair,
+    lastChair, lastSurvivor,
     longest,
     loopArr,
     ObjectInsideObjectArrayObjectObjectType,
@@ -625,4 +625,10 @@ test('reverse words', () => {
     expect(reverseWord("hello world!")).toBe("world! hello")
     expect(reverseWord("yoda doesn't speak like this")).toBe("this like speak doesn't yoda")
     expect(reverseWord("row row row your boat")).toBe("boat your row row row")
+})
+test('last survivor, vol.1', () => {
+    expect(lastSurvivor('abc', [1, 1])).toBe('a')
+    expect(lastSurvivor('kbc', [0, 1])).toBe( 'b')
+    expect(lastSurvivor('zbk', [2, 1])).toBe('z')
+    expect(lastSurvivor('c', [])).toBe('c')
 })
