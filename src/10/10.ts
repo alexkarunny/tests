@@ -498,3 +498,7 @@ export function arrayDiff(a: number[], b: number[]) {
 export function solution(a: string, b: string): string{
     return (a.length > b.length) ? b + a + b : a + b + a
 }
+
+export function reverseWord(str: string){
+    return str.split(' ').reverse().join(' ')
+}

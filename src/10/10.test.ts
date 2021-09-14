@@ -39,7 +39,7 @@ import {
     ObjectInsideObjectInsideObjectType,
     overTheRoad,
     persistence,
-    prevMultOfThree, reverseWords,
+    prevMultOfThree, reverseWord, reverseWords,
     rowSumOddNumbers,
     simpleObjectCopy,
     SimpleObjectType, solution,
@@ -620,4 +620,9 @@ test('concatanation', () => {
     expect(solution('45', '1')).toBe('1451')
     expect(solution('13', '200')).toBe('1320013')
     expect(solution('Soon', 'Me')).toBe('MeSoonMe')
+})
+test('reverse words', () => {
+    expect(reverseWord("hello world!")).toBe("world! hello")
+    expect(reverseWord("yoda doesn't speak like this")).toBe("this like speak doesn't yoda")
+    expect(reverseWord("row row row your boat")).toBe("boat your row row row")
 })
