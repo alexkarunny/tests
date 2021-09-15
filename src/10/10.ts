@@ -495,15 +495,16 @@ export function arrayDiff(a: number[], b: number[]) {
     return arr
 }
 
-export function solution(a: string, b: string): string{
+export function solution(a: string, b: string): string {
     return (a.length > b.length) ? b + a + b : a + b + a
 }
 
-export function reverseWord(str: string){
+export function reverseWord(str: string) {
     return str.split(' ').reverse().join(' ')
 }
+
 export function lastSurvivor(letters: string, coords: number[]): string {
-    if(coords.length === 0) return letters;
+    if (coords.length === 0) return letters;
     let tempNum = coords.length
     let arr = letters.split('')
 
@@ -521,7 +522,7 @@ export function lastSurvivors(str: string): string {
 
     for (let i = 0; i < arr.length; i++) {
 
-        if(arr[i] === arr[i + 1]) {
+        if (arr[i] === arr[i + 1]) {
 
             let letter = (arr[i].codePointAt(0) === 122) ? 'a' : String.fromCharCode(arr[i].codePointAt(0) + 1)
 
@@ -532,4 +533,22 @@ export function lastSurvivors(str: string): string {
 
     }
     return arr.join('')
+}
+
+export function infected(s: string): number {
+
+    const arr = s.split("X")
+    const newArr = [0, 0]
+
+    for (let i = 0; i < arr.length; i++) {
+        let temp = arr[i].indexOf('1')
+        if (temp > -1) {
+            newArr[0] += arr[i].length
+            newArr[1] += arr[i].length
+        } else {
+            newArr[1] += arr[i].length
+        }
+    }
+
+    return (newArr[1] === 0) ? 0 : (100 * newArr[0]) / newArr[1];
 }

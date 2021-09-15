@@ -27,7 +27,7 @@ import {
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
-    getSum,
+    getSum, infected,
     iqTest,
     isLeapYear, isPalindrome,
     isSquare,
@@ -597,9 +597,9 @@ test('lastChair', () => {
     expect(lastChair(10)).toBe(9)
 })
 test('getNumberPassengers', () => {
-    expect(getNumberPassengers([[10,0],[3,5],[5,8]])).toBe(5)
-    expect(getNumberPassengers([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]])).toBe(17)
-    expect(getNumberPassengers([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]])).toBe(21)
+    expect(getNumberPassengers([[10, 0], [3, 5], [5, 8]])).toBe(5)
+    expect(getNumberPassengers([[3, 0], [9, 1], [4, 10], [12, 2], [6, 1], [7, 10]])).toBe(17)
+    expect(getNumberPassengers([[3, 0], [9, 1], [4, 8], [12, 2], [6, 1], [7, 8]])).toBe(21)
 })
 test('reverse words', () => {
     expect(reverseWords('The quick brown fox jumps over the lazy dog.')).toBe('ehT kciuq nworb xof spmuj revo eht yzal .god')
@@ -612,9 +612,9 @@ test('is string a palindrome', () => {
     expect(isPalindrome("hello")).toBe(false)
 })
 test('difference of an array', () => {
-    expect(arrayDiff([], [4,5])).toStrictEqual([])
-    expect(arrayDiff([3,4], [3])).toStrictEqual([4])
-    expect(arrayDiff([1,8,2], [])).toStrictEqual([1,8,2])
+    expect(arrayDiff([], [4, 5])).toStrictEqual([])
+    expect(arrayDiff([3, 4], [3])).toStrictEqual([4])
+    expect(arrayDiff([1, 8, 2], [])).toStrictEqual([1, 8, 2])
 })
 test('concatanation', () => {
     expect(solution('45', '1')).toBe('1451')
@@ -628,11 +628,18 @@ test('reverse words', () => {
 })
 test('last survivor, vol.1', () => {
     expect(lastSurvivor('abc', [1, 1])).toBe('a')
-    expect(lastSurvivor('kbc', [0, 1])).toBe( 'b')
+    expect(lastSurvivor('kbc', [0, 1])).toBe('b')
     expect(lastSurvivor('zbk', [2, 1])).toBe('z')
     expect(lastSurvivor('c', [])).toBe('c')
 })
 test('last survivors, vol.2', () => {
     expect(lastSurvivors('abaa')).toBe('ac')
     expect(lastSurvivors('zzab')).toBe('c')
+})
+test('pandemia', () => {
+    expect(infected("01000000X000X011X0X")).toBe(73.33333333333333)
+    expect(infected("01X000X010X011XX")).toBe(72.72727272727273)
+    expect(infected("0000000010")).toBe(100)
+    expect(infected("X00X000000X10X0100")).toBe(42.857142857142854)
+    expect(infected("XXXXX")).toBe(0)
 })
