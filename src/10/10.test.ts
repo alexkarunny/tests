@@ -32,7 +32,7 @@ import {
     isLeapYear, isPalindrome,
     isSquare,
     isTriangle,
-    lastChair, lastSurvivor,
+    lastChair, lastSurvivor, lastSurvivors,
     longest,
     loopArr,
     ObjectInsideObjectArrayObjectObjectType,
@@ -631,4 +631,8 @@ test('last survivor, vol.1', () => {
     expect(lastSurvivor('kbc', [0, 1])).toBe( 'b')
     expect(lastSurvivor('zbk', [2, 1])).toBe('z')
     expect(lastSurvivor('c', [])).toBe('c')
+})
+test('last survivors, vol.2', () => {
+    expect(lastSurvivors('abaa')).toBe('ac')
+    expect(lastSurvivors('zzab')).toBe('c')
 })

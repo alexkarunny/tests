@@ -514,3 +514,22 @@ export function lastSurvivor(letters: string, coords: number[]): string {
 
     return arr.join('')
 }
+
+export function lastSurvivors(str: string): string {
+
+    let arr = str.split('').sort()
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if(arr[i] === arr[i + 1]) {
+
+            let letter = (arr[i].codePointAt(0) === 122) ? 'a' : String.fromCharCode(arr[i].codePointAt(0) + 1)
+
+            arr.splice(i, 2, letter)
+            arr.sort()
+            i = -1
+        }
+
+    }
+    return arr.join('')
+}
