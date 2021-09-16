@@ -34,7 +34,7 @@ import {
     isTriangle,
     lastChair, lastSurvivor, lastSurvivors,
     longest,
-    loopArr,
+    loopArr, newMember,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType,
     overTheRoad,
@@ -642,4 +642,9 @@ test('pandemia', () => {
     expect(infected("0000000010")).toBe(100)
     expect(infected("X00X000000X10X0100")).toBe(42.857142857142854)
     expect(infected("XXXXX")).toBe(0)
+})
+test('member test', () => {
+    expect(newMember([[45, 12],[55,21],[19, -2],[104, 20]])).toStrictEqual(['Open', 'Senior', 'Open', 'Senior'])
+    expect(newMember([[3, 12],[55,1],[91, -2],[54, 23]])).toStrictEqual(['Open', 'Open', 'Open', 'Open'])
+    expect(newMember([[59, 12],[55,-1],[12, -2],[12, 12]])).toStrictEqual(['Senior', 'Open', 'Open', 'Open'])
 })

@@ -552,3 +552,7 @@ export function infected(s: string): number {
 
     return (newArr[1] === 0) ? 0 : (100 * newArr[0]) / newArr[1];
 }
+
+export function newMember(membersList: number[][]): string[] {
+    return membersList.map(item  => (item[0] >= 55 && item[1] > 7) ? 'Senior' : 'Open' )
+}
