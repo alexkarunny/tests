@@ -50,7 +50,7 @@ import {
     UserPropsType,
     UserType,
     validatePinCode,
-    vaporcode,
+    vaporcode, xMasTree,
     XO
 } from "./10";
 
@@ -647,4 +647,11 @@ test('member test', () => {
     expect(newMember([[45, 12],[55,21],[19, -2],[104, 20]])).toStrictEqual(['Open', 'Senior', 'Open', 'Senior'])
     expect(newMember([[3, 12],[55,1],[91, -2],[54, 23]])).toStrictEqual(['Open', 'Open', 'Open', 'Open'])
     expect(newMember([[59, 12],[55,-1],[12, -2],[12, 12]])).toStrictEqual(['Senior', 'Open', 'Open', 'Open'])
+})
+test('christmas tree', () => {
+    expect(xMasTree(3)).toStrictEqual(['__#__', '_###_', '#####', '__#__', '__#__'])
+    expect(xMasTree(7)).toStrictEqual(['______#______', '_____###_____', '____#####____', '___#######___', '__#########__', '_###########_', '#############', '______#______', '______#______'])
+    expect(xMasTree(2)).toStrictEqual(['_#_', '###', '_#_', '_#_'])
+    expect(xMasTree(4)).toStrictEqual(['___#___', '__###__', '_#####_', '#######', '___#___', '___#___'])
+    expect(xMasTree(6)).toStrictEqual(['_____#_____', '____###____', '___#####___', '__#######__', '_#########_', '###########', '_____#_____', '_____#_____'])
 })
