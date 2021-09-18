@@ -554,9 +554,10 @@ export function infected(s: string): number {
 }
 
 export function newMember(membersList: number[][]): string[] {
-    return membersList.map(item  => (item[0] >= 55 && item[1] > 7) ? 'Senior' : 'Open' )
+    return membersList.map(item => (item[0] >= 55 && item[1] > 7) ? 'Senior' : 'Open')
 }
-export function xMasTree(n: number): string[]{
+
+export function xMasTree(n: number): string[] {
     let height = '#'
     const arr = []
     for (let i = 1; i < n; i++) {
@@ -568,9 +569,9 @@ export function xMasTree(n: number): string[]{
     for (let i = 0; i < n; i++) {
         arr.push(height.split('')
             .map((item, ind) => {
-                if(ind >= (num - i) && ind <= (num + i)) return '#'
+                if (ind >= (num - i) && ind <= (num + i)) return '#'
                 else return '_'
-            } ).join(''))
+            }).join(''))
     }
     let trunk = arr[0]
     arr.push(trunk)
@@ -580,8 +581,25 @@ export function xMasTree(n: number): string[]{
 }
 
 export function findNextSquare(sq: number): number {
-
     return Number.isInteger(Math.sqrt(sq))
-                ? Math.pow(Math.sqrt(sq) + 1, 2)
-                : -1
+        ? Math.pow(Math.sqrt(sq) + 1, 2)
+        : -1
+}
+
+export function checkCoupon(enteredCode: string, correctCode: string, currentDate: string, expirationDate: string): boolean{
+    if (enteredCode !== correctCode) return false
+
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    let currentMonth = months.findIndex(item => item === currentDate.split(' ')[0])
+    let currentDay = Number(currentDate.split(' ')[1].match(/\d+/g))
+    let currentYear = Number(currentDate.split(' ')[2])
+
+    let expMonth = months.findIndex(item => item === expirationDate.split(' ')[0])
+    let expDay = Number(expirationDate.split(' ')[1].match(/\d+/g))
+    let expYear = Number(expirationDate.split(' ')[2])
+
+    let currDate = new Date(currentYear, currentMonth, currentDay)
+    let expDate = new Date(expYear, expMonth, expDay)
+
+    return ((expDate - currDate) >= 0) ? true : false
 }

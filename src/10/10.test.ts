@@ -11,7 +11,7 @@ import {
     changeAddress,
     changeBook,
     changeCcmpanyname,
-    changeName,
+    changeName, checkCoupon,
     copyObjInsObj,
     createPhoneNumber,
     delBook,
@@ -661,5 +661,8 @@ test('next square', () => {
     expect(findNextSquare(319225)).toBe(320356)
     expect(findNextSquare(15241383936)).toBe(15241630849)
     expect(findNextSquare(155)).toBe(-1)
-
+})
+test('check', () => {
+    expect(checkCoupon('123','123','September 5, 2014','October 1, 2014')).toBe(true)
+    expect(checkCoupon('123a','123','September 5, 2014','October 1, 2014')).toBe(false)
 })
