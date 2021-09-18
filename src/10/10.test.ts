@@ -19,7 +19,7 @@ import {
     divisors,
     duplicateCount,
     feast,
-    filter_list,
+    filter_list, findNextSquare,
     fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
@@ -654,4 +654,12 @@ test('christmas tree', () => {
     expect(xMasTree(2)).toStrictEqual(['_#_', '###', '_#_', '_#_'])
     expect(xMasTree(4)).toStrictEqual(['___#___', '__###__', '_#####_', '#######', '___#___', '___#___'])
     expect(xMasTree(6)).toStrictEqual(['_____#_____', '____###____', '___#####___', '__#######__', '_#########_', '###########', '_____#_____', '_____#_____'])
+})
+test('next square', () => {
+    expect(findNextSquare(121)).toBe(144)
+    expect(findNextSquare(625)).toBe(676)
+    expect(findNextSquare(319225)).toBe(320356)
+    expect(findNextSquare(15241383936)).toBe(15241630849)
+    expect(findNextSquare(155)).toBe(-1)
+
 })
