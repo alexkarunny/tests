@@ -603,3 +603,11 @@ export function checkCoupon(enteredCode: string, correctCode: string, currentDat
 
     return ((expDate - currDate) >= 0) ? true : false
 }
+
+export function billboard(name: string, price = 30): number{
+    let sum = 0
+    for (let i = 0; i < name.length; i++) {
+        sum += price
+    }
+    return sum
+}

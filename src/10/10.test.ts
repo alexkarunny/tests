@@ -6,7 +6,7 @@ import {
     ArrOfObjectinsideObject,
     arrOfPrim,
     ArrOfPrimit,
-    arrOfPrimit,
+    arrOfPrimit, billboard,
     bjInsObjType,
     changeAddress,
     changeBook,
@@ -665,4 +665,11 @@ test('next square', () => {
 test('check', () => {
     expect(checkCoupon('123','123','September 5, 2014','October 1, 2014')).toBe(true)
     expect(checkCoupon('123a','123','September 5, 2014','October 1, 2014')).toBe(false)
+})
+test('price of billboard', () => {
+    expect(billboard("Jeong-Ho Aristotelis")).toBe(600)
+    expect(billboard("Abishai Charalampos")).toBe(570)
+    expect(billboard("Idwal Augustin")).toBe(420)
+    expect(billboard("Hadufuns John",20)).toBe(260)
+
 })
