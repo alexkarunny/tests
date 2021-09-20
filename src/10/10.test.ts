@@ -19,7 +19,7 @@ import {
     divisors,
     duplicateCount,
     feast,
-    filter_list, findNextSquare,
+    filter_list, findNextSquare, friend,
     fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
@@ -672,4 +672,9 @@ test('price of billboard', () => {
     expect(billboard("Idwal Augustin")).toBe(420)
     expect(billboard("Hadufuns John",20)).toBe(260)
 
+})
+test('find friends', () => {
+    expect(friend(["Ryan", "Kieran", "Mark"])).toStrictEqual(["Ryan", "Mark"])
+    expect(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"])).toStrictEqual(["Ryan"])
+    expect(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"])).toStrictEqual(["Jimm", "Cari", "aret"])
 })

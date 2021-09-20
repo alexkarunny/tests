@@ -611,3 +611,7 @@ export function billboard(name: string, price = 30): number{
     }
     return sum
 }
+
+export function friend(friends: string[]): string[]{
+    return friends.filter(item => item.length === 4)
+}
