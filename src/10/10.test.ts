@@ -40,7 +40,7 @@ import {
     overTheRoad,
     persistence,
     prevMultOfThree, reverseWord, reverseWords,
-    rowSumOddNumbers,
+    rowSumOddNumbers, SeriesSum,
     simpleObjectCopy,
     SimpleObjectType, solution,
     sortString,
@@ -677,4 +677,10 @@ test('find friends', () => {
     expect(friend(["Ryan", "Kieran", "Mark"])).toStrictEqual(["Ryan", "Mark"])
     expect(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"])).toStrictEqual(["Ryan"])
     expect(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"])).toStrictEqual(["Jimm", "Cari", "aret"])
+})
+test('Sum', () => {
+    expect(SeriesSum(0)).toBe('0.00')
+    expect(SeriesSum(2)).toBe('1.25')
+    expect(SeriesSum(3)).toBe('1.39')
+    expect(SeriesSum(4)).toBe('1.49')
 })

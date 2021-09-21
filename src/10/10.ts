@@ -615,3 +615,13 @@ export function billboard(name: string, price = 30): number{
 export function friend(friends: string[]): string[]{
     return friends.filter(item => item.length === 4)
 }
+export function SeriesSum(n: number): string {
+    //if(n === 0) return '0.00'
+    let temp = 1
+    let sum = 0
+    for (let i = 0; i < n; i++) {
+        sum += 1/temp
+        temp +=3
+    }
+    return sum.toFixed(2)
+}
