@@ -39,7 +39,7 @@ import {
     ObjectInsideObjectInsideObjectType,
     overTheRoad,
     persistence,
-    prevMultOfThree, reverseWord, reverseWords,
+    prevMultOfThree, removeSmallest, reverseWord, reverseWords,
     rowSumOddNumbers, SeriesSum,
     simpleObjectCopy,
     SimpleObjectType, solution,
@@ -683,4 +683,9 @@ test('Sum', () => {
     expect(SeriesSum(2)).toBe('1.25')
     expect(SeriesSum(3)).toBe('1.39')
     expect(SeriesSum(4)).toBe('1.49')
+})
+test('remove small number', () => {
+    expect(removeSmallest([5, 3, 2, 1, 4])).toStrictEqual([5, 3, 2, 4])
+    expect(removeSmallest([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5])
+    expect(removeSmallest([2, 2, 1, 2, 1])).toStrictEqual( [2, 2, 2, 1])
 })

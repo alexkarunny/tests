@@ -625,3 +625,9 @@ export function SeriesSum(n: number): string {
     }
     return sum.toFixed(2)
 }
+export function  removeSmallest(numbers: number[]): number[]  {
+    if(numbers.length === 0) return numbers
+    const arr = [...numbers]
+    let inde = numbers.indexOf(arr.sort((a, b) => a - b)[0])
+    return numbers.filter((item, ind) => ind !== inde)
+}
