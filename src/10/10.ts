@@ -631,3 +631,12 @@ export function  removeSmallest(numbers: number[]): number[]  {
     let inde = numbers.indexOf(arr.sort((a, b) => a - b)[0])
     return numbers.filter((item, ind) => ind !== inde)
 }
+export function isIsogram(str: string): boolean {
+    if(str.length === 0) return true;
+
+    let newStr = str.toLowerCase().split('').sort().filter((item, index, a) => item !== a[index + 1] ).join('')
+
+    return newStr.length === str.length
+
+
+}

@@ -28,7 +28,7 @@ import {
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
     getSum, infected,
-    iqTest,
+    iqTest, isIsogram,
     isLeapYear, isPalindrome,
     isSquare,
     isTriangle,
@@ -688,4 +688,12 @@ test('remove small number', () => {
     expect(removeSmallest([5, 3, 2, 1, 4])).toStrictEqual([5, 3, 2, 4])
     expect(removeSmallest([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5])
     expect(removeSmallest([2, 2, 1, 2, 1])).toStrictEqual( [2, 2, 2, 1])
+})
+test('is programm', () => {
+    expect(isIsogram("Dermatoglyphics")).toBe(true)
+    expect(isIsogram("isogram")).toBe(true)
+    expect(isIsogram("aba")).toBe(false)
+    expect(isIsogram("isIsogram")).toBe(false)
+    expect(isIsogram("moOse")).toBe(false)
+    expect(isIsogram("")).toBe(true)
 })
