@@ -586,7 +586,7 @@ export function findNextSquare(sq: number): number {
         : -1
 }
 
-export function checkCoupon(enteredCode: string, correctCode: string, currentDate: string, expirationDate: string): boolean{
+export function checkCoupon(enteredCode: string, correctCode: string, currentDate: string, expirationDate: string): boolean {
     if (enteredCode !== correctCode) return false
 
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -604,7 +604,7 @@ export function checkCoupon(enteredCode: string, correctCode: string, currentDat
     return ((expDate - currDate) >= 0) ? true : false
 }
 
-export function billboard(name: string, price = 30): number{
+export function billboard(name: string, price = 30): number {
     let sum = 0
     for (let i = 0; i < name.length; i++) {
         sum += price
@@ -612,31 +612,36 @@ export function billboard(name: string, price = 30): number{
     return sum
 }
 
-export function friend(friends: string[]): string[]{
+export function friend(friends: string[]): string[] {
     return friends.filter(item => item.length === 4)
 }
+
 export function SeriesSum(n: number): string {
     //if(n === 0) return '0.00'
     let temp = 1
     let sum = 0
     for (let i = 0; i < n; i++) {
-        sum += 1/temp
-        temp +=3
+        sum += 1 / temp
+        temp += 3
     }
     return sum.toFixed(2)
 }
-export function  removeSmallest(numbers: number[]): number[]  {
-    if(numbers.length === 0) return numbers
+
+export function removeSmallest(numbers: number[]): number[] {
+    if (numbers.length === 0) return numbers
     const arr = [...numbers]
     let inde = numbers.indexOf(arr.sort((a, b) => a - b)[0])
     return numbers.filter((item, ind) => ind !== inde)
 }
+
 export function isIsogram(str: string): boolean {
-    if(str.length === 0) return true;
-
-    let newStr = str.toLowerCase().split('').sort().filter((item, index, a) => item !== a[index + 1] ).join('')
-
+    if (str.length === 0) return true;
+    let newStr = str.toLowerCase().split('').sort().filter((item, index, a) => item !== a[index + 1]).join('')
     return newStr.length === str.length
+}
 
-
+export function hello(name: any) {
+    if(typeof name === 'undefined' || name.length === 0) return 'Hello, World!'
+    const str = name[0].toUpperCase() + name.toLowerCase().substr(1)
+    return `Hello, ${str}!`;
 }

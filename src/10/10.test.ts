@@ -27,7 +27,7 @@ import {
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
-    getSum, infected,
+    getSum, hello, infected,
     iqTest, isIsogram,
     isLeapYear, isPalindrome,
     isSquare,
@@ -644,9 +644,9 @@ test('pandemia', () => {
     expect(infected("XXXXX")).toBe(0)
 })
 test('member test', () => {
-    expect(newMember([[45, 12],[55,21],[19, -2],[104, 20]])).toStrictEqual(['Open', 'Senior', 'Open', 'Senior'])
-    expect(newMember([[3, 12],[55,1],[91, -2],[54, 23]])).toStrictEqual(['Open', 'Open', 'Open', 'Open'])
-    expect(newMember([[59, 12],[55,-1],[12, -2],[12, 12]])).toStrictEqual(['Senior', 'Open', 'Open', 'Open'])
+    expect(newMember([[45, 12], [55, 21], [19, -2], [104, 20]])).toStrictEqual(['Open', 'Senior', 'Open', 'Senior'])
+    expect(newMember([[3, 12], [55, 1], [91, -2], [54, 23]])).toStrictEqual(['Open', 'Open', 'Open', 'Open'])
+    expect(newMember([[59, 12], [55, -1], [12, -2], [12, 12]])).toStrictEqual(['Senior', 'Open', 'Open', 'Open'])
 })
 test('christmas tree', () => {
     expect(xMasTree(3)).toStrictEqual(['__#__', '_###_', '#####', '__#__', '__#__'])
@@ -663,14 +663,14 @@ test('next square', () => {
     expect(findNextSquare(155)).toBe(-1)
 })
 test('check', () => {
-    expect(checkCoupon('123','123','September 5, 2014','October 1, 2014')).toBe(true)
-    expect(checkCoupon('123a','123','September 5, 2014','October 1, 2014')).toBe(false)
+    expect(checkCoupon('123', '123', 'September 5, 2014', 'October 1, 2014')).toBe(true)
+    expect(checkCoupon('123a', '123', 'September 5, 2014', 'October 1, 2014')).toBe(false)
 })
 test('price of billboard', () => {
     expect(billboard("Jeong-Ho Aristotelis")).toBe(600)
     expect(billboard("Abishai Charalampos")).toBe(570)
     expect(billboard("Idwal Augustin")).toBe(420)
-    expect(billboard("Hadufuns John",20)).toBe(260)
+    expect(billboard("Hadufuns John", 20)).toBe(260)
 
 })
 test('find friends', () => {
@@ -687,7 +687,7 @@ test('Sum', () => {
 test('remove small number', () => {
     expect(removeSmallest([5, 3, 2, 1, 4])).toStrictEqual([5, 3, 2, 4])
     expect(removeSmallest([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5])
-    expect(removeSmallest([2, 2, 1, 2, 1])).toStrictEqual( [2, 2, 2, 1])
+    expect(removeSmallest([2, 2, 1, 2, 1])).toStrictEqual([2, 2, 2, 1])
 })
 test('is programm', () => {
     expect(isIsogram("Dermatoglyphics")).toBe(true)
@@ -696,4 +696,10 @@ test('is programm', () => {
     expect(isIsogram("isIsogram")).toBe(false)
     expect(isIsogram("moOse")).toBe(false)
     expect(isIsogram("")).toBe(true)
+})
+test('hello world', () => {
+    expect(hello('johN')).toBe('Hello, John!')
+    expect(hello('alice')).toBe('Hello, Alice!')
+    expect(hello()).toBe('Hello, World!')
+    expect(hello('')).toBe('Hello, World!')
 })
