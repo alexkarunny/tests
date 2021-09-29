@@ -7,7 +7,7 @@ import {
     arrOfPrim,
     ArrOfPrimit,
     arrOfPrimit, billboard,
-    bjInsObjType,
+    bjInsObjType, calculateAge,
     changeAddress,
     changeBook,
     changeCcmpanyname,
@@ -702,4 +702,12 @@ test('hello world', () => {
     expect(hello('alice')).toBe('Hello, Alice!')
     expect(hello()).toBe('Hello, World!')
     expect(hello('')).toBe('Hello, World!')
+})
+test('calcAge', () => {
+    expect(calculateAge(2012, 2016)).toBe("You are 4 years old.")
+    expect(calculateAge(1989, 2016)).toBe("You are 27 years old.")
+    expect(calculateAge(2000, 1990)).toBe("You will be born in 10 years.")
+    expect(calculateAge(3400, 3400)).toBe("You were born this very year!")
+    expect(calculateAge(2011, 2012)).toBe("You are 1 year old.")
+    expect(calculateAge(2000, 1999)).toBe("You will be born in 1 year.")
 })

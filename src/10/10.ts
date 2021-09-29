@@ -645,3 +645,12 @@ export function hello(name: any) {
     const str = name[0].toUpperCase() + name.toLowerCase().substr(1)
     return `Hello, ${str}!`;
 }
+export function  calculateAge(yearOfBirth: number, year: number): string {
+    if( yearOfBirth === year ) return "You were born this very year!";
+    else if(yearOfBirth - year === 1) return "You will be born in 1 year.";
+    else if(year - yearOfBirth === 1) return "You are 1 year old."
+
+    return ((yearOfBirth - year) > 0)
+        ? `You will be born in ${yearOfBirth - year} years.`
+        : `You are ${year - yearOfBirth} years old.`
+}
