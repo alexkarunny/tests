@@ -654,3 +654,12 @@ export function  calculateAge(yearOfBirth: number, year: number): string {
         ? `You will be born in ${yearOfBirth - year} years.`
         : `You are ${year - yearOfBirth} years old.`
 }
+
+export function missingNo(nums: number[]): number {
+    let sum = 0
+    for (let i = 0; i <= 100; i++) {
+        sum += i
+    }
+    return sum - nums.reduce((acc, item) => acc + item)
+
+}
