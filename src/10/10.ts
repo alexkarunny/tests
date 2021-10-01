@@ -666,3 +666,10 @@ export function missingNo(nums: number[]): number {
 export function simpleMultiplication(number: number):number {
     return (number % 2) ? number * 9 : number * 8
 }
+export function sumCubes(n: number): number{
+    let sum = 0
+    for (let i = 0; i <= n ; i++) {
+        sum += i * i * i
+    }
+    return sum
+}

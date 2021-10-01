@@ -43,7 +43,7 @@ import {
     rowSumOddNumbers, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
     SimpleObjectType, solution,
-    sortString,
+    sortString, sumCubes,
     sumTwoSmallestNumbers,
     tickets,
     uniqueInOrder,
@@ -722,4 +722,12 @@ test('simple multiplication', () => {
     expect(simpleMultiplication(8)).toBe(64)
     expect(simpleMultiplication(4)).toBe(32)
     expect(simpleMultiplication(5)).toBe(45)
+})
+test('sum of cubes', () => {
+    expect(sumCubes(1)).toBe(1)
+    expect(sumCubes(2)).toBe(9)
+    expect(sumCubes(3)).toBe(36)
+    expect(sumCubes(4)).toBe(100)
+    expect(sumCubes(10)).toBe(3025)
+    expect(sumCubes(123)).toBe(58155876)
 })
