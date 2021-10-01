@@ -663,3 +663,6 @@ export function missingNo(nums: number[]): number {
     return sum - nums.reduce((acc, item) => acc + item)
 
 }
+export function simpleMultiplication(number: number):number {
+    return (number % 2) ? number * 9 : number * 8
+}
