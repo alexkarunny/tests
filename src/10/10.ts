@@ -676,3 +676,6 @@ export function sumCubes(n: number): number{
 export function howManyYears(date1: string, date2: string): number{
     return Math.abs(+date1.split('/')[0] - +date2.split('/')[0]);
 }
+export function  solve(nums: number[], div: number): number[] {
+    return nums.map(item => item + (item % div))
+}

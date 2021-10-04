@@ -42,7 +42,7 @@ import {
     prevMultOfThree, removeSmallest, reverseWord, reverseWords,
     rowSumOddNumbers, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
-    SimpleObjectType, solution,
+    SimpleObjectType, solution, solve,
     sortString, sumCubes,
     sumTwoSmallestNumbers,
     tickets,
@@ -737,4 +737,12 @@ test('difference between years', () => {
     expect(howManyYears('2015/10/10', '1990/10/10')).toBe(25)
     expect(howManyYears('1992/10/24', '2015/10/24')).toBe(23)
     expect(howManyYears('2018/10/10', '2000/10/10')).toBe(18)
+})
+test('solve ', () => {
+    expect(solve([2,7,5,9,100,34,32,0],3)).toStrictEqual([4,8,7,9,101,35,34,0])
+    expect(solve([],2)).toStrictEqual([])
+    expect(solve([1000,999,998,997],5)).toStrictEqual([1000,1003,1001,999])
+    expect(solve([0,0,0,0],5)).toStrictEqual([0,0,0,0])
+    expect(solve([4,3,2,1],5)).toStrictEqual([8,6,4,2])
+    expect(solve([33,23,45,78,65],10)).toStrictEqual([36,26,50,86,70])
 })
