@@ -673,3 +673,6 @@ export function sumCubes(n: number): number{
     }
     return sum
 }
+export function howManyYears(date1: string, date2: string): number{
+    return Math.abs(+date1.split('/')[0] - +date2.split('/')[0]);
+}

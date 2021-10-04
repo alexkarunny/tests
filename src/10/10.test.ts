@@ -27,7 +27,7 @@ import {
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
-    getSum, hello, infected,
+    getSum, hello, howManyYears, infected,
     iqTest, isIsogram,
     isLeapYear, isPalindrome,
     isSquare,
@@ -730,4 +730,11 @@ test('sum of cubes', () => {
     expect(sumCubes(4)).toBe(100)
     expect(sumCubes(10)).toBe(3025)
     expect(sumCubes(123)).toBe(58155876)
+})
+test('difference between years', () => {
+    expect(howManyYears('1997/10/10', '2015/10/10')).toBe(18)
+    expect(howManyYears('1990/10/10', '2015/10/10')).toBe(25)
+    expect(howManyYears('2015/10/10', '1990/10/10')).toBe(25)
+    expect(howManyYears('1992/10/24', '2015/10/24')).toBe(23)
+    expect(howManyYears('2018/10/10', '2000/10/10')).toBe(18)
 })
