@@ -11,7 +11,7 @@ import {
     changeAddress,
     changeBook,
     changeCcmpanyname,
-    changeName, checkCoupon,
+    changeName, checkCoupon, connotation,
     copyObjInsObj,
     createPhoneNumber,
     delBook,
@@ -745,4 +745,11 @@ test('solve ', () => {
     expect(solve([0,0,0,0],5)).toStrictEqual([0,0,0,0])
     expect(solve([4,3,2,1],5)).toStrictEqual([8,6,4,2])
     expect(solve([33,23,45,78,65],10)).toStrictEqual([36,26,50,86,70])
+})
+test('connotatiosm', () => {
+    expect(connotation("A big brown fox caught a bad bunny")).toBe(true)
+    expect(connotation("Xylophones can obtain Xenon.")).toBe(false)
+    expect(connotation("CHOCOLATE MAKES A GREAT SNACK")).toBe(true)
+    expect(connotation("All FOoD tAsTEs NIcE for someONe")).toBe(true)
+    expect(connotation("Is  this the  best  Kata?")).toBe(true)
 })

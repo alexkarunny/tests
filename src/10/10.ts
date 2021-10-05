@@ -641,14 +641,15 @@ export function isIsogram(str: string): boolean {
 }
 
 export function hello(name: any) {
-    if(typeof name === 'undefined' || name.length === 0) return 'Hello, World!'
+    if (typeof name === 'undefined' || name.length === 0) return 'Hello, World!'
     const str = name[0].toUpperCase() + name.toLowerCase().substr(1)
     return `Hello, ${str}!`;
 }
-export function  calculateAge(yearOfBirth: number, year: number): string {
-    if( yearOfBirth === year ) return "You were born this very year!";
-    else if(yearOfBirth - year === 1) return "You will be born in 1 year.";
-    else if(year - yearOfBirth === 1) return "You are 1 year old."
+
+export function calculateAge(yearOfBirth: number, year: number): string {
+    if (yearOfBirth === year) return "You were born this very year!";
+    else if (yearOfBirth - year === 1) return "You will be born in 1 year.";
+    else if (year - yearOfBirth === 1) return "You are 1 year old."
 
     return ((yearOfBirth - year) > 0)
         ? `You will be born in ${yearOfBirth - year} years.`
@@ -663,19 +664,38 @@ export function missingNo(nums: number[]): number {
     return sum - nums.reduce((acc, item) => acc + item)
 
 }
-export function simpleMultiplication(number: number):number {
+
+export function simpleMultiplication(number: number): number {
     return (number % 2) ? number * 9 : number * 8
 }
-export function sumCubes(n: number): number{
+
+export function sumCubes(n: number): number {
     let sum = 0
-    for (let i = 0; i <= n ; i++) {
+    for (let i = 0; i <= n; i++) {
         sum += i * i * i
     }
     return sum
 }
-export function howManyYears(date1: string, date2: string): number{
+
+export function howManyYears(date1: string, date2: string): number {
     return Math.abs(+date1.split('/')[0] - +date2.split('/')[0]);
 }
-export function  solve(nums: number[], div: number): number[] {
+
+export function solve(nums: number[], div: number): number[] {
     return nums.map(item => item + (item % div))
+}
+
+export function connotation(str: string): boolean {
+    let temp = [0, 0]
+    const arr = str.split(' ')
+        .filter(item => item !== '')
+        .map(item => item.trim().toLowerCase())
+
+    for (let i = 0; i < arr.length; i++) {
+        let t = arr[i][0].charCodeAt(0)
+        if (t >= 97 && t <= 109) temp[0] += 1
+        else temp[1] += 1
+    }
+
+    return (temp[0] >= temp[1]) ? true : false
 }
