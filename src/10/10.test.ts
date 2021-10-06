@@ -15,7 +15,7 @@ import {
     copyObjInsObj,
     createPhoneNumber,
     delBook,
-    descendingOrder,
+    descendingOrder, divide,
     divisors,
     duplicateCount,
     feast,
@@ -752,4 +752,11 @@ test('connotatiosm', () => {
     expect(connotation("CHOCOLATE MAKES A GREAT SNACK")).toBe(true)
     expect(connotation("All FOoD tAsTEs NIcE for someONe")).toBe(true)
     expect(connotation("Is  this the  best  Kata?")).toBe(true)
+})
+test('watermeloon', () => {
+    expect(divide(4)).toBe(true)
+    expect(divide(2)).toBe(false)
+    expect(divide(5)).toBe(false)
+    expect(divide(100)).toBe(true)
+    expect(divide(99)).toBe(false)
 })

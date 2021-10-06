@@ -699,3 +699,6 @@ export function connotation(str: string): boolean {
 
     return (temp[0] >= temp[1]) ? true : false
 }
+export function  divide(weight: number): boolean{
+    return ( weight < 4 || (weight % 2) ) ? false : true
+}
