@@ -690,15 +690,22 @@ export function connotation(str: string): boolean {
     const arr = str.split(' ')
         .filter(item => item !== '')
         .map(item => item.trim().toLowerCase())
-
     for (let i = 0; i < arr.length; i++) {
         let t = arr[i][0].charCodeAt(0)
         if (t >= 97 && t <= 109) temp[0] += 1
         else temp[1] += 1
     }
-
     return (temp[0] >= temp[1]) ? true : false
 }
+
 export function  divide(weight: number): boolean{
     return ( weight < 4 || (weight % 2) ) ? false : true
+}
+
+export function findOutlier(integers: number[]): number{
+    let arr = [0, 0]
+    for (let i = 0; i < integers.length ; i++) {
+        (integers[i] % 2) ? arr[0] += 1 : arr[1] += 1
+    }
+    return ( arr[0] > arr[1] ) ? integers.filter(i => (i % 2) === 0 )[0] : integers.filter(i => (i % 2) !== 0)[0]
 }

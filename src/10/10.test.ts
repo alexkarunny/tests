@@ -19,7 +19,7 @@ import {
     divisors,
     duplicateCount,
     feast,
-    filter_list, findNextSquare, friend,
+    filter_list, findNextSquare, findOutlier, friend,
     fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
@@ -759,4 +759,11 @@ test('watermeloon', () => {
     expect(divide(5)).toBe(false)
     expect(divide(100)).toBe(true)
     expect(divide(99)).toBe(false)
+})
+test('find the integers', () => {
+    expect(findOutlier([0, 1, 2])).toBe(1)
+    expect(findOutlier([1, 2, 3])).toBe(2)
+    expect(findOutlier([2,6,8,10,3])).toBe(3)
+    expect(findOutlier([0,0,3,0,0])).toBe(3)
+    expect(findOutlier([1,1,0,1,1])).toBe(0)
 })
