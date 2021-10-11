@@ -19,7 +19,7 @@ import {
     divisors,
     duplicateCount,
     feast,
-    filter_list, findNextSquare, findOutlier, friend,
+    filter_list, findNextSquare, findOutlier, flattenAndSort, friend,
     fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
@@ -766,4 +766,9 @@ test('find the integers', () => {
     expect(findOutlier([2,6,8,10,3])).toBe(3)
     expect(findOutlier([0,0,3,0,0])).toBe(3)
     expect(findOutlier([1,1,0,1,1])).toBe(0)
+})
+test('arr', () => {
+    expect(flattenAndSort([[], [1]])).toStrictEqual([1])
+    expect(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]])).toStrictEqual([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expect(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]])).toStrictEqual([1, 2, 3, 4, 5, 6, 100])
 })

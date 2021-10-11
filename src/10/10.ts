@@ -709,3 +709,11 @@ export function findOutlier(integers: number[]): number{
     }
     return ( arr[0] > arr[1] ) ? integers.filter(i => (i % 2) === 0 )[0] : integers.filter(i => (i % 2) !== 0)[0]
 }
+
+export function flattenAndSort(arr: number[][]): number[] {
+    let ara: number[] = []
+    for (let i = 0; i < arr.length; i++) {
+        if( arr[i].length > 0 ) ara = ara.concat(arr[i]);
+    }
+    return ara.sort((a, b) => a - b);
+}
