@@ -36,7 +36,7 @@ import {
     longest,
     loopArr, missingNo, newMember,
     ObjectInsideObjectArrayObjectObjectType,
-    ObjectInsideObjectInsideObjectType,
+    ObjectInsideObjectInsideObjectType, oddOrEven,
     overTheRoad,
     persistence,
     prevMultOfThree, removeSmallest, reverseWord, reverseWords,
@@ -771,4 +771,11 @@ test('arr', () => {
     expect(flattenAndSort([[], [1]])).toStrictEqual([1])
     expect(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]])).toStrictEqual([1, 2, 3, 4, 5, 6, 7, 8, 9])
     expect(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]])).toStrictEqual([1, 2, 3, 4, 5, 6, 100])
+})
+test('add or even', () => {
+    expect(oddOrEven([0])).toBe('even')
+    expect(oddOrEven([])).toBe('even')
+    expect(oddOrEven([-1023, 1, -2])).toBe('even')
+    expect(oddOrEven([1023, 1, 3])).toBe('odd')
+    expect(oddOrEven([0, 1, -4])).toBe('odd')
 })

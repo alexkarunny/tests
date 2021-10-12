@@ -717,3 +717,9 @@ export function flattenAndSort(arr: number[][]): number[] {
     }
     return ara.sort((a, b) => a - b);
 }
+
+export function oddOrEven(arr: number[]): 'odd' | 'even' {
+    if(arr.length === 0) return 'even'
+    let temp = arr.reduce((acc, item) => acc + item)
+    return (temp % 2) ? 'odd' : 'even'
+}
