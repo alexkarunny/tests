@@ -723,3 +723,27 @@ export function oddOrEven(arr: number[]): 'odd' | 'even' {
     let temp = arr.reduce((acc, item) => acc + item)
     return (temp % 2) ? 'odd' : 'even'
 }
+
+export function bitsBattle(numbers: number[]): string {
+    let oddNUms = numbers.filter(num => {
+        if(num % 2) return parseInt(num.toString(), 2)
+    })
+    let evenNUms = numbers.filter(num => {
+        if((num % 2) === 0) return parseInt(num.toString(), 2)
+    })
+
+    let oddNum = oddNUms.reduce((item, acc) => {
+        let num = item.toString().split('').filter(i => +i === 1)
+        return num.length + acc
+    }, 0)
+
+    let evenNum = evenNUms.reduce((item, acc) => {
+        let num = item.toString().split('').filter(i => +i === 0)
+        return num.length + acc
+    }, 0)
+
+    if(oddNum > evenNum) return  'evens win';
+    if(evenNum > oddNum) return 'odds win'
+
+    return 'tie'; //code here
+}

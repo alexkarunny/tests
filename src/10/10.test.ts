@@ -6,7 +6,7 @@ import {
     ArrOfObjectinsideObject,
     arrOfPrim,
     ArrOfPrimit,
-    arrOfPrimit, billboard,
+    arrOfPrimit, billboard, bitsBattle,
     bjInsObjType, calculateAge,
     changeAddress,
     changeBook,
@@ -778,4 +778,12 @@ test('add or even', () => {
     expect(oddOrEven([-1023, 1, -2])).toBe('even')
     expect(oddOrEven([1023, 1, 3])).toBe('odd')
     expect(oddOrEven([0, 1, -4])).toBe('odd')
+})
+test('odd against even', () => {
+    expect(bitsBattle([])).toBe('tie')
+    expect(bitsBattle([3, 8, 22, 15, 78])).toBe('evens win')
+    expect(bitsBattle([5, 3, 14])).toBe('odds win')
+
+
+    expect(bitsBattle([1, 13, 16])).toBe('tie')
 })
