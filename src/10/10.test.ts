@@ -783,7 +783,5 @@ test('odd against even', () => {
     expect(bitsBattle([])).toBe('tie')
     expect(bitsBattle([3, 8, 22, 15, 78])).toBe('evens win')
     expect(bitsBattle([5, 3, 14])).toBe('odds win')
-
-
     expect(bitsBattle([1, 13, 16])).toBe('tie')
 })
