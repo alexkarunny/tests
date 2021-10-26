@@ -46,7 +46,7 @@ import {
     sortString, stringToArray, sumCubes,
     sumTwoSmallestNumbers,
     tickets,
-    uniqueInOrder,
+    uniqueInOrder, usdcny,
     UserPropsType,
     UserType,
     validatePinCode,
@@ -788,4 +788,8 @@ test('odd against even', () => {
 test('string To Array', () => {
     expect(stringToArray("Robin Singh")).toEqual(["Robin", "Singh"])
     expect(stringToArray("I love arrays they are my favorite")).toStrictEqual(["I", "love", "arrays", "they", "are", "my", "favorite"])
+})
+test('usd to cny', () => {
+    expect(usdcny(15)).toBe('101.25 Chinese Yuan')
+    expect(usdcny(465)).toBe('3138.75 Chinese Yuan')
 })

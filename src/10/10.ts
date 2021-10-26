@@ -1,3 +1,5 @@
+import internal from "stream";
+
 export type UserType = {
     name: string
     age: number
@@ -748,4 +750,7 @@ export function bitsBattle(numbers: number[]): string {
 
 export function stringToArray(string: string): string[]{
     return string.split(' ')
+}
+export function usdcny(usd: number): string {
+    return `${(usd * 6.75).toFixed(2)} Chinese Yuan`
 }
