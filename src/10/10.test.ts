@@ -43,7 +43,7 @@ import {
     rowSumOddNumbers, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
     SimpleObjectType, solution, solve,
-    sortString, sumCubes,
+    sortString, stringToArray, sumCubes,
     sumTwoSmallestNumbers,
     tickets,
     uniqueInOrder,
@@ -784,4 +784,8 @@ test('odd against even', () => {
     expect(bitsBattle([3, 8, 22, 15, 78])).toBe('evens win')
     expect(bitsBattle([5, 3, 14])).toBe('odds win')
     expect(bitsBattle([1, 13, 16])).toBe('tie')
+})
+test('string To Array', () => {
+    expect(stringToArray("Robin Singh")).toEqual(["Robin", "Singh"])
+    expect(stringToArray("I love arrays they are my favorite")).toStrictEqual(["I", "love", "arrays", "they", "are", "my", "favorite"])
 })
