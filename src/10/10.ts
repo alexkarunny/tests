@@ -754,3 +754,6 @@ export function stringToArray(string: string): string[]{
 export function usdcny(usd: number): string {
     return `${(usd * 6.75).toFixed(2)} Chinese Yuan`
 }
+export function evenNumbers(array: number[], number: number): number[] {
+    return array.filter(num => (num % 2) === 0).splice(-number)
+}

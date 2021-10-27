@@ -17,7 +17,7 @@ import {
     delBook,
     descendingOrder, divide,
     divisors,
-    duplicateCount,
+    duplicateCount, evenNumbers,
     feast,
     filter_list, findNextSquare, findOutlier, flattenAndSort, friend,
     fullCopyArrayObjectObjectjbject,
@@ -792,4 +792,9 @@ test('string To Array', () => {
 test('usd to cny', () => {
     expect(usdcny(15)).toBe('101.25 Chinese Yuan')
     expect(usdcny(465)).toBe('3138.75 Chinese Yuan')
+})
+test('last even numbers', () => {
+    expect(evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)).toEqual([-8, 26])
+    expect(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)).toEqual([4, 6, 8])
+    expect(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1)).toEqual([6])
 })
