@@ -761,3 +761,10 @@ export function evenNumbers(array: number[], number: number): number[] {
 export function removeChar(str: string):string {
     return str.split('').filter((letter, index) => index !== 0 && index !== (str.length - 1)).join('')
 };
+
+export function removeFirstLastCharacters(str: string):string | null {
+
+const arr = str.split(',')
+    if(arr.length < 3) return null;
+return arr.filter((letter, index, array) => index !== 0 && index !== (array.length - 1)).join(' ')
+}

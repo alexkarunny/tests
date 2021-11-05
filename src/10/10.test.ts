@@ -39,7 +39,7 @@ import {
     ObjectInsideObjectInsideObjectType, oddOrEven,
     overTheRoad,
     persistence,
-    prevMultOfThree, removeChar, removeSmallest, reverseWord, reverseWords,
+    prevMultOfThree, removeChar, removeFirstLastCharacters, removeSmallest, reverseWord, reverseWords,
     rowSumOddNumbers, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
     SimpleObjectType, solution, solve,
@@ -802,4 +802,9 @@ test('should remove first and last letter', () => {
     expect(removeChar('eloquent')).toBe('loquen')
     expect(removeChar('country')).toBe('ountr')
     expect(removeChar('ooopsss')).toBe('oopss')
+})
+test('should remove first and last letter with spaces', () => {
+    expect(removeFirstLastCharacters('1,2,3')).toBe('2')
+    expect(removeFirstLastCharacters('1,2')).toBeNull()
+    expect(removeFirstLastCharacters('1,2,3,4,5')).toBe('2 3 4')
 })
