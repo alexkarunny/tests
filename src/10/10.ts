@@ -757,3 +757,7 @@ export function usdcny(usd: number): string {
 export function evenNumbers(array: number[], number: number): number[] {
     return array.filter(num => (num % 2) === 0).splice(-number)
 }
+
+export function removeChar(str: string):string {
+    return str.split('').filter((letter, index) => index !== 0 && index !== (str.length - 1)).join('')
+};
