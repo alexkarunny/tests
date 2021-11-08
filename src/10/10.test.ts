@@ -1,5 +1,5 @@
 import {
-    addBook, arrayDiff,
+    addBook, apple, arrayDiff,
     ArrayObjectObjectObjectArrayObjectType,
     ArrayOfObjects,
     ArrayOfObjectsInsideObjectsType,
@@ -812,4 +812,9 @@ test('at least one term from given array should equal one term from array of sam
     expect(part(['Grouse', 'Partridge', 'Pheasant'])).toBe('Mine\'s a Pint!')
     expect(part(['Pheasant', 'Goose', 'Starling', 'Robin'])).toBe('Lynn, I\'ve pierced my foot on a spike!!')
     expect(part(['Grouse', 'Partridge', 'Pheasant', 'Goose', 'Starling', 'Robin', 'Thrush', 'Emu', 'PearTree', 'Chat', 'Dan', 'Square', 'Toblerone', 'Lynn', 'AlphaPapa', 'BMW', 'Graham', 'Tool', 'Nomad', 'Finger', 'Hamster'])).toBe('Mine\'s a Pint!!!!!!!!')
+})
+test('number squared should be more than 1000', () => {
+    expect(apple('50')).toBe('It\'s hotter than the sun!!')
+    expect(apple(4)).toBe('Help yourself to a honeycomb Yorkie for the glovebox.')
+
 })

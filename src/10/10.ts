@@ -780,5 +780,8 @@ export const part = (x: string[]): string => {
     }
 
     return (phrase.length > 13) ? phrase : 'Lynn, I\'ve pierced my foot on a spike!!';
+}
 
+export const apple = (x: string | number): string => {
+    return (Math.pow(Number(x), 2) > 1000) ? 'It\'s hotter than the sun!!' : 'Help yourself to a honeycomb Yorkie for the glovebox.'
 }
