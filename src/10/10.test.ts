@@ -37,7 +37,7 @@ import {
     loopArr, missingNo, newMember,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, oddOrEven,
-    overTheRoad,
+    overTheRoad, part,
     persistence,
     prevMultOfThree, removeChar, removeFirstLastCharacters, removeSmallest, reverseWord, reverseWords,
     rowSumOddNumbers, SeriesSum, simpleMultiplication,
@@ -739,12 +739,12 @@ test('difference between years', () => {
     expect(howManyYears('2018/10/10', '2000/10/10')).toBe(18)
 })
 test('solve ', () => {
-    expect(solve([2,7,5,9,100,34,32,0],3)).toStrictEqual([4,8,7,9,101,35,34,0])
-    expect(solve([],2)).toStrictEqual([])
-    expect(solve([1000,999,998,997],5)).toStrictEqual([1000,1003,1001,999])
-    expect(solve([0,0,0,0],5)).toStrictEqual([0,0,0,0])
-    expect(solve([4,3,2,1],5)).toStrictEqual([8,6,4,2])
-    expect(solve([33,23,45,78,65],10)).toStrictEqual([36,26,50,86,70])
+    expect(solve([2, 7, 5, 9, 100, 34, 32, 0], 3)).toStrictEqual([4, 8, 7, 9, 101, 35, 34, 0])
+    expect(solve([], 2)).toStrictEqual([])
+    expect(solve([1000, 999, 998, 997], 5)).toStrictEqual([1000, 1003, 1001, 999])
+    expect(solve([0, 0, 0, 0], 5)).toStrictEqual([0, 0, 0, 0])
+    expect(solve([4, 3, 2, 1], 5)).toStrictEqual([8, 6, 4, 2])
+    expect(solve([33, 23, 45, 78, 65], 10)).toStrictEqual([36, 26, 50, 86, 70])
 })
 test('connotatiosm', () => {
     expect(connotation("A big brown fox caught a bad bunny")).toBe(true)
@@ -763,9 +763,9 @@ test('watermeloon', () => {
 test('find the integers', () => {
     expect(findOutlier([0, 1, 2])).toBe(1)
     expect(findOutlier([1, 2, 3])).toBe(2)
-    expect(findOutlier([2,6,8,10,3])).toBe(3)
-    expect(findOutlier([0,0,3,0,0])).toBe(3)
-    expect(findOutlier([1,1,0,1,1])).toBe(0)
+    expect(findOutlier([2, 6, 8, 10, 3])).toBe(3)
+    expect(findOutlier([0, 0, 3, 0, 0])).toBe(3)
+    expect(findOutlier([1, 1, 0, 1, 1])).toBe(0)
 })
 test('arr', () => {
     expect(flattenAndSort([[], [1]])).toStrictEqual([1])
@@ -807,4 +807,9 @@ test('should remove first and last letter with spaces', () => {
     expect(removeFirstLastCharacters('1,2,3')).toBe('2')
     expect(removeFirstLastCharacters('1,2')).toBeNull()
     expect(removeFirstLastCharacters('1,2,3,4,5')).toBe('2 3 4')
+})
+test('at least one term from given array should equal one term from array of samples', () => {
+    expect(part(['Grouse', 'Partridge', 'Pheasant'])).toBe('Mine\'s a Pint!')
+    expect(part(['Pheasant', 'Goose', 'Starling', 'Robin'])).toBe('Lynn, I\'ve pierced my foot on a spike!!')
+    expect(part(['Grouse', 'Partridge', 'Pheasant', 'Goose', 'Starling', 'Robin', 'Thrush', 'Emu', 'PearTree', 'Chat', 'Dan', 'Square', 'Toblerone', 'Lynn', 'AlphaPapa', 'BMW', 'Graham', 'Tool', 'Nomad', 'Finger', 'Hamster'])).toBe('Mine\'s a Pint!!!!!!!!')
 })

@@ -700,34 +700,34 @@ export function connotation(str: string): boolean {
     return (temp[0] >= temp[1]) ? true : false
 }
 
-export function  divide(weight: number): boolean{
-    return ( weight < 4 || (weight % 2) ) ? false : true
+export function divide(weight: number): boolean {
+    return (weight < 4 || (weight % 2)) ? false : true
 }
 
-export function findOutlier(integers: number[]): number{
+export function findOutlier(integers: number[]): number {
     let arr = [0, 0]
-    for (let i = 0; i < integers.length ; i++) {
+    for (let i = 0; i < integers.length; i++) {
         (integers[i] % 2) ? arr[0] += 1 : arr[1] += 1
     }
-    return ( arr[0] > arr[1] ) ? integers.filter(i => (i % 2) === 0 )[0] : integers.filter(i => (i % 2) !== 0)[0]
+    return (arr[0] > arr[1]) ? integers.filter(i => (i % 2) === 0)[0] : integers.filter(i => (i % 2) !== 0)[0]
 }
 
 export function flattenAndSort(arr: number[][]): number[] {
     let ara: number[] = []
     for (let i = 0; i < arr.length; i++) {
-        if( arr[i].length > 0 ) ara = ara.concat(arr[i]);
+        if (arr[i].length > 0) ara = ara.concat(arr[i]);
     }
     return ara.sort((a, b) => a - b);
 }
 
 export function oddOrEven(arr: number[]): 'odd' | 'even' {
-    if(arr.length === 0) return 'even'
+    if (arr.length === 0) return 'even'
     let temp = arr.reduce((acc, item) => acc + item)
     return (temp % 2) ? 'odd' : 'even'
 }
 
 export function bitsBattle(numbers: number[]): string {
-    if(numbers.length === 0) return 'tie';
+    if (numbers.length === 0) return 'tie';
     let oddNUms = numbers.filter(num => num % 2)
 
     let evenNUms = numbers.filter(num => (num % 2) === 0);
@@ -742,29 +742,43 @@ export function bitsBattle(numbers: number[]): string {
         return num.length + acc
     }, 0)
 
-    if(oddNum > evenNum) return  'odds win';
-    if(evenNum > oddNum) return 'evens win';
+    if (oddNum > evenNum) return 'odds win';
+    if (evenNum > oddNum) return 'evens win';
 
     return 'tie'; //code here
 }
 
-export function stringToArray(string: string): string[]{
+export function stringToArray(string: string): string[] {
     return string.split(' ')
 }
+
 export function usdcny(usd: number): string {
     return `${(usd * 6.75).toFixed(2)} Chinese Yuan`
 }
+
 export function evenNumbers(array: number[], number: number): number[] {
     return array.filter(num => (num % 2) === 0).splice(-number)
 }
 
-export function removeChar(str: string):string {
+export function removeChar(str: string): string {
     return str.split('').filter((letter, index) => index !== 0 && index !== (str.length - 1)).join('')
 };
 
-export function removeFirstLastCharacters(str: string):string | null {
+export function removeFirstLastCharacters(str: string): string | null {
 
-const arr = str.split(',')
-    if(arr.length < 3) return null;
-return arr.filter((letter, index, array) => index !== 0 && index !== (array.length - 1)).join(' ')
+    const arr = str.split(',')
+    if (arr.length < 3) return null;
+    return arr.filter((letter, index, array) => index !== 0 && index !== (array.length - 1)).join(' ')
+}
+
+export const part = (x: string[]): string => {
+    const sampleArray = ['Partridge', 'PearTree', 'Chat', 'Dan', 'Toblerone', 'Lynn', 'AlphaPapa', 'Nomad']
+    let phrase = 'Mine\'s a Pint'
+
+    for (let i = 0; i < x.length; i++) {
+        phrase += (sampleArray.includes(x[i])) ? '!' : '';
+    }
+
+    return (phrase.length > 13) ? phrase : 'Lynn, I\'ve pierced my foot on a spike!!';
+
 }
