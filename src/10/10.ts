@@ -785,3 +785,7 @@ export const part = (x: string[]): string => {
 export const apple = (x: string | number): string => {
     return (Math.pow(Number(x), 2) > 1000) ? 'It\'s hotter than the sun!!' : 'Help yourself to a honeycomb Yorkie for the glovebox.'
 }
+
+export const isDivideBy = (number: number, a: number, b: number) => {
+    return (!(number % a) && !(number % b)) ? true : false
+}

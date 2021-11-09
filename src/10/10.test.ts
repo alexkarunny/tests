@@ -28,7 +28,7 @@ import {
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
     getSum, hello, howManyYears, infected,
-    iqTest, isIsogram,
+    iqTest, isDivideBy, isIsogram,
     isLeapYear, isPalindrome,
     isSquare,
     isTriangle,
@@ -816,5 +816,13 @@ test('at least one term from given array should equal one term from array of sam
 test('number squared should be more than 1000', () => {
     expect(apple('50')).toBe('It\'s hotter than the sun!!')
     expect(apple(4)).toBe('Help yourself to a honeycomb Yorkie for the glovebox.')
+})
+test('number should divided by other number', () => {
+    expect(isDivideBy(-12, 2, -6)).toBeTruthy()
+    expect(isDivideBy(-12, 2, -5)).toBeFalsy()
+    expect(isDivideBy(45, 1, 6)).toBeFalsy()
+    expect(isDivideBy(45, 5, 15)).toBeTruthy()
+    expect(isDivideBy(4, 1, 4)).toBeTruthy()
+    expect(isDivideBy(15, -5, 3)).toBeTruthy()
 
 })
