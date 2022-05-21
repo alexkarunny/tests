@@ -789,3 +789,7 @@ export const apple = (x: string | number): string => {
 export const isDivideBy = (number: number, a: number, b: number) => {
     return (!(number % a) && !(number % b)) ? true : false
 }
+
+export const strToNumber = (str: string):number => {
+    return +str
+}

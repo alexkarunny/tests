@@ -43,7 +43,7 @@ import {
     rowSumOddNumbers, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
     SimpleObjectType, solution, solve,
-    sortString, stringToArray, sumCubes,
+    sortString, stringToArray, strToNumber, sumCubes,
     sumTwoSmallestNumbers,
     tickets,
     uniqueInOrder, usdcny,
@@ -825,4 +825,10 @@ test('number should divided by other number', () => {
     expect(isDivideBy(4, 1, 4)).toBeTruthy()
     expect(isDivideBy(15, -5, 3)).toBeTruthy()
 
+})
+test('string to a number', () => {
+    expect(strToNumber('1234')).toBe(1234)
+    expect(strToNumber('605')).toBe(605)
+    expect(strToNumber('1405')).toBe(1405)
+    expect(strToNumber('-7')).toBe(-7)
 })
