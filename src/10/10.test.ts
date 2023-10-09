@@ -17,7 +17,7 @@ import {
     delBook,
     descendingOrder, divide,
     divisors,
-    duplicateCount, evenNumbers,
+    duplicateCount, evenNumbers, excludingVatPrice,
     feast,
     filter_list, findNextSquare, findOutlier, flattenAndSort, friend,
     fullCopyArrayObjectObjectjbject,
@@ -52,7 +52,7 @@ import {
     validatePinCode,
     vaporcode, xMasTree,
     XO
-} from "./10";
+} from './10';
 
 test('change city', () => {
     let user: UserType = {
@@ -831,4 +831,8 @@ test('string to a number', () => {
     expect(strToNumber('605')).toBe(605)
     expect(strToNumber('1405')).toBe(1405)
     expect(strToNumber('-7')).toBe(-7)
+})
+test('get price excluding 15% vat', () => {
+    expect(excludingVatPrice(230)).toBe(200)
+    expect(excludingVatPrice(123)).toBe(106.96)
 })

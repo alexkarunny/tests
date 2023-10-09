@@ -793,3 +793,10 @@ export const isDivideBy = (number: number, a: number, b: number) => {
 export const strToNumber = (str: string):number => {
     return +str
 }
+
+export const excludingVatPrice = (price: number): number => {
+    // your code
+    if(price === null) return -1 ;
+    let vat = Number((price * 15 / 115).toFixed(2))
+    return Number((price - vat).toFixed(2));
+}
