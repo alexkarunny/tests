@@ -1,4 +1,4 @@
-import internal from "stream";
+import internal from 'stream';
 
 export type UserType = {
     name: string
@@ -278,7 +278,7 @@ export function getSum(a: number, b: number): number {
 }
 
 export function iqTest(numbers: string): number {
-    let newArr = numbers.split(" ").map(l => l % 2);
+    let newArr = numbers.split(' ').map(l => l % 2);
     let checkNumber = newArr.reduce((sum, current) => sum + current, 0);
     return (checkNumber === 1) ? newArr.findIndex(item => item === 1) + 1 : newArr.findIndex(item => item === 0) + 1
 }
@@ -313,7 +313,7 @@ export function feast(beast: string, dish: string): boolean {
 
 export function vaporcode(str: string): string {
     if (str === 'Error') throw new Error()
-    return str.toUpperCase().split(" ").join("").split("").join("  ")
+    return str.toUpperCase().split(' ').join('').split('').join('  ')
 }
 
 export const prevMultOfThree = (n: number): number | null => {
@@ -377,8 +377,8 @@ export function uniqueInOrder(iterable: string | any[]): string[] {
         : iterable.filter((it, ind, arr) => it !== arr[ind - 1])//your code here - remember iterable can be a string or an array
 }
 
-export function tickets(peopleInLine: number[]): "YES" | "NO" {
-    if (peopleInLine[0] > 25 || peopleInLine.length === 0) return "NO"
+export function tickets(peopleInLine: number[]): 'YES' | 'NO' {
+    if (peopleInLine[0] > 25 || peopleInLine.length === 0) return 'NO'
     const banknote = []
 
     for (let i = 0; i < peopleInLine.length; i++) {
@@ -387,10 +387,10 @@ export function tickets(peopleInLine: number[]): "YES" | "NO" {
             let index = banknote.findIndex(item => item === 25)
             if (index >= 0) {
                 banknote.splice(index, 1, 50)
-            } else return "NO"
+            } else return 'NO'
         } else if (peopleInLine[i] === 100) {
             let temp = banknote.reduce((acc, item) => acc + item)
-            if (temp < 75) return "NO"
+            if (temp < 75) return 'NO'
             else if (temp >= 75) {
                 let indexFifty = banknote.findIndex(item => item === 50)
                 let indexTwenty = banknote.findIndex(item => item === 25)
@@ -401,13 +401,13 @@ export function tickets(peopleInLine: number[]): "YES" | "NO" {
                 } else {
                     if (banknote.findIndex(item => item === 25) >= 0) {
                         banknote.splice(banknote.findIndex(item => item === 25), 1)
-                    } else return "NO"
+                    } else return 'NO'
                     if (banknote.findIndex(item => item === 25) >= 0) {
                         banknote.splice(banknote.findIndex(item => item === 25), 1)
-                    } else return "NO"
+                    } else return 'NO'
                     if (banknote.findIndex(item => item === 25) >= 0) {
                         banknote.splice(banknote.findIndex(item => item === 25), 1)
-                    } else return "NO"
+                    } else return 'NO'
 
                 }
             }
@@ -415,7 +415,7 @@ export function tickets(peopleInLine: number[]): "YES" | "NO" {
     }
 
 
-    return "YES"
+    return 'YES'
 }
 
 export function isTriangle(a: number, b: number, c: number): boolean {
@@ -539,7 +539,7 @@ export function lastSurvivors(str: string): string {
 
 export function infected(s: string): number {
 
-    const arr = s.split("X")
+    const arr = s.split('X')
     const newArr = [0, 0]
 
     for (let i = 0; i < arr.length; i++) {
@@ -649,9 +649,9 @@ export function hello(name: any) {
 }
 
 export function calculateAge(yearOfBirth: number, year: number): string {
-    if (yearOfBirth === year) return "You were born this very year!";
-    else if (yearOfBirth - year === 1) return "You will be born in 1 year.";
-    else if (year - yearOfBirth === 1) return "You are 1 year old."
+    if (yearOfBirth === year) return 'You were born this very year!';
+    else if (yearOfBirth - year === 1) return 'You will be born in 1 year.';
+    else if (year - yearOfBirth === 1) return 'You are 1 year old.'
 
     return ((yearOfBirth - year) > 0)
         ? `You will be born in ${yearOfBirth - year} years.`
@@ -790,13 +790,37 @@ export const isDivideBy = (number: number, a: number, b: number) => {
     return (!(number % a) && !(number % b)) ? true : false
 }
 
-export const strToNumber = (str: string):number => {
+export const strToNumber = (str: string): number => {
     return +str
 }
 
 export const excludingVatPrice = (price: number): number => {
     // your code
-    if(price === null) return -1 ;
+    if (price === null) return -1;
     let vat = Number((price * 15 / 115).toFixed(2))
     return Number((price - vat).toFixed(2));
+}
+
+export const distinctDigitYear = (year: number): number => {
+    //coding and coding..
+
+    let num = year + 1
+    for (let i = num; i < 9000; i++) {
+        /*
+                let str = i.toString()
+                if(str[0] !== str[1] && str[0] !== str[2] && str[0] !== str[3] && str[1] !== str[2] && str[1] !== str[3] && str[2] !== str[3]) {
+                    num = i
+                    break
+                }
+        */
+        let check = new Set(i.toString())
+
+        if (check.size === 4) {
+            num = i
+            break
+        }
+
+    }
+
+    return num
 }

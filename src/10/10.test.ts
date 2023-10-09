@@ -15,7 +15,7 @@ import {
     copyObjInsObj,
     createPhoneNumber,
     delBook,
-    descendingOrder, divide,
+    descendingOrder, distinctDigitYear, divide,
     divisors,
     duplicateCount, evenNumbers, excludingVatPrice,
     feast,
@@ -835,4 +835,8 @@ test('string to a number', () => {
 test('get price excluding 15% vat', () => {
     expect(excludingVatPrice(230)).toBe(200)
     expect(excludingVatPrice(123)).toBe(106.96)
+})
+test('next number with distinct digits', () => {
+    expect(distinctDigitYear(1987)).toBe(2013)
+    expect(distinctDigitYear(2013)).toBe(2014)
 })
