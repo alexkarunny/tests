@@ -49,7 +49,7 @@ import {
     uniqueInOrder, usdcny,
     UserPropsType,
     UserType,
-    validatePinCode,
+    validatePinCode, validParentheses,
     vaporcode, xMasTree,
     XO
 } from './10';
@@ -839,4 +839,17 @@ test('get price excluding 15% vat', () => {
 test('next number with distinct digits', () => {
     expect(distinctDigitYear(1987)).toBe(2013)
     expect(distinctDigitYear(2013)).toBe(2014)
+})
+test('check if parentheses is valid', () => {
+    expect(validParentheses("((()))")).toBe(true)
+    expect(validParentheses("()()()")).toBe(true)
+    expect(validParentheses("(()())()")).toBeTruthy()
+    expect(validParentheses("()(())((()))(())()")).toBe(true)
+    expect(validParentheses("")).toBe(true)
+
+    expect(validParentheses("()()(")).toBe(false)
+    expect(validParentheses(")(")).toBeFalsy()
+    expect(validParentheses("((())")).toBe(false)
+    expect(validParentheses("())(()")).toBe(false)
+
 })

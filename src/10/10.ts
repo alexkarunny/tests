@@ -824,3 +824,16 @@ export const distinctDigitYear = (year: number): number => {
 
     return num
 }
+
+export const validParentheses = (parenStr: string): boolean => {
+    if(parenStr.length % 2) return false
+
+    let arr = parenStr.split('')
+    for (let i = 0; i < arr.length - 1; i++) {
+        if(arr[i].charCodeAt(0) === 40 && arr[i + 1].charCodeAt(0) === 41) {
+            arr.splice(i, 2)
+            i = -1
+        }
+    }
+    return !arr.length
+}
