@@ -49,7 +49,7 @@ import {
     uniqueInOrder, usdcny,
     UserPropsType,
     UserType,
-    validatePinCode, validParentheses,
+    validatePinCode, validBraces, validParentheses,
     vaporcode, xMasTree,
     XO
 } from './10';
@@ -852,4 +852,11 @@ test('check if parentheses is valid', () => {
     expect(validParentheses("((())")).toBe(false)
     expect(validParentheses("())(()")).toBe(false)
 
+})
+test('check if braces are valid', () => {
+    expect(validBraces("()))")).toBeFalsy()
+    expect(validBraces("()")).toBeTruthy()
+    expect(validBraces("{}")).toBeTruthy()
+    expect(validBraces("[]")).toBeTruthy()
+    expect(validBraces("[]]][[()][{}{]]])[[[][]([()")).toBeFalsy()
 })

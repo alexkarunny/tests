@@ -837,3 +837,32 @@ export const validParentheses = (parenStr: string): boolean => {
     }
     return !arr.length
 }
+
+export const validBraces = (braces: string): boolean => {
+    //TODO
+
+    let bracesObj = {
+        parentheses: '()',
+        braces: '{}',
+        square_brackets: '[]'
+    }
+
+    let bracesArr = braces.split('')
+
+    if((braces.length % 2) || braces[0] === bracesObj.braces[1] || braces[0] === bracesObj.parentheses[1] || braces[0] === bracesObj.square_brackets[1] || braces[braces.length - 1] === bracesObj.braces[0] || braces[braces.length - 1] === bracesObj.parentheses[0] || braces[braces.length - 1] === bracesObj.square_brackets[0]  ) return false
+
+    for (let i = 0; i < bracesArr.length - 1; i++) {
+        if(bracesArr[i] === bracesObj.braces[0] && bracesArr[i + 1] === bracesObj.braces[1]) {
+            bracesArr.splice(i, 2)
+            i = -1
+        } else if(bracesArr[i] === bracesObj.parentheses[0] && bracesArr[i + 1] === bracesObj.parentheses[1]) {
+            bracesArr.splice(i, 2)
+            i = -1
+        } else if(bracesArr[i] === bracesObj.square_brackets[0] && bracesArr[i + 1] === bracesObj.square_brackets[1]) {
+            bracesArr.splice(i, 2)
+            i = -1
+        }
+    }
+
+    return !bracesArr.length
+}
