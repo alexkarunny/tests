@@ -34,7 +34,7 @@ import {
     isTriangle,
     lastChair, lastSurvivor, lastSurvivors,
     longest,
-    loopArr, missingNo, newMember,
+    loopArr, missingNo, neutralise, newMember,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, oddOrEven,
     overTheRoad, part,
@@ -859,4 +859,10 @@ test('check if braces are valid', () => {
     expect(validBraces("{}")).toBeTruthy()
     expect(validBraces("[]")).toBeTruthy()
     expect(validBraces("[]]][[()][{}{]]])[[[][]([()")).toBeFalsy()
+})
+test('interact of strings', () => {
+    expect(neutralise("+++--+---", "++----++-")).toBe("++0--000-")
+    expect(neutralise("-----", "-----")).toBe("-----")
+    expect(neutralise("+-----+++-", "--+-+-++--")).toBe("0-0-0-++0-")
+    expect(neutralise("-+--+-+---", "-+--+-+-+-")).toBe("-+--+-+-0-")
 })

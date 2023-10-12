@@ -866,3 +866,16 @@ export const validBraces = (braces: string): boolean => {
 
     return !bracesArr.length
 }
+
+export const neutralise = (s1: string, s2: string): string => {
+    // Here be dragons!
+
+    const result = []
+
+    for (let i = 0; i < s1.length; i++) {
+        if(s1[i] === s2[i]) result.push(s1[i])
+        else result.push('0')
+    }
+
+    return result.join('');
+}
