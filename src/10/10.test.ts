@@ -45,7 +45,7 @@ import {
     SimpleObjectType, solution, solve,
     sortString, stringToArray, strToNumber, sumCubes,
     sumTwoSmallestNumbers,
-    tickets,
+    tickets, towerBuilder,
     uniqueInOrder, usdcny,
     UserPropsType,
     UserType,
@@ -865,4 +865,9 @@ test('interact of strings', () => {
     expect(neutralise("-----", "-----")).toBe("-----")
     expect(neutralise("+-----+++-", "--+-+-++--")).toBe("0-0-0-++0-")
     expect(neutralise("-+--+-+---", "-+--+-+-+-")).toBe("-+--+-+-0-")
+})
+test('build the tower', () => {
+    expect(towerBuilder(1)).toStrictEqual(["*"])
+    expect(towerBuilder(2)).toStrictEqual([" * ","***"])
+    expect(towerBuilder(3)).toStrictEqual(["  *  "," *** ","*****"])
 })

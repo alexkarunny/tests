@@ -879,3 +879,21 @@ export const neutralise = (s1: string, s2: string): string => {
 
     return result.join('');
 }
+export const towerBuilder = (nFloors: number):string[] => {
+    // build here
+    const floorLength = 1 + 2*(nFloors - 1)
+    const tower = []
+    const star = '*'
+    const space = ' '
+
+    for (let i = 1; i <= nFloors; i++) {
+        let floorStar = 1 + 2 * (i - 1)
+        let spaces = floorLength - floorStar
+        let floor = space.repeat(spaces / 2) + star.repeat(floorStar) + space.repeat(spaces / 2)
+        tower.push(floor)
+    }
+    
+
+    return tower
+}
+
