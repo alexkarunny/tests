@@ -19,7 +19,7 @@ import {
     divisors,
     duplicateCount, evenNumbers, excludingVatPrice,
     feast,
-    filter_list, findNextSquare, findOutlier, flattenAndSort, friend,
+    filter_list, findNextSquare, findOutlier, findUniq, flattenAndSort, friend,
     fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
@@ -870,4 +870,10 @@ test('build the tower', () => {
     expect(towerBuilder(1)).toStrictEqual(["*"])
     expect(towerBuilder(2)).toStrictEqual([" * ","***"])
     expect(towerBuilder(3)).toStrictEqual(["  *  "," *** ","*****"])
+})
+test('find unique number in an array', () => {
+    expect(findUniq([ 1, 1, 1, 2, 1, 1 ])).toBe(2)
+    expect(findUniq([ 3, 10, 3, 3, 3 ])).toBe(10)
+    expect(findUniq([ 1, 1, 1, 2, 1, 1 ])).toBe(2)
+    expect(findUniq([ 0, 0, 1 ])).toBe(1)
 })

@@ -897,3 +897,15 @@ export const towerBuilder = (nFloors: number):string[] => {
     return tower
 }
 
+export const findUniq = (arr: number[]):number =>  {
+    // do magic
+
+    const newArr = arr.filter(n => n === arr[0])
+
+    if(newArr.length === 1 ) {
+        return newArr[0]
+    }
+
+    return arr.find(n => n!== newArr[0])
+}
+
