@@ -920,5 +920,8 @@ export const solutionNew = (st: string): string => {
     }
 
     return arr.join('')
+}
 
+export const camelCaseStyle = (str: string) : string => {
+    return str.split(' ').filter(Boolean).map(i => i[0].toUpperCase() + i.slice(1) ).join('')
 }

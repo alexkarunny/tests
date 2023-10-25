@@ -7,7 +7,7 @@ import {
     arrOfPrim,
     ArrOfPrimit,
     arrOfPrimit, billboard, bitsBattle,
-    bjInsObjType, calculateAge,
+    bjInsObjType, calculateAge, camelCaseStyle,
     changeAddress,
     changeBook,
     changeCcmpanyname,
@@ -880,4 +880,10 @@ test('find unique number in an array', () => {
 test('break up camel case', () => {
     expect(solutionNew('camelCasing')).toBe('camel Casing')
     expect(solutionNew('camelCasingTest')).toBe('camel Casing Test')
+})
+test('rewrite string in CamelCaseStyle', () => {
+    expect(camelCaseStyle("test case")).toBe("TestCase")
+    expect(camelCaseStyle("camel Case method")).toBe("CamelCaseMethod")
+    expect(camelCaseStyle("camel case word")).toBe( "CamelCaseWord")
+    expect(camelCaseStyle("")).toBe( "")
 })
