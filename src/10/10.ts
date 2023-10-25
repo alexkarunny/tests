@@ -826,11 +826,11 @@ export const distinctDigitYear = (year: number): number => {
 }
 
 export const validParentheses = (parenStr: string): boolean => {
-    if(parenStr.length % 2) return false
+    if (parenStr.length % 2) return false
 
     let arr = parenStr.split('')
     for (let i = 0; i < arr.length - 1; i++) {
-        if(arr[i].charCodeAt(0) === 40 && arr[i + 1].charCodeAt(0) === 41) {
+        if (arr[i].charCodeAt(0) === 40 && arr[i + 1].charCodeAt(0) === 41) {
             arr.splice(i, 2)
             i = -1
         }
@@ -849,16 +849,16 @@ export const validBraces = (braces: string): boolean => {
 
     let bracesArr = braces.split('')
 
-    if((braces.length % 2) || braces[0] === bracesObj.braces[1] || braces[0] === bracesObj.parentheses[1] || braces[0] === bracesObj.square_brackets[1] || braces[braces.length - 1] === bracesObj.braces[0] || braces[braces.length - 1] === bracesObj.parentheses[0] || braces[braces.length - 1] === bracesObj.square_brackets[0]  ) return false
+    if ((braces.length % 2) || braces[0] === bracesObj.braces[1] || braces[0] === bracesObj.parentheses[1] || braces[0] === bracesObj.square_brackets[1] || braces[braces.length - 1] === bracesObj.braces[0] || braces[braces.length - 1] === bracesObj.parentheses[0] || braces[braces.length - 1] === bracesObj.square_brackets[0]) return false
 
     for (let i = 0; i < bracesArr.length - 1; i++) {
-        if(bracesArr[i] === bracesObj.braces[0] && bracesArr[i + 1] === bracesObj.braces[1]) {
+        if (bracesArr[i] === bracesObj.braces[0] && bracesArr[i + 1] === bracesObj.braces[1]) {
             bracesArr.splice(i, 2)
             i = -1
-        } else if(bracesArr[i] === bracesObj.parentheses[0] && bracesArr[i + 1] === bracesObj.parentheses[1]) {
+        } else if (bracesArr[i] === bracesObj.parentheses[0] && bracesArr[i + 1] === bracesObj.parentheses[1]) {
             bracesArr.splice(i, 2)
             i = -1
-        } else if(bracesArr[i] === bracesObj.square_brackets[0] && bracesArr[i + 1] === bracesObj.square_brackets[1]) {
+        } else if (bracesArr[i] === bracesObj.square_brackets[0] && bracesArr[i + 1] === bracesObj.square_brackets[1]) {
             bracesArr.splice(i, 2)
             i = -1
         }
@@ -873,15 +873,15 @@ export const neutralise = (s1: string, s2: string): string => {
     const result = []
 
     for (let i = 0; i < s1.length; i++) {
-        if(s1[i] === s2[i]) result.push(s1[i])
+        if (s1[i] === s2[i]) result.push(s1[i])
         else result.push('0')
     }
 
     return result.join('');
 }
-export const towerBuilder = (nFloors: number):string[] => {
+export const towerBuilder = (nFloors: number): string[] => {
     // build here
-    const floorLength = 1 + 2*(nFloors - 1)
+    const floorLength = 1 + 2 * (nFloors - 1)
     const tower = []
     const star = '*'
     const space = ' '
@@ -892,20 +892,33 @@ export const towerBuilder = (nFloors: number):string[] => {
         let floor = space.repeat(spaces / 2) + star.repeat(floorStar) + space.repeat(spaces / 2)
         tower.push(floor)
     }
-    
+
 
     return tower
 }
 
-export const findUniq = (arr: number[]):number =>  {
+export const findUniq = (arr: number[]): number => {
     // do magic
 
     const newArr = arr.filter(n => n === arr[0])
 
-    if(newArr.length === 1 ) {
+    if (newArr.length === 1) {
         return newArr[0]
     }
 
-    return arr.find(n => n!== newArr[0])
+    return arr.find(n => n !== newArr[0])
 }
+export const solutionNew = (st: string): string => {
 
+    const arr = st.split('')
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].charCodeAt(0) < 91) {
+            arr.splice(i, 0, ' ')
+            i++
+        }
+    }
+
+    return arr.join('')
+
+}

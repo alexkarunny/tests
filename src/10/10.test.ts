@@ -42,7 +42,7 @@ import {
     prevMultOfThree, removeChar, removeFirstLastCharacters, removeSmallest, reverseWord, reverseWords,
     rowSumOddNumbers, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
-    SimpleObjectType, solution, solve,
+    SimpleObjectType, solution, solutionNew, solve,
     sortString, stringToArray, strToNumber, sumCubes,
     sumTwoSmallestNumbers,
     tickets, towerBuilder,
@@ -876,4 +876,8 @@ test('find unique number in an array', () => {
     expect(findUniq([ 3, 10, 3, 3, 3 ])).toBe(10)
     expect(findUniq([ 1, 1, 1, 2, 1, 1 ])).toBe(2)
     expect(findUniq([ 0, 0, 1 ])).toBe(1)
+})
+test('break up camel case', () => {
+    expect(solutionNew('camelCasing')).toBe('camel Casing')
+    expect(solutionNew('camelCasingTest')).toBe('camel Casing Test')
 })
