@@ -28,7 +28,7 @@ import {
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
     getSum, hello, howManyYears, infected,
-    iqTest, isDivideBy, isIsogram,
+    iqTest, isDivideBy, isDivisible, isIsogram,
     isLeapYear, isPalindrome,
     isSquare,
     isTriangle,
@@ -886,4 +886,11 @@ test('rewrite string in CamelCaseStyle', () => {
     expect(camelCaseStyle("camel Case method")).toBe("CamelCaseMethod")
     expect(camelCaseStyle("camel case word")).toBe( "CamelCaseWord")
     expect(camelCaseStyle("")).toBe( "")
+})
+test('check if n divided by x and y', () => {
+    expect(isDivisible(3,3,4)).toBeFalsy()
+    expect(isDivisible(12,3,4)).toBeTruthy()
+    expect(isDivisible(8,3,4)).toBeFalsy()
+    expect(isDivisible(48,3,4)).toBeTruthy()
+
 })

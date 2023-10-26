@@ -925,3 +925,7 @@ export const solutionNew = (st: string): string => {
 export const camelCaseStyle = (str: string) : string => {
     return str.split(' ').filter(Boolean).map(i => i[0].toUpperCase() + i.slice(1) ).join('')
 }
+export const isDivisible = (n: number, x: number, y: number): boolean => {
+
+return !(n % x) && !(n % y)
+}
