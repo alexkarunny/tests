@@ -42,7 +42,7 @@ import {
     prevMultOfThree, removeChar, removeFirstLastCharacters, removeSmallest, reverseWord, reverseWords,
     rowSumOddNumbers, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
-    SimpleObjectType, solution, solutionNew, solve,
+    SimpleObjectType, solution, solutionNew, solve, sortByLength,
     sortString, stringToArray, strToNumber, sumCubes,
     sumTwoSmallestNumbers,
     tickets, towerBuilder,
@@ -893,4 +893,10 @@ test('check if n divided by x and y', () => {
     expect(isDivisible(8,3,4)).toBeFalsy()
     expect(isDivisible(48,3,4)).toBeTruthy()
 
+})
+
+test('sort array by strings length', () => {
+    expect(sortByLength(["Beg", "Life", "I", "To"])).toStrictEqual(["I", "To", "Beg", "Life"])
+    expect(sortByLength(["", "Moderately", "Brains", "Pizza"])).toStrictEqual(["", "Pizza", "Brains", "Moderately"])
+    expect(sortByLength(["Longer", "Longest", "Short"])).toStrictEqual(["Short", "Longer", "Longest"])
 })
