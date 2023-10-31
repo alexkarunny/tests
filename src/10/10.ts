@@ -935,3 +935,18 @@ export const sortByLength = (array: string[]): string[] => {
 
     return array.sort((a, b) => a.length - b.length);
 }
+export const searchArray =  (arrayToSearch: number[][], query: number[]): number => {
+// TODO your code here
+if(typeof arrayToSearch !== "object" || typeof query !== "object" || query.length !== 2 || arrayToSearch.find(i => i.length !== 2)) throw Error
+
+    let x = -1
+
+    for (let i = 0; i < arrayToSearch.length; i++) {
+        if(arrayToSearch[i][0] === query[0] && arrayToSearch[i][1] === query[1] ) {
+            x = i
+            break
+        }
+    }
+
+    return x
+}

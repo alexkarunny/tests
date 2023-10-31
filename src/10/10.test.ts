@@ -40,7 +40,7 @@ import {
     overTheRoad, part,
     persistence,
     prevMultOfThree, removeChar, removeFirstLastCharacters, removeSmallest, reverseWord, reverseWords,
-    rowSumOddNumbers, SeriesSum, simpleMultiplication,
+    rowSumOddNumbers, searchArray, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
     SimpleObjectType, solution, solutionNew, solve, sortByLength,
     sortString, stringToArray, strToNumber, sumCubes,
@@ -899,4 +899,7 @@ test('sort array by strings length', () => {
     expect(sortByLength(["Beg", "Life", "I", "To"])).toStrictEqual(["I", "To", "Beg", "Life"])
     expect(sortByLength(["", "Moderately", "Brains", "Pizza"])).toStrictEqual(["", "Pizza", "Brains", "Moderately"])
     expect(sortByLength(["Longer", "Longest", "Short"])).toStrictEqual(["Short", "Longer", "Longest"])
+})
+test('find indexOfArray in Array', () => {
+expect(searchArray([[2,3],[7,2],[9,20],[1,2],[7,2],[45,4],[7,87],[4,5],[2,7],[6,32]], [9,20])).toBe(2)
 })
