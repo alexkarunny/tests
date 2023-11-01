@@ -922,12 +922,12 @@ export const solutionNew = (st: string): string => {
     return arr.join('')
 }
 
-export const camelCaseStyle = (str: string) : string => {
-    return str.split(' ').filter(Boolean).map(i => i[0].toUpperCase() + i.slice(1) ).join('')
+export const camelCaseStyle = (str: string): string => {
+    return str.split(' ').filter(Boolean).map(i => i[0].toUpperCase() + i.slice(1)).join('')
 }
 export const isDivisible = (n: number, x: number, y: number): boolean => {
 
-return !(n % x) && !(n % y)
+    return !(n % x) && !(n % y)
 }
 export const sortByLength = (array: string[]): string[] => {
     // Return an array containing the same strings,
@@ -935,14 +935,14 @@ export const sortByLength = (array: string[]): string[] => {
 
     return array.sort((a, b) => a.length - b.length);
 }
-export const searchArray =  (arrayToSearch: number[][], query: number[]): number => {
+export const searchArray = (arrayToSearch: number[][], query: number[]): number => {
 // TODO your code here
-if(typeof arrayToSearch !== "object" || typeof query !== "object" || query.length !== 2 || arrayToSearch.find(i => i.length !== 2)) throw Error
+    if (typeof arrayToSearch !== 'object' || typeof query !== 'object' || query.length !== 2 || arrayToSearch.find(i => i.length !== 2)) throw Error
 
     let x = -1
 
     for (let i = 0; i < arrayToSearch.length; i++) {
-        if(arrayToSearch[i][0] === query[0] && arrayToSearch[i][1] === query[1] ) {
+        if (arrayToSearch[i][0] === query[0] && arrayToSearch[i][1] === query[1]) {
             x = i
             break
         }
@@ -952,5 +952,9 @@ if(typeof arrayToSearch !== "object" || typeof query !== "object" || query.lengt
 }
 export const hoopCount = (n: number): string => {
     //your code goes here
-    return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
+    return n >= 10 ? 'Great, now move on to tricks' : 'Keep at it until you get it'
+}
+export const getAverage = (marks: number[]): number => {
+    let sum = marks.reduce((akk, i) => akk + i, 0)
+    return Math.floor(sum / marks.length)
 }

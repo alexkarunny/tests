@@ -26,7 +26,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getNumberPassengers,
+    fullCopyObjectInsideObjectInsideObject, getAverage, getNumberPassengers,
     getSum, hello, hoopCount, howManyYears, infected,
     iqTest, isDivideBy, isDivisible, isIsogram,
     isLeapYear, isPalindrome,
@@ -906,4 +906,9 @@ expect(searchArray([[2,3],[7,2],[9,20],[1,2],[7,2],[45,4],[7,87],[4,5],[2,7],[6,
 test('check the amount of the loops', () => {
 expect(hoopCount(3)).toBe("Keep at it until you get it")
 expect(hoopCount(11)).toBe("Great, now move on to tricks")
+})
+test('find the average of the array', () => {
+expect(getAverage([2,2,2,2])).toBe(2)
+expect(getAverage([1,2,3,4,5,])).toBe(3)
+expect(getAverage([1,1,1,1,1,1,1,2])).toBe(1)
 })
