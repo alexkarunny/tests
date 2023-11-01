@@ -950,3 +950,7 @@ if(typeof arrayToSearch !== "object" || typeof query !== "object" || query.lengt
 
     return x
 }
+export const hoopCount = (n: number): string => {
+    //your code goes here
+    return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
+}
