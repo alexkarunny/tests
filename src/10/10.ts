@@ -958,7 +958,7 @@ export const getAverage = (marks: number[]): number => {
     let sum = marks.reduce((akk, i) => akk + i, 0)
     return Math.floor(sum / marks.length)
 }
-export const cakes = (recipe: any, available: any): number => {
+export const cakes = (recipe: { [key: string]: number }, available: { [key: string]: number }): number => {
     const recipeIngredients = Object.keys(recipe)
     const temp: number[] = []
     for (let i = 0; i < recipeIngredients.length; i++) {
@@ -970,4 +970,32 @@ export const cakes = (recipe: any, available: any): number => {
     }
 
     return Math.min(...temp)
+}
+export const getMissingIngredients = (recipe: { [key: string]: number }, added: { [key: string]: number }): { [key: string]: number } => {
+    if(!Object.keys(added).length) return recipe
+    const recipeIngredients = Object.keys(recipe)
+    const requiredIngredients: { [key: string]: number } = {}
+    const temp: number[] = []
+
+    for (let i = 0; i < recipeIngredients.length; i++) {
+        if (recipeIngredients[i] in added) {
+            temp.push(Math.ceil(added[recipeIngredients[i]] / recipe[recipeIngredients[i]]))
+        }
+    }
+
+    const cakesNumber = Math.max(...temp)
+
+    for (let i = 0; i < recipeIngredients.length; i++) {
+        if(recipeIngredients[i] in added){
+            let missingAmount = recipe[recipeIngredients[i]] * cakesNumber - added[recipeIngredients[i]]
+            if(missingAmount) {
+                requiredIngredients[recipeIngredients[i]] = missingAmount
+            }
+        } else{
+            requiredIngredients[recipeIngredients[i]] = recipe[recipeIngredients[i]] * cakesNumber
+        }
+
+    }
+
+    return requiredIngredients
 }

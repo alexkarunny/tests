@@ -26,7 +26,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getAverage, getNumberPassengers,
+    fullCopyObjectInsideObjectInsideObject, getAverage, getMissingIngredients, getNumberPassengers,
     getSum, hello, hoopCount, howManyYears, infected,
     iqTest, isDivideBy, isDivisible, isIsogram,
     isLeapYear, isPalindrome,
@@ -915,4 +915,8 @@ expect(getAverage([1,1,1,1,1,1,1,2])).toBe(1)
 test('find', () => {
 expect(cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200})).toBe(2)
     expect(cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000})).toBe(0)
+})
+test('find out the missing amount of ingredients', () => {
+expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {flour: 50, eggs: 1})).toStrictEqual({flour: 150, sugar: 100})
+expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {})).toStrictEqual({flour: 200, eggs: 1, sugar: 100})
 })
