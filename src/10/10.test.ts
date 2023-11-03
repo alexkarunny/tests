@@ -7,7 +7,7 @@ import {
     arrOfPrim,
     ArrOfPrimit,
     arrOfPrimit, billboard, bitsBattle,
-    bjInsObjType, calculateAge, camelCaseStyle,
+    bjInsObjType, cakes, calculateAge, camelCaseStyle,
     changeAddress,
     changeBook,
     changeCcmpanyname,
@@ -911,4 +911,8 @@ test('find the average of the array', () => {
 expect(getAverage([2,2,2,2])).toBe(2)
 expect(getAverage([1,2,3,4,5,])).toBe(3)
 expect(getAverage([1,1,1,1,1,1,1,2])).toBe(1)
+})
+test('find', () => {
+expect(cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200})).toBe(2)
+    expect(cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000})).toBe(0)
 })

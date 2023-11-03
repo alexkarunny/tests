@@ -958,3 +958,16 @@ export const getAverage = (marks: number[]): number => {
     let sum = marks.reduce((akk, i) => akk + i, 0)
     return Math.floor(sum / marks.length)
 }
+export const cakes = (recipe: any, available: any): number => {
+    const recipeIngredients = Object.keys(recipe)
+    const temp: number[] = []
+    for (let i = 0; i < recipeIngredients.length; i++) {
+        if (recipeIngredients[i] in available) {
+            temp.push(Math.floor(available[recipeIngredients[i]] / recipe[recipeIngredients[i]]))
+        } else {
+            temp.push(0)
+        }
+    }
+
+    return Math.min(...temp)
+}
