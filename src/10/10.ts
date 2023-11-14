@@ -999,3 +999,11 @@ export const getMissingIngredients = (recipe: { [key: string]: number }, added: 
 
     return requiredIngredients
 }
+export const findScreenHeight = (width: number, ratio: string) : string => {
+    // Happy coding :)
+    const [widthRatio, heightRatio] = ratio.split(':')
+
+    const height = width * Number(heightRatio) /  Number(widthRatio)
+
+    return `${width.toString()}x${height.toString()}`
+}

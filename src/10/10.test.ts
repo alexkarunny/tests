@@ -19,7 +19,7 @@ import {
     divisors,
     duplicateCount, evenNumbers, excludingVatPrice,
     feast,
-    filter_list, findNextSquare, findOutlier, findUniq, flattenAndSort, friend,
+    filter_list, findNextSquare, findOutlier, findScreenHeight, findUniq, flattenAndSort, friend,
     fullCopyArrayObjectObjectjbject,
     fullCopyArrayOfObjects,
     fullCopyArrayOfObjectsInsideObject,
@@ -919,4 +919,8 @@ expect(cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs:
 test('find out the missing amount of ingredients', () => {
 expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {flour: 50, eggs: 1})).toStrictEqual({flour: 150, sugar: 100})
 expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {})).toStrictEqual({flour: 200, eggs: 1, sugar: 100})
+})
+test('find the screen size', () => {
+expect(findScreenHeight(1024,"4:3")).toBe("1024x768")
+expect(findScreenHeight(1280,"16:9")).toBe("1280x720")
 })
