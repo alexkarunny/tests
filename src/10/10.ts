@@ -971,8 +971,10 @@ export const cakes = (recipe: { [key: string]: number }, available: { [key: stri
 
     return Math.min(...temp)
 }
-export const getMissingIngredients = (recipe: { [key: string]: number }, added: { [key: string]: number }): { [key: string]: number } => {
-    if(!Object.keys(added).length) return recipe
+export const getMissingIngredients = (recipe: { [key: string]: number }, added: { [key: string]: number }): {
+    [key: string]: number
+} => {
+    if (!Object.keys(added).length) return recipe
     const recipeIngredients = Object.keys(recipe)
     const requiredIngredients: { [key: string]: number } = {}
     const temp: number[] = []
@@ -986,12 +988,12 @@ export const getMissingIngredients = (recipe: { [key: string]: number }, added: 
     const cakesNumber = Math.max(...temp)
 
     for (let i = 0; i < recipeIngredients.length; i++) {
-        if(recipeIngredients[i] in added){
+        if (recipeIngredients[i] in added) {
             let missingAmount = recipe[recipeIngredients[i]] * cakesNumber - added[recipeIngredients[i]]
-            if(missingAmount) {
+            if (missingAmount) {
                 requiredIngredients[recipeIngredients[i]] = missingAmount
             }
-        } else{
+        } else {
             requiredIngredients[recipeIngredients[i]] = recipe[recipeIngredients[i]] * cakesNumber
         }
 
@@ -999,11 +1001,22 @@ export const getMissingIngredients = (recipe: { [key: string]: number }, added: 
 
     return requiredIngredients
 }
-export const findScreenHeight = (width: number, ratio: string) : string => {
+export const findScreenHeight = (width: number, ratio: string): string => {
     // Happy coding :)
     const [widthRatio, heightRatio] = ratio.split(':')
 
-    const height = width * Number(heightRatio) /  Number(widthRatio)
+    const height = width * Number(heightRatio) / Number(widthRatio)
 
     return `${width.toString()}x${height.toString()}`
+}
+
+export const cubeOdd = (arr: any): number | undefined => {
+    const notNumber = arr.find(i => typeof i !== 'number')
+    if (notNumber) return undefined
+    let sum = 0
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2) sum += Math.pow(arr[i], 3)
+    }
+    return sum;
 }

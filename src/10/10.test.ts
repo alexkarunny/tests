@@ -13,7 +13,7 @@ import {
     changeCcmpanyname,
     changeName, checkCoupon, connotation,
     copyObjInsObj,
-    createPhoneNumber,
+    createPhoneNumber, cubeOdd,
     delBook,
     descendingOrder, distinctDigitYear, divide,
     divisors,
@@ -923,4 +923,9 @@ expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {})).toStrictEqu
 test('find the screen size', () => {
 expect(findScreenHeight(1024,"4:3")).toBe("1024x768")
 expect(findScreenHeight(1280,"16:9")).toBe("1280x720")
+})
+test('find Sum of Odd Cubed Numbers', ( ) => {
+    expect(cubeOdd(["a",12,9,"z",42])).toBe(undefined)
+    expect(cubeOdd([1, 2, 3, 4])).toBe(28)
+    expect(cubeOdd([-3,-2,2,3])).toBe(0)
 })
