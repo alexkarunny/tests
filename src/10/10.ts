@@ -1033,4 +1033,7 @@ export const partsSums = (ls: number[]): number[] => {
     return finalArr
 }
 
-partsSums( [1, 2, 3, 4, 5, 6] )
+export const areaOrPerimeter = (l: number , w: number): number => {
+    // Return your answer
+    return l === w ? Math.pow(l, 2) : (l * 2) + (w * 2)
+};
