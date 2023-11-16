@@ -1020,3 +1020,6 @@ export const cubeOdd = (arr: any): number | undefined => {
     }
     return sum;
 }
+export const testingFunction = (arr: string[]): string[] => {
+    return arr.map((it, index) => `${index + 1}: ${it}` )
+}

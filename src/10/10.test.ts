@@ -44,7 +44,7 @@ import {
     simpleObjectCopy,
     SimpleObjectType, solution, solutionNew, solve, sortByLength,
     sortString, stringToArray, strToNumber, sumCubes,
-    sumTwoSmallestNumbers,
+    sumTwoSmallestNumbers, testingFunction,
     tickets, towerBuilder,
     uniqueInOrder, usdcny,
     UserPropsType,
@@ -928,4 +928,8 @@ test('find Sum of Odd Cubed Numbers', ( ) => {
     expect(cubeOdd(["a",12,9,"z",42])).toBe(undefined)
     expect(cubeOdd([1, 2, 3, 4])).toBe(28)
     expect(cubeOdd([-3,-2,2,3])).toBe(0)
+})
+test('refactor array', () => {
+expect(testingFunction([])).toStrictEqual([])
+expect(testingFunction(["a", "b", "c"])).toStrictEqual(["1: a", "2: b", "3: c"])
 })
