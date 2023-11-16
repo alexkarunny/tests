@@ -1021,5 +1021,16 @@ export const cubeOdd = (arr: any): number | undefined => {
     return sum;
 }
 export const testingFunction = (arr: string[]): string[] => {
-    return arr.map((it, index) => `${index + 1}: ${it}` )
+    return arr.map((it, index) => `${index + 1}: ${it}`)
 }
+export const partsSums = (ls: number[]): number[] => {
+    const sum = ls.reduce((i, acc) => i + acc, 0)// your code
+    const finalArr = [sum]
+    for (let i = 0; i < ls.length; i++) {
+        finalArr.push(finalArr[i] - ls[i])
+    }
+
+    return finalArr
+}
+
+partsSums( [1, 2, 3, 4, 5, 6] )
