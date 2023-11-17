@@ -34,7 +34,7 @@ import {
     isTriangle,
     lastChair, lastSurvivor, lastSurvivors,
     longest,
-    loopArr, missingNo, neutralise, newMember,
+    loopArr, minMax, missingNo, neutralise, newMember,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, oddOrEven,
     overTheRoad, part, partsSums,
@@ -946,4 +946,9 @@ expect(areaOrPerimeter(6, 10)).toBe(32)
 test('debug the function', () => {
 expect(getPlanetName(3)).toBe('Earth')
 expect(getPlanetName(4)).toBe('Mars')
+})
+test('find min and max number within array', () => {
+expect(minMax([1, 2, 3, 4, 5])).toStrictEqual( [1, 5])
+expect(minMax([2334454, 5] )).toStrictEqual( [5, 2334454])
+expect(minMax([5])).toStrictEqual(  [5, 5])
 })

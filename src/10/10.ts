@@ -1057,3 +1057,12 @@ export const getPlanetName = (id: number): string => {
             return 'Neptune'
     }
 }
+
+export const minMax = (arr: number[]): number[] => {
+    if(arr.length === 1 ) {
+        arr[1] = arr[0]
+        return arr
+    }
+arr.sort((a, b) => a - b)
+    return [arr[0], arr[arr.length - 1]]; // fix me!
+}
