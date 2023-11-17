@@ -26,7 +26,7 @@ import {
     fullCopyArrayOfObjectsInsideObjects,
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
-    fullCopyObjectInsideObjectInsideObject, getAverage, getMissingIngredients, getNumberPassengers,
+    fullCopyObjectInsideObjectInsideObject, getAverage, getMissingIngredients, getNumberPassengers, getPlanetName,
     getSum, hello, hoopCount, howManyYears, infected,
     iqTest, isDivideBy, isDivisible, isIsogram,
     isLeapYear, isPalindrome,
@@ -942,4 +942,8 @@ expect(partsSums([1, 2, 3, 4, 5, 6])).toStrictEqual([21, 20, 18, 15, 11, 6, 0])
 test('count area or periment', () => {
 expect(areaOrPerimeter(3, 3)).toBe(9)
 expect(areaOrPerimeter(6, 10)).toBe(32)
+})
+test('debug the function', () => {
+expect(getPlanetName(3)).toBe('Earth')
+expect(getPlanetName(4)).toBe('Mars')
 })

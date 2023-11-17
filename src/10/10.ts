@@ -1033,7 +1033,27 @@ export const partsSums = (ls: number[]): number[] => {
     return finalArr
 }
 
-export const areaOrPerimeter = (l: number , w: number): number => {
+export const areaOrPerimeter = (l: number, w: number): number => {
     // Return your answer
     return l === w ? Math.pow(l, 2) : (l * 2) + (w * 2)
 };
+export const getPlanetName = (id: number): string => {
+    switch (id) {
+        case 1:
+            return 'Mercury'
+        case 2:
+            return 'Venus'
+        case 3:
+            return 'Earth'
+        case 4:
+            return 'Mars'
+        case 5:
+            return 'Jupiter'
+        case 6:
+            return 'Saturn'
+        case 7:
+            return 'Uranus'
+        case 8:
+            return 'Neptune'
+    }
+}
