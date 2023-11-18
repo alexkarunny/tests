@@ -34,7 +34,7 @@ import {
     isTriangle,
     lastChair, lastSurvivor, lastSurvivors,
     longest,
-    loopArr, minMax, missingNo, neutralise, newMember,
+    loopArr, makeUpperCase, minMax, missingNo, neutralise, newMember,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, oddOrEven,
     overTheRoad, part, partsSums,
@@ -951,4 +951,9 @@ test('find min and max number within array', () => {
 expect(minMax([1, 2, 3, 4, 5])).toStrictEqual( [1, 5])
 expect(minMax([2334454, 5] )).toStrictEqual( [5, 2334454])
 expect(minMax([5])).toStrictEqual(  [5, 5])
+})
+test('transform string to uppercase', () => {
+expect(makeUpperCase("hello")).toBe("HELLO")
+expect(makeUpperCase("Hello")).toBe("HELLO")
+expect(makeUpperCase("HELLO")).toBe("HELLO")
 })

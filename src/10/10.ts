@@ -1066,3 +1066,8 @@ export const minMax = (arr: number[]): number[] => {
 arr.sort((a, b) => a - b)
     return [arr[0], arr[arr.length - 1]]; // fix me!
 }
+
+export const makeUpperCase = (str: string): string => {
+    // Code here
+    return str.toUpperCase()
+}
