@@ -1071,3 +1071,11 @@ export const makeUpperCase = (str: string): string => {
     // Code here
     return str.toUpperCase()
 }
+export const makeParts = (arr: number[], chunkSize: number): number[][] => {
+    const newArr = []
+    for (let i = 0; i < arr.length; i += chunkSize ) {
+        newArr.push(arr.slice(i, i + chunkSize))
+    }
+
+    return newArr;
+}

@@ -34,7 +34,7 @@ import {
     isTriangle,
     lastChair, lastSurvivor, lastSurvivors,
     longest,
-    loopArr, makeUpperCase, minMax, missingNo, neutralise, newMember,
+    loopArr, makeParts, makeUpperCase, minMax, missingNo, neutralise, newMember,
     ObjectInsideObjectArrayObjectObjectType,
     ObjectInsideObjectInsideObjectType, oddOrEven,
     overTheRoad, part, partsSums,
@@ -956,4 +956,9 @@ test('transform string to uppercase', () => {
 expect(makeUpperCase("hello")).toBe("HELLO")
 expect(makeUpperCase("Hello")).toBe("HELLO")
 expect(makeUpperCase("HELLO")).toBe("HELLO")
+})
+test('split array to arrays', () => {
+expect(makeParts([1,2,3,4,5], 2)).toStrictEqual([[1,2],[3,4],[5]])
+expect(makeParts([1,2,3], 1)).toStrictEqual([[1],[2],[3]])
+expect(makeParts([1,2,3,4,5], 10)).toStrictEqual([[1,2,3,4,5]])
 })
