@@ -27,7 +27,7 @@ import {
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getAverage, getMissingIngredients, getNumberPassengers, getPlanetName,
-    getSum, hello, hoopCount, howManyYears, infected,
+    getSum, hello, high, hoopCount, howManyYears, infected,
     iqTest, isDivideBy, isDivisible, isIsogram,
     isLeapYear, isPalindrome,
     isSquare,
@@ -961,4 +961,9 @@ test('split array to arrays', () => {
 expect(makeParts([1,2,3,4,5], 2)).toStrictEqual([[1,2],[3,4],[5]])
 expect(makeParts([1,2,3], 1)).toStrictEqual([[1],[2],[3]])
 expect(makeParts([1,2,3,4,5], 10)).toStrictEqual([[1,2,3,4,5]])
+})
+test('find highest scoring word', () => {
+expect(high('what time are we climbing up the volcano')).toBe('volcano')
+expect(high('man i need a taxi up to ubud')).toBe('taxi')
+expect(high('take me to semynak')).toBe('semynak')
 })

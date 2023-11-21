@@ -1059,11 +1059,11 @@ export const getPlanetName = (id: number): string => {
 }
 
 export const minMax = (arr: number[]): number[] => {
-    if(arr.length === 1 ) {
+    if (arr.length === 1) {
         arr[1] = arr[0]
         return arr
     }
-arr.sort((a, b) => a - b)
+    arr.sort((a, b) => a - b)
     return [arr[0], arr[arr.length - 1]]; // fix me!
 }
 
@@ -1073,9 +1073,21 @@ export const makeUpperCase = (str: string): string => {
 }
 export const makeParts = (arr: number[], chunkSize: number): number[][] => {
     const newArr = []
-    for (let i = 0; i < arr.length; i += chunkSize ) {
+    for (let i = 0; i < arr.length; i += chunkSize) {
         newArr.push(arr.slice(i, i + chunkSize))
     }
 
     return newArr;
+}
+export const high = (x: string): string => {
+    const tempArr = ['', 0]
+    const arr = x.split(' ')
+    for (let i = 0; i < arr.length; i++) {
+        let num = arr[i].split('').reduce((acc, item) => acc += (item.charCodeAt(0) - 96), 0)
+        if (num > tempArr[1]) {
+            tempArr[0] = arr[i]
+            tempArr[1] = num
+        }
+    }
+    return tempArr[0]
 }
