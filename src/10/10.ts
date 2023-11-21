@@ -1091,3 +1091,14 @@ export const high = (x: string): string => {
     }
     return tempArr[0]
 }
+export const dontGiveMeFive = (start: number, end: number): number => {
+    let num = 0
+    for (let i = start; i <= end ; i++) {
+        if((String(i).indexOf('5')) >= 0) {
+            continue
+        } else {
+            num +=1
+        }
+    }
+    return num
+}

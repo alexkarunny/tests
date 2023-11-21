@@ -16,7 +16,7 @@ import {
     createPhoneNumber, cubeOdd,
     delBook,
     descendingOrder, distinctDigitYear, divide,
-    divisors,
+    divisors, dontGiveMeFive,
     duplicateCount, evenNumbers, excludingVatPrice,
     feast,
     filter_list, findNextSquare, findOutlier, findScreenHeight, findUniq, flattenAndSort, friend,
@@ -227,7 +227,7 @@ test('4. Array of primitives inside an object', () => {
     let man2: ArrOfPrimit = {
         name: 'John',
         age: 28,
-        friends: ["Peter", "Steven", "William"]
+        friends: ['Peter', 'Steven', 'William']
     };
 
     let man2FullCopy: ArrOfPrimit = fullCopyArrayOfPrimitivInsadeObj(man2)
@@ -241,9 +241,9 @@ test('4. Array of primitives inside an object', () => {
 test('5. Array of objects', () => {
     // 5 Array of objects
     let people: ArrayOfObjects = [
-        {name: "Peter", age: 30},
-        {name: "Steven", age: 32},
-        {name: "William", age: 28}
+        {name: 'Peter', age: 30},
+        {name: 'Steven', age: 32},
+        {name: 'William', age: 28}
     ];
 
     let peopleFullCopy = fullCopyArrayOfObjects(people)
@@ -258,9 +258,9 @@ test('6. Array of objects inside object', () => {
         name: 'John',
         age: 25,
         friends: [
-            {name: "Peter", age: 30},
-            {name: "Steven", age: 32},
-            {name: "William", age: 28}
+            {name: 'Peter', age: 30},
+            {name: 'Steven', age: 32},
+            {name: 'William', age: 28}
         ]
     };
 
@@ -279,10 +279,10 @@ test('7. Object inside an object, inside an object', () => {
         name: 'John',
         age: 28,
         mother: {
-            name: "Kate",
+            name: 'Kate',
             age: 50,
             work: {
-                position: "doctor",
+                position: 'doctor',
                 experience: 15
             }
         }
@@ -301,15 +301,15 @@ test('8. Array of objects inside object -> object', () => {
         name: 'John',
         age: 28,
         mother: {
-            name: "Kate",
+            name: 'Kate',
             age: 50,
             work: {
-                position: "doctor",
+                position: 'doctor',
                 experience: 15
             },
             parents: [
-                {name: "Kevin", age: 80},
-                {name: "Jennifer", age: 78},
+                {name: 'Kevin', age: 80},
+                {name: 'Jennifer', age: 78},
             ]
         }
     };
@@ -328,25 +328,25 @@ test('9. Object inside an object -> array -> object ->  object', () => {
         name: 'John',
         age: 28,
         mother: {
-            name: "Kate",
+            name: 'Kate',
             age: 50,
             work: {
-                position: "doctor",
+                position: 'doctor',
                 experience: 15
             },
             parents: [
                 {
-                    name: "Kevin",
+                    name: 'Kevin',
                     age: 80,
                     favoriteDish: {
-                        title: "borscht"
+                        title: 'borscht'
                     }
                 },
                 {
-                    name: "Jennifer",
+                    name: 'Jennifer',
                     age: 78,
                     favoriteDish: {
-                        title: "sushi"
+                        title: 'sushi'
                     }
                 },
             ]
@@ -367,33 +367,33 @@ test('10 Array of objects inside an object -> object -> array -> object ->  obje
         name: 'John',
         age: 28,
         mother: {
-            name: "Kate",
+            name: 'Kate',
             age: 50,
             work: {
-                position: "doctor",
+                position: 'doctor',
                 experience: 15
             },
             parents: [
                 {
-                    name: "Kevin",
+                    name: 'Kevin',
                     age: 80,
                     favoriteDish: {
-                        title: "borscht",
+                        title: 'borscht',
                         ingredients: [
-                            {title: "beet", amount: 3},
-                            {title: "potatoes", amount: 5},
-                            {title: "carrot", amount: 1},
+                            {title: 'beet', amount: 3},
+                            {title: 'potatoes', amount: 5},
+                            {title: 'carrot', amount: 1},
                         ]
                     }
                 },
                 {
-                    name: "Jennifer",
+                    name: 'Jennifer',
                     age: 78,
                     favoriteDish: {
-                        title: "sushi",
+                        title: 'sushi',
                         ingredients: [
-                            {title: "fish", amount: 1},
-                            {title: "rise", amount: 0.5}
+                            {title: 'fish', amount: 1},
+                            {title: 'rise', amount: 0.5}
                         ]
                     }
                 },
@@ -447,7 +447,7 @@ test('get sum beetwen', () => {
 
 })
 test('iq test', () => {
-    let firstTest = iqTest("2 4 7 8 10")
+    let firstTest = iqTest('2 4 7 8 10')
     let secondTest = iqTest('1 2 2')
     let thirdtwst = iqTest('1 3 5 3 5 6 7 9')
     expect(firstTest).toBe(3)
@@ -491,9 +491,9 @@ test('over road find the number of a house', () => {
 })
 test('a dish has to fit an animal', () => {
 
-    const first = feast("great blue heron", "garlic naan");
-    const sec = feast("chickadee", "chocolate cake");
-    const third = feast("brown bear", "bear claw")
+    const first = feast('great blue heron', 'garlic naan');
+    const sec = feast('chickadee', 'chocolate cake');
+    const third = feast('brown bear', 'bear claw')
 
     expect(first).toBe(true)
     expect(sec).toBe(true)
@@ -503,9 +503,9 @@ test('a dish has to fit an animal', () => {
 })
 test('vaporcode have to be returned', () => {
 
-    expect(vaporcode("Let's go to the movies")).toBe("L  E  T  '  S  G  O  T  O  T  H  E  M  O  V  I  E  S")
-    expect(() => vaporcode("Error")).toThrowError() // при поиске ошибки нужно оборачивать функцию колбэком(стрелочная ф)
-    expect(vaporcode("Why isn't my code working?")).toBe("W  H  Y  I  S  N  '  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?")
+    expect(vaporcode('Let\'s go to the movies')).toBe('L  E  T  \'  S  G  O  T  O  T  H  E  M  O  V  I  E  S')
+    expect(() => vaporcode('Error')).toThrowError() // при поиске ошибки нужно оборачивать функцию колбэком(стрелочная ф)
+    expect(vaporcode('Why isn\'t my code working?')).toBe('W  H  Y  I  S  N  \'  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?')
 })
 test('find integer', () => {
     expect(prevMultOfThree(1)).toBe(null)
@@ -516,41 +516,41 @@ test('find integer', () => {
     expect(prevMultOfThree(1244)).toBe(12)
 
 })
-test("loop array", () => {
+test('loop array', () => {
     let ne = loopArr([1, 5, 87, 45, 8, 8], 'left', 2)
     expect(loopArr([1, 5, 87, 45, 8, 8], 'left', 2)).toStrictEqual([87, 45, 8, 8, 1, 5])
     expect(loopArr([1, 5, 87, 45, 8, 8], 'right', 2)).toStrictEqual([8, 8, 1, 5, 87, 45])
 })
-test("descent order", () => {
+test('descent order', () => {
     expect(descendingOrder(15)).toBe(51)
     expect(descendingOrder(1)).toBe(1)
     expect(descendingOrder(0)).toBe(0)
     expect(descendingOrder(123456789)).toBe(987654321)
     expect(descendingOrder(1021)).toBe(2110)
 })
-test("duplateCount", () => {
+test('duplateCount', () => {
 
-    expect(duplicateCount("abcde")).toBe(0);
-    expect(duplicateCount("aabbcde")).toBe(2);
-    expect(duplicateCount("aabBcde")).toBe(2);
-    expect(duplicateCount("Indivisibility")).toBe(1);
-    expect(duplicateCount("Indivisibilities")).toBe(2);
+    expect(duplicateCount('abcde')).toBe(0);
+    expect(duplicateCount('aabbcde')).toBe(2);
+    expect(duplicateCount('aabBcde')).toBe(2);
+    expect(duplicateCount('Indivisibility')).toBe(1);
+    expect(duplicateCount('Indivisibilities')).toBe(2);
 
 })
-test("isSquare", () => {
+test('isSquare', () => {
     expect(isSquare(0)).toBe(true)
     expect(isSquare(25)).toBe(true)
     expect(isSquare(3)).toBe(false)
     expect(isSquare(26)).toBe(false)
     expect(isSquare(4)).toBe(true)
 })
-test("persistence", () => {
+test('persistence', () => {
     expect(persistence(39)).toBe(3)
     expect(persistence(4)).toBe(0)
     expect(persistence(25)).toBe(2)
     expect(persistence(999)).toBe(4)
 })
-test("unique", () => {
+test('unique', () => {
     const testArr = uniqueInOrder('AAAABBBCCDAABBB')
     const testArrTwo = uniqueInOrder('ABBCcAD')
     const testArrThree = uniqueInOrder([1, 2, 2, 3, 3])
@@ -569,19 +569,19 @@ test('isTiangle', () => {
     expect(isTriangle(1, 2, 2)).toBe(true)
     expect(isTriangle(7, 2, 2)).toBe(false)
 })
-test("twoSmallestNumbers", () => {
+test('twoSmallestNumbers', () => {
     expect(sumTwoSmallestNumbers([5, 8, 12, 19, 22])).toBe(13)
     expect(sumTwoSmallestNumbers([15, 28, 4, 2, 43])).toBe(6)
     expect(sumTwoSmallestNumbers([23, 71, 33, 82, 1])).toBe(24)
     expect(sumTwoSmallestNumbers([52, 76, 14, 12, 4])).toBe(16)
 })
 test('longestString', () => {
-    expect(longest("aretheyhere", "yestheyarehere")).toBe("aehrsty")
+    expect(longest('aretheyhere', 'yestheyarehere')).toBe('aehrsty')
 
-    expect(longest("inmanylanguages", "theresapairoffunctions")).toBe("acefghilmnoprstuy")
-    expect(longest("loopingisfunbutdangerous", "lessdangerousthancoding")).toBe("abcdefghilnoprstu")
+    expect(longest('inmanylanguages', 'theresapairoffunctions')).toBe('acefghilmnoprstuy')
+    expect(longest('loopingisfunbutdangerous', 'lessdangerousthancoding')).toBe('abcdefghilnoprstu')
 })
-test("rowSumOddNumbers", () => {
+test('rowSumOddNumbers', () => {
 
     expect(rowSumOddNumbers(1)).toBe(1)
     expect(rowSumOddNumbers(2)).toBe(8)
@@ -591,7 +591,7 @@ test("rowSumOddNumbers", () => {
 test('divisors', () => {
     expect(divisors(15)).toStrictEqual([3, 5])
     expect(divisors(12)).toStrictEqual([2, 3, 4, 6])
-    expect(divisors(13)).toBe("13 is prime")
+    expect(divisors(13)).toBe('13 is prime')
 })
 test('lastChair', () => {
     expect(lastChair(10)).toBe(9)
@@ -608,8 +608,8 @@ test('reverse words', () => {
 })
 test('is string a palindrome', () => {
     expect(isPalindrome('aba')).toBe(true)
-    expect(isPalindrome("Abba")).toBe(true)
-    expect(isPalindrome("hello")).toBe(false)
+    expect(isPalindrome('Abba')).toBe(true)
+    expect(isPalindrome('hello')).toBe(false)
 })
 test('difference of an array', () => {
     expect(arrayDiff([], [4, 5])).toStrictEqual([])
@@ -622,9 +622,9 @@ test('concatanation', () => {
     expect(solution('Soon', 'Me')).toBe('MeSoonMe')
 })
 test('reverse words', () => {
-    expect(reverseWord("hello world!")).toBe("world! hello")
-    expect(reverseWord("yoda doesn't speak like this")).toBe("this like speak doesn't yoda")
-    expect(reverseWord("row row row your boat")).toBe("boat your row row row")
+    expect(reverseWord('hello world!')).toBe('world! hello')
+    expect(reverseWord('yoda doesn\'t speak like this')).toBe('this like speak doesn\'t yoda')
+    expect(reverseWord('row row row your boat')).toBe('boat your row row row')
 })
 test('last survivor, vol.1', () => {
     expect(lastSurvivor('abc', [1, 1])).toBe('a')
@@ -637,11 +637,11 @@ test('last survivors, vol.2', () => {
     expect(lastSurvivors('zzab')).toBe('c')
 })
 test('pandemia', () => {
-    expect(infected("01000000X000X011X0X")).toBe(73.33333333333333)
-    expect(infected("01X000X010X011XX")).toBe(72.72727272727273)
-    expect(infected("0000000010")).toBe(100)
-    expect(infected("X00X000000X10X0100")).toBe(42.857142857142854)
-    expect(infected("XXXXX")).toBe(0)
+    expect(infected('01000000X000X011X0X')).toBe(73.33333333333333)
+    expect(infected('01X000X010X011XX')).toBe(72.72727272727273)
+    expect(infected('0000000010')).toBe(100)
+    expect(infected('X00X000000X10X0100')).toBe(42.857142857142854)
+    expect(infected('XXXXX')).toBe(0)
 })
 test('member test', () => {
     expect(newMember([[45, 12], [55, 21], [19, -2], [104, 20]])).toStrictEqual(['Open', 'Senior', 'Open', 'Senior'])
@@ -667,16 +667,16 @@ test('check', () => {
     expect(checkCoupon('123a', '123', 'September 5, 2014', 'October 1, 2014')).toBe(false)
 })
 test('price of billboard', () => {
-    expect(billboard("Jeong-Ho Aristotelis")).toBe(600)
-    expect(billboard("Abishai Charalampos")).toBe(570)
-    expect(billboard("Idwal Augustin")).toBe(420)
-    expect(billboard("Hadufuns John", 20)).toBe(260)
+    expect(billboard('Jeong-Ho Aristotelis')).toBe(600)
+    expect(billboard('Abishai Charalampos')).toBe(570)
+    expect(billboard('Idwal Augustin')).toBe(420)
+    expect(billboard('Hadufuns John', 20)).toBe(260)
 
 })
 test('find friends', () => {
-    expect(friend(["Ryan", "Kieran", "Mark"])).toStrictEqual(["Ryan", "Mark"])
-    expect(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"])).toStrictEqual(["Ryan"])
-    expect(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"])).toStrictEqual(["Jimm", "Cari", "aret"])
+    expect(friend(['Ryan', 'Kieran', 'Mark'])).toStrictEqual(['Ryan', 'Mark'])
+    expect(friend(['Ryan', 'Jimmy', '123', '4', 'Cool Man'])).toStrictEqual(['Ryan'])
+    expect(friend(['Jimm', 'Cari', 'aret', 'truehdnviegkwgvke', 'sixtyiscooooool'])).toStrictEqual(['Jimm', 'Cari', 'aret'])
 })
 test('Sum', () => {
     expect(SeriesSum(0)).toBe('0.00')
@@ -690,12 +690,12 @@ test('remove small number', () => {
     expect(removeSmallest([2, 2, 1, 2, 1])).toStrictEqual([2, 2, 2, 1])
 })
 test('is programm', () => {
-    expect(isIsogram("Dermatoglyphics")).toBe(true)
-    expect(isIsogram("isogram")).toBe(true)
-    expect(isIsogram("aba")).toBe(false)
-    expect(isIsogram("isIsogram")).toBe(false)
-    expect(isIsogram("moOse")).toBe(false)
-    expect(isIsogram("")).toBe(true)
+    expect(isIsogram('Dermatoglyphics')).toBe(true)
+    expect(isIsogram('isogram')).toBe(true)
+    expect(isIsogram('aba')).toBe(false)
+    expect(isIsogram('isIsogram')).toBe(false)
+    expect(isIsogram('moOse')).toBe(false)
+    expect(isIsogram('')).toBe(true)
 })
 test('hello world', () => {
     expect(hello('johN')).toBe('Hello, John!')
@@ -704,12 +704,12 @@ test('hello world', () => {
     expect(hello('')).toBe('Hello, World!')
 })
 test('calcAge', () => {
-    expect(calculateAge(2012, 2016)).toBe("You are 4 years old.")
-    expect(calculateAge(1989, 2016)).toBe("You are 27 years old.")
-    expect(calculateAge(2000, 1990)).toBe("You will be born in 10 years.")
-    expect(calculateAge(3400, 3400)).toBe("You were born this very year!")
-    expect(calculateAge(2011, 2012)).toBe("You are 1 year old.")
-    expect(calculateAge(2000, 1999)).toBe("You will be born in 1 year.")
+    expect(calculateAge(2012, 2016)).toBe('You are 4 years old.')
+    expect(calculateAge(1989, 2016)).toBe('You are 27 years old.')
+    expect(calculateAge(2000, 1990)).toBe('You will be born in 10 years.')
+    expect(calculateAge(3400, 3400)).toBe('You were born this very year!')
+    expect(calculateAge(2011, 2012)).toBe('You are 1 year old.')
+    expect(calculateAge(2000, 1999)).toBe('You will be born in 1 year.')
 })
 test('missing number', () => {
     expect(missingNo([9, 45, 53, 10, 100, 30, 85, 72, 69, 93, 98, 27, 73, 82, 91, 60, 5, 79, 88, 18, 71, 36, 44, 22, 89, 40, 59, 80, 81, 67, 25, 54, 13, 64, 56, 39, 48, 92, 84, 94, 87, 90, 77, 63, 32, 68, 37, 96, 23, 0, 95, 1, 52, 78, 6, 57, 50, 2, 46, 19, 76, 47, 14, 4, 3, 29, 17, 11, 21, 24, 74, 65, 12, 83, 28, 41, 66, 7, 58, 55, 51, 43, 97, 42, 86, 49, 31, 20, 75, 70, 34, 33, 38, 8, 15, 62, 35, 61, 99, 16])).toBe(26)
@@ -747,11 +747,11 @@ test('solve ', () => {
     expect(solve([33, 23, 45, 78, 65], 10)).toStrictEqual([36, 26, 50, 86, 70])
 })
 test('connotatiosm', () => {
-    expect(connotation("A big brown fox caught a bad bunny")).toBe(true)
-    expect(connotation("Xylophones can obtain Xenon.")).toBe(false)
-    expect(connotation("CHOCOLATE MAKES A GREAT SNACK")).toBe(true)
-    expect(connotation("All FOoD tAsTEs NIcE for someONe")).toBe(true)
-    expect(connotation("Is  this the  best  Kata?")).toBe(true)
+    expect(connotation('A big brown fox caught a bad bunny')).toBe(true)
+    expect(connotation('Xylophones can obtain Xenon.')).toBe(false)
+    expect(connotation('CHOCOLATE MAKES A GREAT SNACK')).toBe(true)
+    expect(connotation('All FOoD tAsTEs NIcE for someONe')).toBe(true)
+    expect(connotation('Is  this the  best  Kata?')).toBe(true)
 })
 test('watermeloon', () => {
     expect(divide(4)).toBe(true)
@@ -786,8 +786,8 @@ test('odd against even', () => {
     expect(bitsBattle([1, 13, 16])).toBe('tie')
 })
 test('string To Array', () => {
-    expect(stringToArray("Robin Singh")).toEqual(["Robin", "Singh"])
-    expect(stringToArray("I love arrays they are my favorite")).toStrictEqual(["I", "love", "arrays", "they", "are", "my", "favorite"])
+    expect(stringToArray('Robin Singh')).toEqual(['Robin', 'Singh'])
+    expect(stringToArray('I love arrays they are my favorite')).toStrictEqual(['I', 'love', 'arrays', 'they', 'are', 'my', 'favorite'])
 })
 test('usd to cny', () => {
     expect(usdcny(15)).toBe('101.25 Chinese Yuan')
@@ -841,129 +841,144 @@ test('next number with distinct digits', () => {
     expect(distinctDigitYear(2013)).toBe(2014)
 })
 test('check if parentheses is valid', () => {
-    expect(validParentheses("((()))")).toBe(true)
-    expect(validParentheses("()()()")).toBe(true)
-    expect(validParentheses("(()())()")).toBeTruthy()
-    expect(validParentheses("()(())((()))(())()")).toBe(true)
-    expect(validParentheses("")).toBe(true)
+    expect(validParentheses('((()))')).toBe(true)
+    expect(validParentheses('()()()')).toBe(true)
+    expect(validParentheses('(()())()')).toBeTruthy()
+    expect(validParentheses('()(())((()))(())()')).toBe(true)
+    expect(validParentheses('')).toBe(true)
 
-    expect(validParentheses("()()(")).toBe(false)
-    expect(validParentheses(")(")).toBeFalsy()
-    expect(validParentheses("((())")).toBe(false)
-    expect(validParentheses("())(()")).toBe(false)
+    expect(validParentheses('()()(')).toBe(false)
+    expect(validParentheses(')(')).toBeFalsy()
+    expect(validParentheses('((())')).toBe(false)
+    expect(validParentheses('())(()')).toBe(false)
 
 })
 test('check if braces are valid', () => {
-    expect(validBraces("()))")).toBeFalsy()
-    expect(validBraces("()")).toBeTruthy()
-    expect(validBraces("{}")).toBeTruthy()
-    expect(validBraces("[]")).toBeTruthy()
-    expect(validBraces("[]]][[()][{}{]]])[[[][]([()")).toBeFalsy()
+    expect(validBraces('()))')).toBeFalsy()
+    expect(validBraces('()')).toBeTruthy()
+    expect(validBraces('{}')).toBeTruthy()
+    expect(validBraces('[]')).toBeTruthy()
+    expect(validBraces('[]]][[()][{}{]]])[[[][]([()')).toBeFalsy()
 })
 test('interact of strings', () => {
-    expect(neutralise("+++--+---", "++----++-")).toBe("++0--000-")
-    expect(neutralise("-----", "-----")).toBe("-----")
-    expect(neutralise("+-----+++-", "--+-+-++--")).toBe("0-0-0-++0-")
-    expect(neutralise("-+--+-+---", "-+--+-+-+-")).toBe("-+--+-+-0-")
+    expect(neutralise('+++--+---', '++----++-')).toBe('++0--000-')
+    expect(neutralise('-----', '-----')).toBe('-----')
+    expect(neutralise('+-----+++-', '--+-+-++--')).toBe('0-0-0-++0-')
+    expect(neutralise('-+--+-+---', '-+--+-+-+-')).toBe('-+--+-+-0-')
 })
 test('build the tower', () => {
-    expect(towerBuilder(1)).toStrictEqual(["*"])
-    expect(towerBuilder(2)).toStrictEqual([" * ","***"])
-    expect(towerBuilder(3)).toStrictEqual(["  *  "," *** ","*****"])
+    expect(towerBuilder(1)).toStrictEqual(['*'])
+    expect(towerBuilder(2)).toStrictEqual([' * ', '***'])
+    expect(towerBuilder(3)).toStrictEqual(['  *  ', ' *** ', '*****'])
 })
 test('find unique number in an array', () => {
-    expect(findUniq([ 1, 1, 1, 2, 1, 1 ])).toBe(2)
-    expect(findUniq([ 3, 10, 3, 3, 3 ])).toBe(10)
-    expect(findUniq([ 1, 1, 1, 2, 1, 1 ])).toBe(2)
-    expect(findUniq([ 0, 0, 1 ])).toBe(1)
+    expect(findUniq([1, 1, 1, 2, 1, 1])).toBe(2)
+    expect(findUniq([3, 10, 3, 3, 3])).toBe(10)
+    expect(findUniq([1, 1, 1, 2, 1, 1])).toBe(2)
+    expect(findUniq([0, 0, 1])).toBe(1)
 })
 test('break up camel case', () => {
     expect(solutionNew('camelCasing')).toBe('camel Casing')
     expect(solutionNew('camelCasingTest')).toBe('camel Casing Test')
 })
 test('rewrite string in CamelCaseStyle', () => {
-    expect(camelCaseStyle("test case")).toBe("TestCase")
-    expect(camelCaseStyle("camel Case method")).toBe("CamelCaseMethod")
-    expect(camelCaseStyle("camel case word")).toBe( "CamelCaseWord")
-    expect(camelCaseStyle("")).toBe( "")
+    expect(camelCaseStyle('test case')).toBe('TestCase')
+    expect(camelCaseStyle('camel Case method')).toBe('CamelCaseMethod')
+    expect(camelCaseStyle('camel case word')).toBe('CamelCaseWord')
+    expect(camelCaseStyle('')).toBe('')
 })
 test('check if n divided by x and y', () => {
-    expect(isDivisible(3,3,4)).toBeFalsy()
-    expect(isDivisible(12,3,4)).toBeTruthy()
-    expect(isDivisible(8,3,4)).toBeFalsy()
-    expect(isDivisible(48,3,4)).toBeTruthy()
+    expect(isDivisible(3, 3, 4)).toBeFalsy()
+    expect(isDivisible(12, 3, 4)).toBeTruthy()
+    expect(isDivisible(8, 3, 4)).toBeFalsy()
+    expect(isDivisible(48, 3, 4)).toBeTruthy()
 
 })
 
 test('sort array by strings length', () => {
-    expect(sortByLength(["Beg", "Life", "I", "To"])).toStrictEqual(["I", "To", "Beg", "Life"])
-    expect(sortByLength(["", "Moderately", "Brains", "Pizza"])).toStrictEqual(["", "Pizza", "Brains", "Moderately"])
-    expect(sortByLength(["Longer", "Longest", "Short"])).toStrictEqual(["Short", "Longer", "Longest"])
+    expect(sortByLength(['Beg', 'Life', 'I', 'To'])).toStrictEqual(['I', 'To', 'Beg', 'Life'])
+    expect(sortByLength(['', 'Moderately', 'Brains', 'Pizza'])).toStrictEqual(['', 'Pizza', 'Brains', 'Moderately'])
+    expect(sortByLength(['Longer', 'Longest', 'Short'])).toStrictEqual(['Short', 'Longer', 'Longest'])
 })
 test('find indexOfArray in Array', () => {
-expect(searchArray([[2,3],[7,2],[9,20],[1,2],[7,2],[45,4],[7,87],[4,5],[2,7],[6,32]], [9,20])).toBe(2)
+    expect(searchArray([[2, 3], [7, 2], [9, 20], [1, 2], [7, 2], [45, 4], [7, 87], [4, 5], [2, 7], [6, 32]], [9, 20])).toBe(2)
 })
 test('check the amount of the loops', () => {
-expect(hoopCount(3)).toBe("Keep at it until you get it")
-expect(hoopCount(11)).toBe("Great, now move on to tricks")
+    expect(hoopCount(3)).toBe('Keep at it until you get it')
+    expect(hoopCount(11)).toBe('Great, now move on to tricks')
 })
 test('find the average of the array', () => {
-expect(getAverage([2,2,2,2])).toBe(2)
-expect(getAverage([1,2,3,4,5,])).toBe(3)
-expect(getAverage([1,1,1,1,1,1,1,2])).toBe(1)
+    expect(getAverage([2, 2, 2, 2])).toBe(2)
+    expect(getAverage([1, 2, 3, 4, 5,])).toBe(3)
+    expect(getAverage([1, 1, 1, 1, 1, 1, 1, 2])).toBe(1)
 })
 test('find', () => {
-expect(cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200})).toBe(2)
-    expect(cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000})).toBe(0)
+    expect(cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200})).toBe(2)
+    expect(cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {
+        sugar: 500,
+        flour: 2000,
+        milk: 2000
+    })).toBe(0)
 })
 test('find out the missing amount of ingredients', () => {
-expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {flour: 50, eggs: 1})).toStrictEqual({flour: 150, sugar: 100})
-expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {})).toStrictEqual({flour: 200, eggs: 1, sugar: 100})
+    expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {flour: 50, eggs: 1})).toStrictEqual({
+        flour: 150,
+        sugar: 100
+    })
+    expect(getMissingIngredients({flour: 200, eggs: 1, sugar: 100}, {})).toStrictEqual({
+        flour: 200,
+        eggs: 1,
+        sugar: 100
+    })
 })
 test('find the screen size', () => {
-expect(findScreenHeight(1024,"4:3")).toBe("1024x768")
-expect(findScreenHeight(1280,"16:9")).toBe("1280x720")
+    expect(findScreenHeight(1024, '4:3')).toBe('1024x768')
+    expect(findScreenHeight(1280, '16:9')).toBe('1280x720')
 })
-test('find Sum of Odd Cubed Numbers', ( ) => {
-    expect(cubeOdd(["a",12,9,"z",42])).toBe(undefined)
+test('find Sum of Odd Cubed Numbers', () => {
+    expect(cubeOdd(['a', 12, 9, 'z', 42])).toBe(undefined)
     expect(cubeOdd([1, 2, 3, 4])).toBe(28)
-    expect(cubeOdd([-3,-2,2,3])).toBe(0)
+    expect(cubeOdd([-3, -2, 2, 3])).toBe(0)
 })
 test('refactor array', () => {
-expect(testingFunction([])).toStrictEqual([])
-expect(testingFunction(["a", "b", "c"])).toStrictEqual(["1: a", "2: b", "3: c"])
+    expect(testingFunction([])).toStrictEqual([])
+    expect(testingFunction(['a', 'b', 'c'])).toStrictEqual(['1: a', '2: b', '3: c'])
 })
 test('count sums of the parts', () => {
-expect(partsSums([])).toStrictEqual([0])
-expect(partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358])).toStrictEqual([10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0])
-expect(partsSums([0, 1, 3, 6, 10])).toStrictEqual( [20, 20, 19, 16, 10, 0])
-expect(partsSums([1, 2, 3, 4, 5, 6])).toStrictEqual([21, 20, 18, 15, 11, 6, 0])
+    expect(partsSums([])).toStrictEqual([0])
+    expect(partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358])).toStrictEqual([10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0])
+    expect(partsSums([0, 1, 3, 6, 10])).toStrictEqual([20, 20, 19, 16, 10, 0])
+    expect(partsSums([1, 2, 3, 4, 5, 6])).toStrictEqual([21, 20, 18, 15, 11, 6, 0])
 })
 test('count area or periment', () => {
-expect(areaOrPerimeter(3, 3)).toBe(9)
-expect(areaOrPerimeter(6, 10)).toBe(32)
+    expect(areaOrPerimeter(3, 3)).toBe(9)
+    expect(areaOrPerimeter(6, 10)).toBe(32)
 })
 test('debug the function', () => {
-expect(getPlanetName(3)).toBe('Earth')
-expect(getPlanetName(4)).toBe('Mars')
+    expect(getPlanetName(3)).toBe('Earth')
+    expect(getPlanetName(4)).toBe('Mars')
 })
 test('find min and max number within array', () => {
-expect(minMax([1, 2, 3, 4, 5])).toStrictEqual( [1, 5])
-expect(minMax([2334454, 5] )).toStrictEqual( [5, 2334454])
-expect(minMax([5])).toStrictEqual(  [5, 5])
+    expect(minMax([1, 2, 3, 4, 5])).toStrictEqual([1, 5])
+    expect(minMax([2334454, 5])).toStrictEqual([5, 2334454])
+    expect(minMax([5])).toStrictEqual([5, 5])
 })
 test('transform string to uppercase', () => {
-expect(makeUpperCase("hello")).toBe("HELLO")
-expect(makeUpperCase("Hello")).toBe("HELLO")
-expect(makeUpperCase("HELLO")).toBe("HELLO")
+    expect(makeUpperCase('hello')).toBe('HELLO')
+    expect(makeUpperCase('Hello')).toBe('HELLO')
+    expect(makeUpperCase('HELLO')).toBe('HELLO')
 })
 test('split array to arrays', () => {
-expect(makeParts([1,2,3,4,5], 2)).toStrictEqual([[1,2],[3,4],[5]])
-expect(makeParts([1,2,3], 1)).toStrictEqual([[1],[2],[3]])
-expect(makeParts([1,2,3,4,5], 10)).toStrictEqual([[1,2,3,4,5]])
+    expect(makeParts([1, 2, 3, 4, 5], 2)).toStrictEqual([[1, 2], [3, 4], [5]])
+    expect(makeParts([1, 2, 3], 1)).toStrictEqual([[1], [2], [3]])
+    expect(makeParts([1, 2, 3, 4, 5], 10)).toStrictEqual([[1, 2, 3, 4, 5]])
 })
 test('find highest scoring word', () => {
-expect(high('what time are we climbing up the volcano')).toBe('volcano')
-expect(high('man i need a taxi up to ubud')).toBe('taxi')
-expect(high('take me to semynak')).toBe('semynak')
+    expect(high('what time are we climbing up the volcano')).toBe('volcano')
+    expect(high('man i need a taxi up to ubud')).toBe('taxi')
+    expect(high('take me to semynak')).toBe('semynak')
+})
+test('count numbers except five', () => {
+    expect(dontGiveMeFive(1, 9)).toBe(8)
+    expect(dontGiveMeFive(4, 17)).toBe(12)
 })
