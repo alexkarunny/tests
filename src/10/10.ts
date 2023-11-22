@@ -1093,12 +1093,25 @@ export const high = (x: string): string => {
 }
 export const dontGiveMeFive = (start: number, end: number): number => {
     let num = 0
-    for (let i = start; i <= end ; i++) {
-        if((String(i).indexOf('5')) >= 0) {
+    for (let i = start; i <= end; i++) {
+        if ((String(i).indexOf('5')) >= 0) {
             continue
         } else {
-            num +=1
+            num += 1
         }
     }
     return num
+}
+export const grabscrab = (anagram: string, dictionary: string[]): string[] => {
+    // Your code here
+    const arr = []
+    let anagrammSort = anagram.split('').sort().join('')
+    for (let i = 0; i < dictionary.length; i++) {
+        let dictionaryWordSort = dictionary[i].split('').sort().join('')
+        if (anagrammSort === dictionaryWordSort) {
+            arr.push(dictionary[i])
+        }
+    }
+
+    return arr
 }

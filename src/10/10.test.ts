@@ -27,7 +27,7 @@ import {
     fullCopyArrayOfPrimitivInsadeObj,
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getAverage, getMissingIngredients, getNumberPassengers, getPlanetName,
-    getSum, hello, high, hoopCount, howManyYears, infected,
+    getSum, grabscrab, hello, high, hoopCount, howManyYears, infected,
     iqTest, isDivideBy, isDivisible, isIsogram,
     isLeapYear, isPalindrome,
     isSquare,
@@ -981,4 +981,9 @@ test('find highest scoring word', () => {
 test('count numbers except five', () => {
     expect(dontGiveMeFive(1, 9)).toBe(8)
     expect(dontGiveMeFive(4, 17)).toBe(12)
+})
+test('find the anagrams', () => {
+    expect(grabscrab('trisf', ['first'])).toStrictEqual(['first'])
+    expect(grabscrab('oob', ['bob', 'baobab'])).toStrictEqual([])
+    expect(grabscrab('ainstuomn', ['mountains', 'hills', 'mesa'])).toStrictEqual(['mountains'])
 })
