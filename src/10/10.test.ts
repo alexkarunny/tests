@@ -28,7 +28,7 @@ import {
     fullCopyObjectArrayObjectObject,
     fullCopyObjectInsideObjectInsideObject, getAverage, getMissingIngredients, getNumberPassengers, getPlanetName,
     getSum, grabscrab, hello, high, hoopCount, howManyYears, infected,
-    iqTest, isDivideBy, isDivisible, isIsogram,
+    iqTest, isDigit, isDivideBy, isDivisible, isIsogram,
     isLeapYear, isPalindrome,
     isSquare,
     isTriangle,
@@ -986,4 +986,9 @@ test('find the anagrams', () => {
     expect(grabscrab('trisf', ['first'])).toStrictEqual(['first'])
     expect(grabscrab('oob', ['bob', 'baobab'])).toStrictEqual([])
     expect(grabscrab('ainstuomn', ['mountains', 'hills', 'mesa'])).toStrictEqual(['mountains'])
+})
+test('check if it digit', () => {
+expect(isDigit('7')).toBeTruthy()
+expect(isDigit('')).toBeFalsy()
+expect(isDigit('a2')).toBeFalsy()
 })

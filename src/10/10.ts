@@ -1115,3 +1115,7 @@ export const grabscrab = (anagram: string, dictionary: string[]): string[] => {
 
     return arr
 }
+export const isDigit = (n: string): boolean => {
+    let reg = /^\d$/
+    return reg.test(n)
+}
