@@ -43,7 +43,7 @@ import {
     rowSumOddNumbers, searchArray, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
     SimpleObjectType, solution, solutionNew, solve, sortByLength,
-    sortString, stringToArray, strToNumber, sumCubes,
+    sortString, stringToArray, strToNumber, sum, sumCubes,
     sumTwoSmallestNumbers, testingFunction,
     tickets, towerBuilder,
     uniqueInOrder, usdcny,
@@ -991,4 +991,8 @@ test('check if it digit', () => {
 expect(isDigit('7')).toBeTruthy()
 expect(isDigit('')).toBeFalsy()
 expect(isDigit('a2')).toBeFalsy()
+})
+test('count sum of the numbers within array', () => {
+    expect(sum([1, 5.2, 4, 0, -1])).toBe(9.2)
+    expect(sum([])).toBe(0)
 })

@@ -1119,3 +1119,6 @@ export const isDigit = (n: string): boolean => {
     let reg = /^\d$/
     return reg.test(n)
 }
+export const sum = (numbers: number[]): number => {
+    return numbers.reduce((acc, item) => acc + item, 0)
+}
