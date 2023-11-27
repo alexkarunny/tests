@@ -39,7 +39,7 @@ import {
     ObjectInsideObjectInsideObjectType, oddOrEven,
     overTheRoad, part, partsSums,
     persistence,
-    prevMultOfThree, removeChar, removeFirstLastCharacters, removeSmallest, reverseWord, reverseWords,
+    prevMultOfThree, printArray, removeChar, removeFirstLastCharacters, removeSmallest, reverseWord, reverseWords,
     rowSumOddNumbers, searchArray, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
     SimpleObjectType, solution, solutionNew, solve, sortByLength,
@@ -995,4 +995,7 @@ expect(isDigit('a2')).toBeFalsy()
 test('count sum of the numbers within array', () => {
     expect(sum([1, 5.2, 4, 0, -1])).toBe(9.2)
     expect(sum([])).toBe(0)
+})
+test('printing elements of array', () => {
+expect(printArray([2,4,5,2])).toBe("2,4,5,2")
 })

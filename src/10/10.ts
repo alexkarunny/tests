@@ -1122,3 +1122,7 @@ export const isDigit = (n: string): boolean => {
 export const sum = (numbers: number[]): number => {
     return numbers.reduce((acc, item) => acc + item, 0)
 }
+export const printArray = (array: any[]): string => {
+    //show me the code!
+return array.join(',')
+}
