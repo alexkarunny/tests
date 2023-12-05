@@ -43,7 +43,7 @@ import {
     rowSumOddNumbers, searchArray, SeriesSum, simpleMultiplication,
     simpleObjectCopy,
     SimpleObjectType, solution, solutionNew, solve, sortByLength,
-    sortString, stringToArray, strToNumber, sum, sumCubes,
+    sortString, squareOrSquareRoot, stringToArray, strToNumber, sum, sumCubes,
     sumTwoSmallestNumbers, testingFunction,
     tickets, towerBuilder,
     uniqueInOrder, usdcny,
@@ -998,4 +998,7 @@ test('count sum of the numbers within array', () => {
 })
 test('printing elements of array', () => {
 expect(printArray([2,4,5,2])).toBe("2,4,5,2")
+})
+test('square or square root', () => {
+expect(squareOrSquareRoot([ 4, 3, 9, 7, 2, 1 ])).toStrictEqual([ 2, 9, 3, 49, 4, 1 ])
 })

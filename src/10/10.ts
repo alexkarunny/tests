@@ -1126,3 +1126,10 @@ export const printArray = (array: any[]): string => {
     //show me the code!
 return array.join(',')
 }
+export const squareOrSquareRoot = (array: number[]): number[] => {
+    return array.map(i => {
+        let num = Math.sqrt(i)
+        if(Number.isInteger(num)) return num
+        else return num * num
+    })
+}
